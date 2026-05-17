@@ -16,7 +16,7 @@ const frameworks = [
   {
     href: '/frameworks/cavey-growth',
     name: 'CAVE Growth System™',
-    desc: 'Counter袖得 Adaptive Growth — a structured approach to navigating organizational change when the environment actively resists it.',
+    desc: 'Counter-Adaptive Growth — a structured approach to navigating organizational change when the environment actively resists it.',
   },
   {
     href: '/frameworks/exploration-imperative',
