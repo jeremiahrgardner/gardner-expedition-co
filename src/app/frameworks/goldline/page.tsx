@@ -12,8 +12,7 @@ export default function GoldlinePage() {
             <span className="eyebrow">Framework</span>
             <h1>Goldline™</h1>
             <p className="lead">
-              A diagnostic framework for identifying the precise decision-making patterns
-              that keep leaders and organizations stuck — and the specific pathway out.
+              Find the center that lets you explore.
             </p>
           </div>
         </section>
@@ -22,60 +21,46 @@ export default function GoldlinePage() {
           <div className="fw-main">
             <h2>What It Is</h2>
             <p>
-              Goldline™ is a diagnostic assessment and accompanying interpretive framework
-              designed to reveal the specific cognitive and organizational patterns that
-              shape how a leader makes decisions under uncertainty. It surfaces what
-              appears rational but is actually reflexive — the inherited logic that operates
-              below conscious awareness and quietly governs behavior.
+              Goldline™ is Jeremiah's signature personal clarity and alignment framework.
+              It helps leaders, high performers, and creators identify their central
+              contribution, build the structures that support it, and navigate growth
+              without losing their center.
             </p>
             <p>
-              The name comes from the navigation principle: a goldline is the course a
-              ship is actually on, as opposed to the course it intends to be on. The
-              gap between intention and trajectory is where organizational struggle lives.
+              The name comes from the navigation principle used in cave diving: when
+              visibility drops to zero, the goldline is the anchored thread that helps
+              explorers find their way back. In leadership and personal development,
+              the goldline is the through-line of deepest contribution — the pattern
+              that connects your most effective work across time.
             </p>
+
+            <h2>The Three Parts</h2>
+            <ul>
+              <li><strong>Trace the Line</strong> — Identify the lived patterns where your deepest contribution has already appeared, often disguised by circumstance or success.</li>
+              <li><strong>Anchor the Line</strong> — Build the systems, rhythms, boundaries, and infrastructure that let you operate from that center consistently.</li>
+              <li><strong>Navigate the Line</strong> — Make aligned decisions, explore new territory, and expand your contribution outward from a place of clarity.</li>
+            </ul>
 
             <h2>Core Philosophy</h2>
             <p>
-              Most organizational dysfunction is not a motivation problem. The people
-              involved are capable, experienced, and trying hard. The problem is
-              structural — a failure of pattern recognition. Leaders are operating from
-              mental models that were accurate in previous environments but are actively
-              misguiding them in the current one.
+              Most people are operating from inherited logic — patterns that were accurate
+              in previous environments but are actively misguiding them now. The Goldline™
+              framework surfaces that misalignment and gives you the vocabulary and
+              structure to address it systematically.
             </p>
             <p>
-              Goldline™ makes that misalignment visible and provides the vocabulary
-              and framework to address it systematically.
+              The work is not about finding a new identity. It is about recognizing
+              what has been true about your contribution all along — and building the
+              conditions that let you operate from that truth more consistently.
             </p>
-
-            <h2>What It Reveals</h2>
-            <p>The framework identifies several critical pattern domains:</p>
-            <ul>
-              <li><strong>Decision Architecture</strong> — How information is gathered, filtered, and weighted before a decision is made</li>
-              <li><strong>Risk Calibration</strong> — The implicit risk tolerance that governs strategic choices without being explicitly stated</li>
-              <li><strong>Alignment Dynamics</strong> — How consensus is manufactured, maintained, or avoided in leadership teams</li>
-              <li><strong>Feedback Loops</strong> — The quality and honesty of the signals an organization uses to evaluate its own performance</li>
-              <li><strong>Trajectory Gap</strong> — The measurable distance between stated intent and actual organizational behavior</li>
-            </ul>
 
             <h2>Practical Application</h2>
             <p>
-              Goldline™ is used in coaching engagements, team development programs,
-              and organizational诊断 projects. It is particularly effective when a
-              leader or team knows something is not working but cannot articulate
-              what it is — the classic symptoms of a pattern problem, not a competence problem.
-            </p>
-            <p>
-              The diagnostic typically requires 30–45 minutes to complete and produces
-              a detailed report that becomes the foundation for a 90-day coaching arc.
-            </p>
-
-            <h2>Background</h2>
-            <p>
-              Goldline™ was developed through years of field engagement with senior
-              leaders in healthcare, manufacturing, and professional services. It draws
-              on cognitive science, organizational behavior research, and systems
-              thinking — synthesized into a practical diagnostic tool that can be
-              used without academic infrastructure.
+              Goldline™ is applied through coaching engagements and the Goldline
+              Clarity Snapshot™ diagnostic. It is particularly powerful for leaders
+              and high performers who know something is not working but cannot
+              articulate what it is — the classic symptoms of a pattern problem,
+              not a competence problem.
             </p>
           </div>
 
@@ -83,19 +68,13 @@ export default function GoldlinePage() {
             <div className="fw-sidebar-section">
               <h4>Explore Further</h4>
               <Link href="/frameworks">← All Frameworks</Link>
-              <Link href="/frameworks/the-read">The Read</Link>
-              <Link href="/frameworks/cavey-growth">CAVE Growth System™</Link>
+              <Link href="/frameworks/the-read">The Read™</Link>
+              <Link href="/frameworks/cave-growth">CAVE Growth System™</Link>
             </div>
             <div className="fw-sidebar-section">
               <h4>Related</h4>
               <Link href="/field-notes">Field Notes</Link>
               <Link href="/diagnostics">Take the Assessment</Link>
-            </div>
-            <div className="fw-sidebar-section">
-              <h4>Status</h4>
-              <p style={{ fontSize: '0.82rem', color: 'var(--muted)' }}>
-                Active · Field-tested · Available for engagement
-              </p>
             </div>
           </aside>
         </div>

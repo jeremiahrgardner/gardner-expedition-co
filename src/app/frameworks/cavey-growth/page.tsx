@@ -12,9 +12,7 @@ export default function CAVEGrowthPage() {
             <span className="eyebrow">Framework</span>
             <h1>CAVE Growth System™</h1>
             <p className="lead">
-              Counter-Adaptive Growth — a structured approach to organizational change
-              when the environment actively resists it. Built for environments where
-              the system fights back.
+              Navigate growth when the path is not yet visible.
             </p>
           </div>
         </section>
@@ -23,49 +21,45 @@ export default function CAVEGrowthPage() {
           <div className="fw-main">
             <h2>What It Is</h2>
             <p>
-              CAVE stands for Counter-Adaptive Velocity Environment. The acronym is
-              intentional — it describes the condition precisely: an environment
-              where the natural organizational response to change is resistance, and
-              where that resistance is not a bug but a feature of the system.
+              CAVE Growth System™ is an organizational growth and uncertainty-navigation
+              system developed through field engagement with organizations navigating
+              genuine complexity. It helps teams build a durable capability for
+              finding, testing, and scaling new opportunities under uncertainty.
             </p>
             <p>
-              Most change frameworks assume that if you design the right intervention,
-              the organization will move. CAVE Growth assumes the opposite: the
-              organization will push back, and the work is to design for that pushback
-              from the beginning rather than being surprised by it.
+              CAVE stands for the conditions the system is designed for: environments
+              where the path forward is not visible, where assumptions are hidden,
+              where customer needs are not yet fully formed, and where the cost of
+              wrong decisions is real. The system does not eliminate uncertainty —
+              it gives organizations the capability to navigate through it.
             </p>
 
-            <h2>Core Philosophy</h2>
-            <p>
-              Organizational resistance to change is not irrational. It is the system
-              protecting something it values — stability, identity, established
-              competence, political equilibrium. The CAVE Growth System does not
-              treat resistance as an obstacle to overcome. It treats it as a signal
-              to interpret.
-            </p>
-            <p>
-              The framework provides a structured vocabulary for diagnosing what
-              the resistance is actually protecting, and a corresponding set of
-              intervention strategies that work with the resistance rather
-              than against it.
-            </p>
-
-            <h2>The Four Phases</h2>
+            <h2>Core Components</h2>
             <ul>
-              <li><strong>Cartography</strong> — Mapping the actual terrain of resistance: who resists, why, through what channels, with what resources</li>
-              <li><strong>Alignment Architecture</strong> — Designing change trajectories that create genuine win-win conditions rather than forced compliance</li>
-              <li><strong>Velocity Calibration</strong> — Determining the actual pace of sustainable change, which is almost always slower than leaders want</li>
-              <li><strong>Evolution Cycles</strong> — Building feedback loops that allow the change process to adapt as it runs, rather than following a fixed plan</li>
+              <li><strong>Customer Insight as Navigation</strong> — Using deep customer empathy not just to inform decisions but to sense direction when data is insufficient</li>
+              <li><strong>Assumption Surfacing</strong> — Making the hidden logic explicit — what you believe about the market, the customer, and the problem before you have evidence</li>
+              <li><strong>Rapid Experimentation</strong> — Building learning loops that generate evidence quickly, at low cost, before large commitments are made</li>
+              <li><strong>Evidence-Based Decisions</strong> — Building the discipline to wait for sufficient evidence while maintaining the capacity to act before certainty arrives</li>
             </ul>
+
+            <h2>Connection to the Ecosystem</h2>
+            <p>
+              The CAVE Growth System™ is the organizational layer of the framework
+              ecosystem. It connects to The Read™ (diagnosing where the real
+              opportunity and risk are), the Search System™ (making exploration a
+              permanent function), Progress Metrics™ (measuring learning before
+              conventional business metrics are available), and Program as a
+              Product™ (building the organizational change capability to scale
+              what works).
+            </p>
 
             <h2>Practical Application</h2>
             <p>
-              CAVE Growth is applied in organizational transformation engagements
-              where early interventions have failed, where there is a history of
-              change initiatives that did not stick, or where the organizational
-              culture has strong inertial forces. It is particularly relevant in
-              healthcare, manufacturing, and regulated industries where the cost
-              of failed change is high.
+              CAVE Growth is applied in organizational transformation engagements,
+              innovation system builds, and growth capability development. It is
+              particularly relevant in healthcare, manufacturing, and regulated
+              industries where the cost of failed change is high and the need
+              for genuine adaptive capacity is urgent.
             </p>
           </div>
 
@@ -74,7 +68,7 @@ export default function CAVEGrowthPage() {
               <h4>Explore Further</h4>
               <Link href="/frameworks">← All Frameworks</Link>
               <Link href="/frameworks/goldline">Goldline™</Link>
-              <Link href="/frameworks/exploration-imperative">Exploration Imperative™</Link>
+              <Link href="/frameworks/the-read">The Read™</Link>
             </div>
             <div className="fw-sidebar-section">
               <h4>Applied</h4>

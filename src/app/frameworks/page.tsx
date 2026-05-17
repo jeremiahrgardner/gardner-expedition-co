@@ -6,27 +6,44 @@ const frameworks = [
   {
     href: '/frameworks/goldline',
     name: 'Goldline™',
-    desc: 'A diagnostic framework for identifying the decision-making patterns that keep leaders and organizations stuck — and the pathway out.',
+    subtitle: 'Find the center that lets you explore.',
+    desc: 'A personal clarity and alignment framework for identifying your central contribution, building the systems that support it, and navigating growth without losing your center.',
   },
   {
     href: '/frameworks/the-read',
-    name: 'The Read',
-    desc: 'A methodology for developing superior situational awareness: reading rooms, systems, dynamics, and signals with greater accuracy.',
+    name: 'The Read™',
+    subtitle: 'See what the moment is really telling you.',
+    desc: 'A diagnostic leadership framework for observing beneath the surface, separating symptoms from signals, and choosing the intervention the moment actually needs.',
   },
   {
-    href: '/frameworks/cavey-growth',
+    href: '/frameworks/cave-growth',
     name: 'CAVE Growth System™',
-    desc: 'Counter-Adaptive Growth — a structured approach to navigating organizational change when the environment actively resists it.',
+    subtitle: 'Navigate growth when the path is not yet visible.',
+    desc: 'An organizational growth system that helps teams surface assumptions, learn from customers, run rapid experiments, and make evidence-based decisions under uncertainty.',
   },
   {
-    href: '/frameworks/exploration-imperative',
-    name: 'Exploration Imperative™',
-    desc: 'A strategic principle for building organizational cultures that treat uncertainty as a design condition, not a problem to solve.',
+    href: '/frameworks/the-search',
+    name: 'The Search System™',
+    subtitle: 'Make exploration a permanent enterprise function.',
+    desc: 'An operating model for organizations that need to continuously discover, validate, and invest in new opportunities alongside the work of execution.',
   },
   {
     href: '/frameworks/coaching-metaskills',
     name: 'Coaching Metaskills™',
-    desc: 'The underlying capabilities that make coaching conversations transformational — not just competent.',
+    subtitle: 'Build the human capability to lead through uncertainty.',
+    desc: 'A capability-building system for leaders and coaches who need to observe clearly, diagnose accurately, intervene deliberately, and help teams learn from evidence.',
+  },
+  {
+    href: '/frameworks/progress-metrics',
+    name: 'Progress Metrics™',
+    subtitle: 'Measure evidence before certainty arrives.',
+    desc: 'A measurement system for tracking learning, confidence, and opportunity progress before traditional business metrics are available.',
+  },
+  {
+    href: '/frameworks/program-as-product',
+    name: 'Program as a Product™',
+    subtitle: 'Build transformation systems that evolve.',
+    desc: 'A change philosophy that treats organizational programs as evolving products shaped by stakeholder insight, adoption patterns, experimentation, and evidence.',
   },
 ]
 
@@ -47,9 +64,9 @@ export default function FrameworksPage() {
               They are not theories. They are navigational architecture.
             </p>
             <p style={{ fontSize: '1.1rem', color: 'var(--muted)', lineHeight: '1.75', marginTop: '1em' }}>
-              The ecosystem is designed to be coherent: frameworks reinforce each other,
-              diagnostics reveal where to apply them, and field notes document the patterns
-              that do not fit neatly into any single framework but are worth knowing.
+              The ecosystem is designed to be coherent. Frameworks reinforce each other:
+              from personal clarity to diagnostic leadership, team capability,
+              organizational growth, and enterprise exploration.
             </p>
           </div>
         </section>
@@ -57,9 +74,10 @@ export default function FrameworksPage() {
         <section className="section">
           <div className="container">
             <div className="framework-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
-              {frameworks.map(({ href, name, desc }) => (
+              {frameworks.map(({ href, name, subtitle, desc }) => (
                 <Link key={href} href={href} className="framework-card">
                   <h3>{name}</h3>
+                  <p className="framework-subtitle">{subtitle}</p>
                   <p>{desc}</p>
                   <span className="arrow">Explore →</span>
                 </Link>

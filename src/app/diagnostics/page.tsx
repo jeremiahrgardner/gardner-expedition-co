@@ -4,28 +4,22 @@ import SiteFooter from '@/components/SiteFooter'
 
 const diagnostics = [
   {
-    name: 'Goldline™ Assessment',
+    name: 'Goldline Clarity Snapshot™',
     href: '#',
-    desc: 'A comprehensive diagnostic for identifying the decision-making patterns that keep leaders and organizations stuck. 30–45 minute self-assessment with detailed interpretive report.',
-    availability: 'Available',
+    desc: 'A short assessment that helps high performers identify where they are losing alignment across Trace, Anchor, and Navigate. Available in pilot form.',
+    availability: 'Pilot',
   },
   {
-    name: 'Uncertainty Readiness Index',
+    name: 'Uncertainty Readiness Diagnostic™',
     href: '#',
-    desc: 'Evaluates an organization\'s or leader\'s capacity to operate effectively in ambiguous conditions — not just tolerance, but genuine navigational skill.',
+    desc: 'An organizational diagnostic that helps leaders assess whether their teams have the clarity, behaviors, evidence practices, and decision systems needed to operate in uncertainty.',
     availability: 'In Development',
   },
   {
-    name: 'The Read — Situational Awareness Scale',
+    name: 'The Read Diagnostic',
     href: '#',
-    desc: 'Assesses the accuracy of a leader\'s situational perception against calibrated benchmarks. Identifies systematic perceptual biases that operate below conscious awareness.',
-    availability: 'In Development',
-  },
-  {
-    name: 'CAVE Environment Diagnostic',
-    href: '#',
-    desc: 'Maps the specific resistance patterns in an organizational system and identifies the structural sources of counter-adaptive behavior.',
-    availability: 'Available via Engagement',
+    desc: 'A pilot tool for helping leaders identify what they are seeing, what may be driving it, and what the moment actually needs.',
+    availability: 'Available by Request',
   },
 ]
 
@@ -41,8 +35,11 @@ export default function DiagnosticsPage() {
               Diagnostics
             </h1>
             <p style={{ fontSize: '1.1rem', color: 'var(--muted)', lineHeight: '1.75' }}>
-              Structured insight into decision-making patterns, organizational friction,
-              and growth constraints — built for leaders who want accuracy before action.
+              Gardner Expedition Co. develops diagnostics that help leaders and
+              organizations make uncertainty visible. Some tools are available
+              in pilot form; others are under active development.
+            </p>
+            <p style={{ fontSize: '1.1rem', color: 'var(--muted)', lineHeight: '1.75', marginTop: '1em' }}>
               Not BuzzFeed quizzes. Not marketing lead magnets. Genuine diagnostic
               instruments with interpretive frameworks attached.
             </p>
@@ -59,13 +56,6 @@ export default function DiagnosticsPage() {
                     <span className="tag" style={{ fontSize: '0.65rem' }}>{availability}</span>
                   </div>
                   <p>{desc}</p>
-                  {availability === 'Available' && (
-                    <div style={{ marginTop: 'var(--space-md)' }}>
-                      <Link href={href} className="btn-primary" style={{ fontSize: '0.75rem', padding: '10px 20px' }}>
-                        Begin Assessment
-                      </Link>
-                    </div>
-                  )}
                 </div>
               ))}
             </div>
@@ -78,9 +68,9 @@ export default function DiagnosticsPage() {
               Want a guided diagnostic experience?
             </h2>
             <p style={{ color: '#999', maxWidth: '48ch', margin: '0 auto var(--space-md)' }}>
-              The Goldline™ Assessment is most powerful when paired with a coaching
-              engagement — someone who can help you read the results accurately
-              and translate them into an action arc.
+              Diagnostics are most powerful when paired with a coaching
+              engagement — someone who can help read the results and
+              translate them into an action arc.
             </p>
             <Link href="/about" className="btn-primary" style={{ background: 'var(--gold)', color: 'var(--ink)' }}>
               Get in Touch

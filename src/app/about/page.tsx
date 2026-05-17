@@ -38,43 +38,26 @@ export default function AboutPage() {
             </span>
 
             <p>
-              The work of Gardner Expedition Co. is built around a single conviction:
-              most organizational struggle is not a competence problem. It is a clarity
-              problem — a failure to accurately read the system you are operating within,
-              to distinguish signal from noise, and to act with conviction in the absence
-              of complete information.
+              Jeremiah Gardner is a bestselling author, entrepreneur, keynote speaker,
+              innovation strategist, and elite cave explorer who helps leaders and
+              organizations navigate uncertainty, build adaptive capability, and turn
+              ambiguity into advantage.
             </p>
 
             <p>
-              Jeremiah has spent fifteen years in organizational consulting, coaching,
-              and leadership development — working primarily with healthcare, manufacturing,
-              and professional services organizations navigating genuine complexity. The
-              frameworks that make up Gardner Expedition Co. — Goldline™, The Read,
-              CAVE Growth System™, Exploration Imperative™, and Coaching Metaskills™ —
-              were built through that field work, not before it.
+              He has helped companies including Roche, American Family Insurance,
+              ING Holding Group, GE, Nike, Unilever, and eBay build innovation systems,
+              leadership practices, and growth capabilities. His background blends
+              executive strategy, organizational transformation, customer-centered
+              innovation, and the high-stakes discipline of underwater cave exploration.
             </p>
 
             <p>
-              The intellectual ecosystem that this website represents is designed to
-              be coherent: the frameworks provide the structure, the diagnostics surface
-              where to apply them, the field notes document patterns worth knowing,
-              and the expeditions show what happens when it all meets real-world complexity.
+              Gardner Expedition Co. is the home of his core intellectual ecosystem —
+              the frameworks, diagnostics, and operating systems built through that
+              field work: Goldline™, The Read™, CAVE Growth System™, The Search System™,
+              Coaching Metaskills™, Progress Metrics™, and Program as a Product™.
               The work is designed to be used, not just admired.
-            </p>
-
-            <p>
-              Before independent practice, Jeremiah held leadership positions in
-              organizational development and learning at several regional and national
-              healthcare organizations. He holds a graduate degree in organizational
-              psychology and has trained in cognitive behavioral therapy, systems
-              thinking methodology, and executive coaching.
-            </p>
-
-            <p>
-              He is based in the upper Midwest. He writes when something is worth
-              saying, speaks when the topic is genuinely aligned with the work,
-              and takes on a small number of organizational engagements each year
-              to keep the frameworks honest.
             </p>
 
             <div className="about-links">

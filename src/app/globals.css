@@ -451,6 +451,13 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 .framework-card h3 {
   font-size: 1.3rem;
+  margin-bottom: 4px;
+}
+
+.framework-card .framework-subtitle {
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--gold);
   margin-bottom: 8px;
 }
 
