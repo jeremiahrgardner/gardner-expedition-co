@@ -13,6 +13,7 @@ export default function SiteNav() {
     { href: '/diagnostics', label: 'Diagnostics' },
     { href: '/media', label: 'Media' },
     { href: '/about', label: 'About' },
+    { href: 'https://haloclinepress.com', label: 'Books' },
   ]
 
   return (

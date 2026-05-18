@@ -25,11 +25,21 @@ export default function SiteFooter() {
         </div>
 
         <div className="site-footer-nav">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://jeremiahgardner.com" target="_blank" rel="noopener noreferrer">JeremiahGardner.com</a></li>
+            <li><a href="https://haloclinepress.com" target="_blank" rel="noopener noreferrer">Halocline Press</a></li>
+            <li><a href="https://asknoema.ai" target="_blank" rel="noopener noreferrer">AskNoema.ai</a></li>
+            <li><a href="https://www.deadreckon.io" target="_blank" rel="noopener noreferrer">DeadReckon.io</a></li>
+          </ul>
+        </div>
+
+        <div className="site-footer-nav">
           <h4>The Work</h4>
           <ul>
             <li><Link href="/frameworks/goldline">Goldline™</Link></li>
             <li><Link href="/frameworks/the-read">The Read</Link></li>
-            <li><Link href="/frameworks/cavey-growth">CAVE Growth System™</Link></li>
+            <li><Link href="/frameworks/cave-growth">CAVE Growth System™</Link></li>
             <li><Link href="/frameworks/exploration-imperative">Exploration Imperative™</Link></li>
             <li><Link href="/frameworks/coaching-metaskills">Coaching Metaskills™</Link></li>
           </ul>
