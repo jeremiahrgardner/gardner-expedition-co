@@ -241,6 +241,34 @@ function renderBlock(block: string) {
       </blockquote>
     )
   }
+  if (block === "##HR##") {
+    return <hr key={"hr"} style={{ border: "none", borderTop: "1px solid var(--soft-gray)", margin: "3rem 0" }} />
+  }
+
+  const hasBold = block.includes("**")
+  const hasBlockquote = block.startsWith("> ")
+
+  const content = hasBlockquote ? block.slice(2) : block
+
+  if (hasBold) {
+    const segments = content.split(/(\*\*[^*]+\*\*)/g)
+    return (
+      <p key={block} style={{
+        color: "var(--ink)",
+        lineHeight: 1.8,
+        marginBottom: "1.5rem",
+        maxWidth: "68ch",
+      }}>
+        {segments.map((seg, i) => {
+          if (seg.startsWith("**") && seg.endsWith("**")) {
+            return <strong key={i} style={{ fontWeight: 600 }}>{seg.slice(2, -2)}</strong>
+          }
+          return seg
+        })}
+      </p>
+    )
+  }
+
   return (
     <p key={block} style={{
       color: "var(--ink)",
@@ -248,7 +276,7 @@ function renderBlock(block: string) {
       marginBottom: "1.5rem",
       maxWidth: "68ch",
     }}>
-      {block}
+      {content}
     </p>
   )
 }
