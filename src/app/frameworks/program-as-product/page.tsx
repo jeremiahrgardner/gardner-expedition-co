@@ -78,7 +78,7 @@ export default function ProgramAsProductPage() {
             <div className="fw-sidebar-section">
               <h4>Related</h4>
               <Link href="/expeditions">Applied Expeditions</Link>
-              <Link href="/field-notes">Field Notes</Link>
+              <Link href="/articles">Articles</Link>
             </div>
           </aside>
         </div>

@@ -49,19 +49,19 @@ const frameworks = [
 
 const essays = [
   {
-    href: '/field-notes/navigating-uncertainty',
+    href: '/articles/navigating-uncertainty',
     title: 'On Navigating Uncertainty Without a Map',
     date: 'Field Notes',
     excerpt: 'The absence of certainty is not the absence of direction. It is the condition under which direction is most honestly discovered.',
   },
   {
-    href: '/field-notes/the-intelligence-of-systems',
+    href: '/articles/the-intelligence-of-systems',
     title: 'The Intelligence of Systems',
     date: 'Field Notes',
     excerpt: "Every organization is a living system with its own gravity, resistance, and momentum. The leader's task is not to control it — but to read it.",
   },
   {
-    href: '/field-notes/alignment-as-practice',
+    href: '/articles/alignment-as-practice',
     title: 'Alignment as Practice',
     date: 'Field Notes',
     excerpt: 'Alignment is not a state you reach. It is a discipline you practice — daily, in the face of evidence that suggests you are off course.',
@@ -105,7 +105,7 @@ export default function HomePage() {
               <Link href="/frameworks" className="btn-primary">
                 Explore the Frameworks
               </Link>
-              <Link href="/field-notes" className="btn-ghost">
+              <Link href="/articles" className="btn-ghost">
                 Read Field Notes
               </Link>
             </div>
@@ -181,7 +181,7 @@ export default function HomePage() {
               ))}
             </div>
             <div style={{ marginTop: 'var(--space-md)' }}>
-              <Link href="/field-notes" className="btn-ghost" style={{ fontSize: '0.78rem' }}>
+              <Link href="/articles" className="btn-ghost" style={{ fontSize: '0.78rem' }}>
                 All Field Notes →
               </Link>
             </div>

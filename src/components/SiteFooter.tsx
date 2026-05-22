@@ -17,7 +17,7 @@ export default function SiteFooter() {
           <h4>Navigate</h4>
           <ul>
             <li><Link href="/frameworks">Frameworks</Link></li>
-            <li><Link href="/field-notes">Field Notes</Link></li>
+            <li><Link href="/articles">Articles</Link></li>
             <li><Link href="/expeditions">Expeditions</Link></li>
             <li><Link href="/diagnostics">Diagnostics</Link></li>
             <li><Link href="/media">Media</Link></li>

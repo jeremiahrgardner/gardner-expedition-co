@@ -67,7 +67,7 @@ export default function FieldNotesPage() {
               {essays.map(({ slug, title, date, tag, excerpt }) => (
                 <Link
                   key={title}
-                  href={`/field-notes/${slug}`}
+                  href={`/articles/${slug}`}
                   style={{
                     display: 'grid',
                     gridTemplateColumns: '1fr auto',

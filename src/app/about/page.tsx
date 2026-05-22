@@ -64,7 +64,7 @@ export default function AboutPage() {
               <Link href="/frameworks" className="btn-primary" style={{ fontSize: '0.78rem', padding: '10px 22px' }}>
                 Explore the Frameworks
               </Link>
-              <Link href="/field-notes" className="btn-ghost" style={{ fontSize: '0.78rem', padding: '10px 22px' }}>
+              <Link href="/articles" className="btn-ghost" style={{ fontSize: '0.78rem', padding: '10px 22px' }}>
                 Read Field Notes
               </Link>
             </div>

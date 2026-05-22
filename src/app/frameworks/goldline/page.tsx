@@ -73,7 +73,7 @@ export default function GoldlinePage() {
             </div>
             <div className="fw-sidebar-section">
               <h4>Related</h4>
-              <Link href="/field-notes">Field Notes</Link>
+              <Link href="/articles">Articles</Link>
               <Link href="/diagnostics">Take the Assessment</Link>
             </div>
           </aside>

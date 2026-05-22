@@ -132,7 +132,7 @@ export default function NavigatingUncertaintyPage() {
           borderTop: '1px solid var(--soft-gray)',
           paddingTop: 'var(--space-md)',
         }}>
-          <Link href="/field-notes" style={{ fontSize: '0.85rem', color: 'var(--muted)' }}>
+          <Link href="/articles" style={{ fontSize: '0.85rem', color: 'var(--muted)' }}>
             ← Back to Field Notes
           </Link>
         </div>

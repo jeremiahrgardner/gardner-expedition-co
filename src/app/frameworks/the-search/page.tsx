@@ -76,7 +76,7 @@ export default function TheSearchPage() {
             </div>
             <div className="fw-sidebar-section">
               <h4>Related</h4>
-              <Link href="/field-notes">Field Notes</Link>
+              <Link href="/articles">Articles</Link>
               <Link href="/expeditions">Applied Expeditions</Link>
             </div>
           </aside>

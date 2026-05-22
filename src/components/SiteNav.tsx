@@ -8,7 +8,7 @@ export default function SiteNav() {
 
   const links = [
     { href: '/frameworks', label: 'Frameworks' },
-    { href: '/field-notes', label: 'Field Notes' },
+    { href: '/articles', label: 'Articles' },
     { href: '/expeditions', label: 'Expeditions' },
     { href: '/diagnostics', label: 'Diagnostics' },
     { href: '/media', label: 'Media' },
