@@ -263,7 +263,7 @@ export default async function ArticlePage({ params }: Props) {
             paddingTop: "var(--space-md)",
           }}>
             <Link href="/articles" style={{ fontSize: "0.85rem", color: "var(--muted)" }}>
-              \u2190 Back to Articles
+              ← Back to Articles
             </Link>
           </div>
         </div>
@@ -302,7 +302,7 @@ export default async function ArticlePage({ params }: Props) {
             paddingTop: "var(--space-md)",
           }}>
             <Link href="/articles" style={{ fontSize: "0.85rem", color: "var(--muted)" }}>
-              \u2190 Back to Articles
+              ← Back to Articles
             </Link>
           </div>
         </div>
@@ -317,7 +317,7 @@ export default async function ArticlePage({ params }: Props) {
       <SiteNav />
       <div className="page-wrapper" style={{ textAlign: "center", padding: "4rem 0" }}>
         <h1 style={{ fontFamily: "var(--font-serif)", marginBottom: "1rem" }}>Article not found</h1>
-        <Link href="/articles" style={{ color: "var(--gold)" }}>\u2190 Back to Articles</Link>
+        <Link href="/articles" style={{ color: "var(--gold)" }}>← Back to Articles</Link>
       </div>
       <SiteFooter />
     </>
