@@ -247,11 +247,14 @@ function renderBlock(block: string) {
 
   const hasBold = block.includes("**")
   const hasBlockquote = block.startsWith("> ")
+  const hasItalic = block.includes("_")
+  const hasEmphasis = /(?<!\*)\*(?!\*)[^*_\n]+(?<!\*)\*(?!\*)/.test(block)
 
   const content = hasBlockquote ? block.slice(2) : block
 
-  if (hasBold) {
-    const segments = content.split(/(\*\*[^*]+\*\*)/g)
+  if (hasBold || hasItalic || hasEmphasis) {
+    // Split on **bold**, _italic_, and *emphasis* simultaneously
+    const segments = content.split(/(\*\*[^*]+\*\*|_([^_]+)_|(?<!\*)\*(?!\*)([^*_\n]+?)(?<!\*)\*(?!\*))/g)
     return (
       <p key={block} style={{
         color: "var(--ink)",
@@ -260,8 +263,15 @@ function renderBlock(block: string) {
         maxWidth: "68ch",
       }}>
         {segments.map((seg, i) => {
+          if (!seg) return null
           if (seg.startsWith("**") && seg.endsWith("**")) {
             return <strong key={i} style={{ fontWeight: 600 }}>{seg.slice(2, -2)}</strong>
+          }
+          if (seg.startsWith("_") && seg.endsWith("_")) {
+            return <em key={i}>{seg.slice(1, -1)}</em>
+          }
+          if (seg.startsWith("*") && seg.endsWith("*") && !seg.startsWith("**")) {
+            return <em key={i}>{seg.slice(1, -1)}</em>
           }
           return seg
         })}
