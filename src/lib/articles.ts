@@ -7,6 +7,10 @@ export interface Article {
   date: string
   excerpt: string
   paragraphs: string[]
+  /** Notion field: Type select (Essay | Field Notes) */
+  type?: string
+  /** Notion field: Tag select */
+  tag?: string
 }
 
 export const articles: Article[] = articlesData as Article[]
