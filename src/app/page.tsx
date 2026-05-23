@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
+import KitNewsletterForm from '@/components/KitNewsletterForm'
 
 const frameworks = [
   {
@@ -288,6 +289,13 @@ export default function HomePage() {
                 <a href="https://haloclinepress.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--paper)', textDecoration: 'underline', fontSize: '0.85rem' }}>HaloclinePress.com →</a>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* ─── FIELD NOTES NEWSLETTER ─── */}
+        <section className="section" style={{ background: 'var(--paper)', borderTop: '1px solid var(--soft-gray)', borderBottom: '1px solid var(--soft-gray)' }}>
+          <div className="container" style={{ maxWidth: '640px' }}>
+            <KitNewsletterForm source="gec" heading="Stay in the field." subtext="Essays, frameworks, and observations — written when something is worth saying." />
           </div>
         </section>
 

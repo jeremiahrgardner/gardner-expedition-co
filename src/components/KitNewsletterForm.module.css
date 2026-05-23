@@ -1,0 +1,119 @@
+.container {
+  max-width: 28rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.label {
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.field {
+  flex: 1;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.input {
+  width: 100%;
+  padding: 0.6rem 0.875rem;
+  border: 1px solid #D8D3CC;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  background: #F2EFE8;
+  color: #111;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  border-color: #B89B5E;
+  box-shadow: 0 0 0 3px rgba(184, 155, 94, 0.15);
+  background: #fff;
+}
+
+.input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button {
+  width: 100%;
+  padding: 0.65rem 1.25rem;
+  background: #111;
+  color: #F2EFE8;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.15s;
+  margin-top: 0.25rem;
+}
+
+.button:hover:not(:disabled) {
+  background: #2a2a2a;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.finePrint {
+  font-size: 0.7rem;
+  color: #999;
+  margin-top: 0.25rem;
+}
+
+.errorText {
+  font-size: 0.78rem;
+  color: #c0392b;
+  margin-top: -0.25rem;
+}
+
+.success {
+  padding: 1.5rem 0;
+}
+
+.successHeading {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 1.5rem;
+  color: #111;
+  margin-bottom: 0.5rem;
+}
+
+.successText {
+  font-size: 0.875rem;
+  color: #666;
+}
