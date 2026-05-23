@@ -14,14 +14,14 @@ export default function AboutPage() {
               <div style={{
                 width: '100%',
                 height: '100%',
-                background: 'linear-gradient(160deg, #e8e8e8 0%, #c8c8c8 100%)',
+                background: 'linear-gradient(160deg, var(--paper-warm) 0%, var(--margin) 100%)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
               }}>
                 <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                  <circle cx="40" cy="30" r="16" fill="#999"/>
-                  <ellipse cx="40" cy="75" rx="28" ry="22" fill="#999"/>
+                  <circle cx="40" cy="30" r="16" fill="var(--margin)"/>
+                  <ellipse cx="40" cy="75" rx="28" ry="22" fill="var(--margin)"/>
                 </svg>
               </div>
             </div>

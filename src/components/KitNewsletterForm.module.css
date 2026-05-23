@@ -9,7 +9,7 @@
   font-size: 9px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: #888;
+  color: var(--margin);
   margin-bottom: 1.5rem;
   display: block;
 }
@@ -45,7 +45,7 @@
 .input {
   width: 100%;
   padding: 0.6rem 0.875rem;
-  border: 1px solid #D8D3CC;
+  border: 1px solid var(--divider);
   border-radius: 4px;
   font-size: 0.875rem;
   background: #F2EFE8;
@@ -92,7 +92,7 @@
 
 .finePrint {
   font-size: 0.7rem;
-  color: #999;
+  color: var(--margin);
   margin-top: 0.25rem;
 }
 
@@ -115,5 +115,5 @@
 
 .successText {
   font-size: 0.875rem;
-  color: #666;
+  color: var(--margin);
 }

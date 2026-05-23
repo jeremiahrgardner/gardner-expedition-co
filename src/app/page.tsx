@@ -289,7 +289,7 @@ export default function HomePage() {
               <h2 style={{ color: 'var(--paper)', marginTop: 'var(--space-sm)', marginBottom: 'var(--space-md)' }}>
                 See your starting point clearly.
               </h2>
-              <p style={{ color: '#999', fontSize: '1rem', maxWidth: '52ch', margin: '0 auto var(--space-md)' }}>
+              <p style={{ color: 'var(--margin)', fontSize: '1rem', maxWidth: '52ch', margin: '0 auto var(--space-md)' }}>
                 Gardner Expedition Co. develops diagnostics that help leaders and organizations
                 make uncertainty visible. Tools are available in pilot form or under active
                 development — designed for leaders who want accuracy before action.
@@ -317,21 +317,21 @@ export default function HomePage() {
             </div>
             <div className="media-grid">
               <Link href="https://haloclinepress.com/books/the-read" className="media-card" target="_blank" rel="noopener noreferrer">
-                <div className="media-card-box" style={{ background: '#1a1a1a' }}>
+                <div className="media-card-box" style={{ background: 'var(--ink)' }}>
                   <span>The Read</span>
                 </div>
                 <div className="media-card-title">The Read</div>
                 <div className="media-card-sub">Book · October 2026</div>
               </Link>
               <Link href="/media" className="media-card">
-                <div className="media-card-box" style={{ background: '#2c2c2c' }}>
+                <div className="media-card-box" style={{ background: 'var(--ink-light)' }}>
                   <span>Podcast</span>
                 </div>
                 <div className="media-card-title">Exploration Imperative Podcast</div>
                 <div className="media-card-sub">Podcast Series</div>
               </Link>
               <Link href="/media" className="media-card">
-                <div className="media-card-box" style={{ background: '#3a3a3a' }}>
+                <div className="media-card-box" style={{ background: 'var(--ink-light)' }}>
                   <span>Speaking</span>
                 </div>
                 <div className="media-card-title">Keynote Speaking</div>
@@ -356,19 +356,19 @@ export default function HomePage() {
               Three ways to engage.
             </h2>
             <div style={{ display: 'grid', gap: 'var(--space-md)', textAlign: 'left', marginTop: 'var(--space-lg)' }}>
-              <div style={{ borderTop: '1px solid #333', paddingTop: 'var(--space-md)' }}>
+              <div style={{ borderTop: '1px solid var(--ink-light)', paddingTop: 'var(--space-md)' }}>
                 <p style={{ fontWeight: 600, color: 'var(--gold)', fontSize: '0.85rem', marginBottom: '0.25rem' }}>Speaking & Keynotes</p>
-                <p style={{ color: '#999', fontSize: '0.9rem', marginBottom: '0.5rem' }}>For conference planners and event teams.</p>
+                <p style={{ color: 'var(--margin)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>For conference planners and event teams.</p>
                 <a href="https://jeremiahgardner.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--paper)', textDecoration: 'underline', fontSize: '0.85rem' }}>JeremiahGardner.com →</a>
               </div>
-              <div style={{ borderTop: '1px solid #333', paddingTop: 'var(--space-md)' }}>
+              <div style={{ borderTop: '1px solid var(--ink-light)', paddingTop: 'var(--space-md)' }}>
                 <p style={{ fontWeight: 600, color: 'var(--gold)', fontSize: '0.85rem', marginBottom: '0.25rem' }}>Enterprise Advisory</p>
-                <p style={{ color: '#999', fontSize: '0.9rem', marginBottom: '0.5rem' }}>For organizations seeking structured frameworks and diagnostic work.</p>
+                <p style={{ color: 'var(--margin)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>For organizations seeking structured frameworks and diagnostic work.</p>
                 <a href="https://www.deadreckon.io" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--paper)', textDecoration: 'underline', fontSize: '0.85rem' }}>DeadReckon.io →</a>
               </div>
-              <div style={{ borderTop: '1px solid #333', paddingTop: 'var(--space-md)' }}>
+              <div style={{ borderTop: '1px solid var(--ink-light)', paddingTop: 'var(--space-md)' }}>
                 <p style={{ fontWeight: 600, color: 'var(--gold)', fontSize: '0.85rem', marginBottom: '0.25rem' }}>Books & Publications</p>
-                <p style={{ color: '#999', fontSize: '0.9rem', marginBottom: '0.5rem' }}>For readers exploring the frameworks in depth.</p>
+                <p style={{ color: 'var(--margin)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>For readers exploring the frameworks in depth.</p>
                 <a href="https://haloclinepress.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--paper)', textDecoration: 'underline', fontSize: '0.85rem' }}>HaloclinePress.com →</a>
               </div>
             </div>

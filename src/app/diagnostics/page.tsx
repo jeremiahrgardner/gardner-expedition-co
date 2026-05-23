@@ -67,7 +67,7 @@ export default function DiagnosticsPage() {
             <h2 style={{ color: 'var(--paper)', marginBottom: 'var(--space-md)' }}>
               Want a guided diagnostic experience?
             </h2>
-            <p style={{ color: '#999', maxWidth: '48ch', margin: '0 auto var(--space-md)' }}>
+            <p style={{ color: 'var(--margin)', maxWidth: '48ch', margin: '0 auto var(--space-md)' }}>
               Diagnostics are most powerful when paired with a coaching
               engagement — someone who can help read the results and
               translate them into an action arc.

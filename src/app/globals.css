@@ -8,12 +8,12 @@
   --paper:      #F4F1EA;   /* warmer archival paper */
   --paper-warm: #EDE9DF;   /* secondary backgrounds */
   --ink:        #111111;   /* headlines, primary structure */
-  --ink-body:   #222222;   /* running body text */
-  --ink-light:  #4a4a4a;   /* secondary body, descriptions */
+  --ink-body:   var(--ink);   /* running body text */
+  --ink-light:  var(--ink-light);   /* secondary body, descriptions */
   --gold:       #B89B5E;   /* signal only — ornaments, active states */
   --soft-gray:  #D4CFC7;   /* borders, rules */
   --border:     #E8E3D9;   /* section dividers */
-  --muted:      #8a8580;    /* captions, labels, metadata */
+  --muted:      var(--margin);    /* captions, labels, metadata */
   --margin:     #C8C4BC;   /* margin notes, annotations */
   --divider:    #E8E3D9;   /* section dividers, subtle rules */
 
