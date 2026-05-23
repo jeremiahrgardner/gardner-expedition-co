@@ -49,6 +49,7 @@ export default function SiteFooter() {
       <div className="site-footer-bottom">
         <p>© {year} Gardner Expedition Co. All rights reserved.</p>
         <p>Navigating complexity. Building clarity.</p>
+        <p>Part of the Gardner Expedition Co. ecosystem.</p>
       </div>
     </footer>
   )
