@@ -354,6 +354,10 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   .site-nav-links { display: none; }
   .hamburger { display: flex; }
 }
+  html, body {
+    overflow-x: hidden;
+  }
+
 
 /* ============================================================
    Footer
