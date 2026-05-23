@@ -2,6 +2,8 @@ import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 import KitNewsletterForm from '@/components/KitNewsletterForm'
+import FieldNotebookOrnaments from '@/components/diagrams/FieldNotebookOrnaments'
+import PaperTexture from '@/components/diagrams/PaperTexture'
 
 const frameworks = [
   {
@@ -90,44 +92,68 @@ export default function HomePage() {
       <SiteNav />
       <div className="page-wrapper">
 
-        {/* ─── HERO ─── */}
-        <section className="hero">
-          <div className="hero-inner">
-            <p className="hero-eyebrow">Gardner Expedition Co.</p>
-            <h1>
+        {/* ─── HERO — Asymmetric Editorial Composition ─── */}
+        <section className="hero-editorial">
+          <div className="container">
+            <span className="eyebrow-label">Gardner Expedition Co.</span>
+            
+            <h1 className="hero-headline">
               Built for leaders who cannot wait for certainty.
             </h1>
-            <p>
-              Frameworks, diagnostics, and field systems for seeing clearly,
-              deciding wisely, and moving through the unknown — from personal
-              clarity to enterprise-level exploration.
-            </p>
-            <div className="hero-cta">
+            
+            <div className="hero-pull-quote">
+              <div className="pull-quote-bar" />
+              <p>Built for leaders who cannot wait for certainty.</p>
+            </div>
+            
+            <div className="hero-description">
+              <FieldNotebookOrnaments variant="reading-mark" className="ornament-left" color="#B89B5E" opacity={0.5} />
+              <p className="hero-desc-text">
+                Frameworks, diagnostics, and field systems for seeing clearly,
+                deciding wisely, and moving through the unknown — from personal
+                clarity to enterprise-level exploration.
+              </p>
+              <FieldNotebookOrnaments variant="reading-mark" className="ornament-right" color="#B89B5E" opacity={0.5} />
+            </div>
+            
+            <div className="hero-cta-single">
               <Link href="/frameworks" className="btn-primary">
                 Explore the Frameworks
-              </Link>
-              <Link href="/articles" className="btn-ghost">
-                Read Field Notes
               </Link>
             </div>
           </div>
         </section>
 
-        {/* ─── CORE THESIS ─── */}
-        <section className="section" style={{ borderBottom: '1px solid var(--soft-gray)' }}>
+        {/* ─── Transitional Zone ─── */}
+        <div className="section-transition">
           <div className="container">
-            <div style={{ maxWidth: '800px' }}>
+            <div className="transition-rule">
+              <FieldNotebookOrnaments variant="divider" className="transition-ornament" color="#B89B5E" opacity={0.5} />
+            </div>
+          </div>
+        </div>
+
+        {/* ─── CORE THESIS — Left-offset with paper texture ─── */}
+        <section className="section thesis-section">
+          <div className="relative">
+            <PaperTexture className="paper-texture-overlay" opacity={0.035} variant="fine" />
+            <div className="container thesis-inner">
               <span className="gold-rule" />
-              <h2 style={{ marginBottom: 'var(--space-md)' }}>
+              <h2 className="thesis-headline">
                 The work begins with a single observation.
               </h2>
-              <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: 'var(--muted)' }}>
+              <div className="thesis-pull-quote">
+                <p>
+                  Most organizational struggle is not a competence problem. It is a clarity problem.
+                </p>
+              </div>
+              <p className="thesis-body">
                 Most organizational struggle is not a competence problem. It is a
                 clarity problem — a failure to accurately read the system you are
                 operating within, to distinguish signal from noise, and to act with
                 conviction in the absence of complete information.
               </p>
-              <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: 'var(--muted)', marginTop: '1.2em' }}>
+              <p className="thesis-body">
                 Gardner Expedition Co. exists to build the intellectual infrastructure
                 that makes high-quality navigation possible: frameworks that bring
                 structure to complexity, diagnostics that reveal what is actually
@@ -137,41 +163,53 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ─── FRAMEWORKS ─── */}
-        <section className="section" style={{ borderBottom: '1px solid var(--soft-gray)' }}>
+        {/* ─── Section Break ─── */}
+        <div className="section-break">
           <div className="container">
-            <div className="section-header">
-              <span className="eyebrow">Intellectual Backbone</span>
-              <h2>Frameworks</h2>
-              <p>
-                Field-tested systems for clarity, diagnostic leadership,
-                team capability, organizational growth, and enterprise exploration.
-              </p>
-            </div>
+            <FieldNotebookOrnaments variant="diamond" className="section-break-ornament" color="#B89B5E" opacity={0.3} />
+          </div>
+        </div>
+
+        {/* ─── FRAMEWORKS — Sparse header, field notebook cards ─── */}
+        <section className="section frameworks-section">
+          <div className="container">
+            <header className="frameworks-header">
+              <h2 className="frameworks-title">Frameworks</h2>
+              <FieldNotebookOrnaments variant="cross" className="frameworks-cross" color="#B89B5E" opacity={0.4} />
+            </header>
+            
             <div className="framework-grid">
               {frameworks.map(({ href, name, subtitle, desc }) => (
                 <Link key={href} href={href} className="framework-card">
-                  <h3>{name}</h3>
+                  <h3 className="framework-card-title">{name}</h3>
                   <p className="framework-subtitle">{subtitle}</p>
-                  <p>{desc}</p>
-                  <span className="arrow">Explore →</span>
+                  <p className="framework-desc">{desc}</p>
+                  <div className="framework-arrow">
+                    <svg width="24" height="8" viewBox="0 0 24 8" aria-hidden="true">
+                      <line x1="0" y1="4" x2="18" y2="4" stroke="currentColor" strokeWidth="0.75" opacity={0.6} />
+                      <polyline points="14,1 18,4 14,7" fill="none" stroke="currentColor" strokeWidth="0.75" opacity={0.6} />
+                    </svg>
+                  </div>
                 </Link>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ─── FIELD NOTES ─── */}
-        <section className="section" style={{ borderBottom: '1px solid var(--soft-gray)' }}>
+        {/* ─── Section Break ─── */}
+        <div className="section-break">
           <div className="container">
-            <div className="section-header">
-              <span className="eyebrow">Essays & Reflections</span>
-              <h2>Field Notes</h2>
-              <p>
-                Observations, principles, and explorations written from the intersection
-                of strategy, psychology, and organizational life.
-              </p>
-            </div>
+            <FieldNotebookOrnaments variant="asterisk" className="section-break-ornament" color="#B89B5E" opacity={0.25} />
+          </div>
+        </div>
+
+        {/* ─── FIELD NOTES ─── */}
+        <section className="section field-notes-section">
+          <div className="container">
+            <header className="frameworks-header">
+              <h2 className="frameworks-title">Field Notes</h2>
+              <FieldNotebookOrnaments variant="cross" className="frameworks-cross" color="#B89B5E" opacity={0.4} />
+            </header>
             <div className="essay-grid">
               {essays.map(({ href, title, date, excerpt }) => (
                 <Link key={title} href={href} className="essay-card">
@@ -189,17 +227,20 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ─── EXPEDITIONS ─── */}
-        <section className="section" style={{ borderBottom: '1px solid var(--soft-gray)' }}>
+        {/* ─── Section Break ─── */}
+        <div className="section-break">
           <div className="container">
-            <div className="section-header">
-              <span className="eyebrow">Applied Work</span>
-              <h2>Expeditions</h2>
-              <p>
-                Organizational transformations and field engagements where the frameworks
-                meet real-world complexity.
-              </p>
-            </div>
+            <FieldNotebookOrnaments variant="divider" className="section-break-ornament" color="#B89B5E" opacity={0.3} />
+          </div>
+        </div>
+
+        {/* ─── EXPEDITIONS ─── */}
+        <section className="section expeditions-section">
+          <div className="container">
+            <header className="frameworks-header">
+              <h2 className="frameworks-title">Expeditions</h2>
+              <FieldNotebookOrnaments variant="cross" className="frameworks-cross" color="#B89B5E" opacity={0.4} />
+            </header>
             <div className="expedition-list">
               {expeditions.map(({ href, title, tag, desc }) => (
                 <Link key={title} href={href} className="expedition-card">
@@ -214,26 +255,61 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ─── DIAGNOSTICS TEASER ─── */}
-        <section className="section" style={{ background: 'var(--ink)', color: 'var(--paper)' }}>
-          <div className="container" style={{ textAlign: 'center', maxWidth: '680px' }}>
-            <span className="eyebrow" style={{ color: 'var(--gold)' }}>Diagnostics</span>
-            <h2 style={{ color: 'var(--paper)', marginTop: 'var(--space-sm)', marginBottom: 'var(--space-md)' }}>
-              See your starting point clearly.
-            </h2>
-            <p style={{ color: '#999', fontSize: '1rem', maxWidth: '52ch', margin: '0 auto var(--space-md)' }}>
-              Gardner Expedition Co. develops diagnostics that help leaders and organizations
-              make uncertainty visible. Tools are available in pilot form or under active
-              development — designed for leaders who want accuracy before action.
-            </p>
-            <Link href="/diagnostics" className="btn-primary" style={{ background: 'var(--gold)', color: 'var(--ink)' }}>
-              Explore Diagnostics
-            </Link>
+        {/* ─── Section Break ─── */}
+        <div className="section-break">
+          <div className="container">
+            <FieldNotebookOrnaments variant="diamond" className="section-break-ornament" color="#B89B5E" opacity={0.3} />
+          </div>
+        </div>
+
+        {/* ─── DIAGNOSTICS TEASER — Dark section with texture ─── */}
+        <section className="section diagnostics-section">
+          <div className="relative">
+            <div className="diagnostics-texture">
+              <svg
+                viewBox="0 0 400 300"
+                preserveAspectRatio="xMidYMid slice"
+                aria-hidden="true"
+                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', opacity: 0.06 }}
+              >
+                {/* Topographic contour lines */}
+                <ellipse cx="200" cy="150" rx="180" ry="120" fill="none" stroke="#B89B5E" strokeWidth="0.5" />
+                <ellipse cx="200" cy="150" rx="140" ry="95" fill="none" stroke="#B89B5E" strokeWidth="0.5" />
+                <ellipse cx="200" cy="150" rx="100" ry="70" fill="none" stroke="#B89B5E" strokeWidth="0.5" />
+                <ellipse cx="200" cy="150" rx="60" ry="45" fill="none" stroke="#B89B5E" strokeWidth="0.5" />
+                <ellipse cx="200" cy="150" rx="25" ry="20" fill="none" stroke="#B89B5E" strokeWidth="0.5" />
+                {/* Cross contour lines for irregularity */}
+                <path d="M 30 100 Q 100 80 200 100 T 370 100" fill="none" stroke="#B89B5E" strokeWidth="0.3" />
+                <path d="M 50 180 Q 120 200 200 180 T 350 180" fill="none" stroke="#B89B5E" strokeWidth="0.3" />
+                <path d="M 80 250 Q 150 230 200 250 T 320 250" fill="none" stroke="#B89B5E" strokeWidth="0.3" />
+              </svg>
+            </div>
+            <div className="container diagnostics-inner">
+              <span className="eyebrow" style={{ color: 'var(--gold)' }}>Diagnostics</span>
+              <h2 style={{ color: 'var(--paper)', marginTop: 'var(--space-sm)', marginBottom: 'var(--space-md)' }}>
+                See your starting point clearly.
+              </h2>
+              <p style={{ color: '#999', fontSize: '1rem', maxWidth: '52ch', margin: '0 auto var(--space-md)' }}>
+                Gardner Expedition Co. develops diagnostics that help leaders and organizations
+                make uncertainty visible. Tools are available in pilot form or under active
+                development — designed for leaders who want accuracy before action.
+              </p>
+              <Link href="/diagnostics" className="btn-primary" style={{ background: 'var(--gold)', color: 'var(--ink)' }}>
+                Explore Diagnostics
+              </Link>
+            </div>
           </div>
         </section>
 
+        {/* ─── Section Break ─── */}
+        <div className="section-break">
+          <div className="container">
+            <FieldNotebookOrnaments variant="divider" className="section-break-ornament" color="#B89B5E" opacity={0.3} />
+          </div>
+        </div>
+
         {/* ─── MEDIA STRIP ─── */}
-        <section className="section">
+        <section className="section media-section">
           <div className="container">
             <div className="section-header">
               <span className="eyebrow">Books, Speaking, Podcast</span>
@@ -264,6 +340,13 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        {/* ─── Section Break ─── */}
+        <div className="section-break">
+          <div className="container">
+            <FieldNotebookOrnaments variant="cross" className="section-break-ornament" color="#B89B5E" opacity={0.4} />
+          </div>
+        </div>
 
         {/* ─── WORK WITH US ─── */}
         <section className="section" style={{ background: 'var(--ink)', color: 'var(--paper)' }}>
@@ -299,20 +382,19 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ─── CLOSING ─── */}
-        <section className="section" style={{ borderTop: '1px solid var(--soft-gray)', textAlign: 'center' }}>
-          <div className="container" style={{ maxWidth: '640px' }}>
-            <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', marginBottom: 'var(--space-md)' }}>
-              There is an entire body of thought, exploration, and applied wisdom here.
-            </h2>
-            <p style={{ fontSize: '1rem', color: 'var(--muted)', maxWidth: '52ch', margin: '0 auto var(--space-md)' }}>
-              The frameworks have been built over years of field engagement. The field notes
-              are written for people who think carefully. The diagnostics are designed
-              for leaders who want to know what is actually true.
-            </p>
-            <Link href="/about" className="btn-ghost">
-              About the Work
-            </Link>
+        {/* ─── CLOSING — Atmospheric pull quote ─── */}
+        <section className="closing-section">
+          <div className="relative">
+            <PaperTexture className="paper-texture-overlay" opacity={0.04} variant="fine" />
+            <div className="container closing-inner">
+              <FieldNotebookOrnaments variant="cross" className="closing-ornament" color="#B89B5E" opacity={0.5} />
+              <blockquote className="closing-quote">
+                The capacity to see clearly in uncertain conditions is not a talent. It is a practice.
+              </blockquote>
+              <Link href="/about" className="closing-link">
+                About the work →
+              </Link>
+            </div>
           </div>
         </section>
 

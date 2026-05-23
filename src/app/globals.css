@@ -886,3 +886,309 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   padding-bottom: var(--space-sm);
   border-bottom: 1px solid var(--soft-gray);
 }
+
+/* ============================================================
+   Editorial Hero
+   ============================================================ */
+.hero-editorial {
+  padding: var(--space-2xl) 0 var(--space-xl);
+  border-bottom: 1px solid var(--soft-gray);
+}
+
+.eyebrow-label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.hero-headline {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: var(--space-lg);
+  max-width: 20ch;
+}
+
+.hero-pull-quote {
+  margin-bottom: var(--space-lg);
+}
+
+.pull-quote-bar {
+  width: 3px;
+  height: 100%;
+  min-height: 60px;
+  background: #B89B5E;
+  margin-right: var(--space-md);
+  display: inline-block;
+  vertical-align: top;
+}
+
+.hero-pull-quote p {
+  display: inline;
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--muted);
+  max-width: none;
+  vertical-align: top;
+}
+
+.hero-description {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  max-width: 600px;
+}
+
+.ornament-left,
+.ornament-right {
+  flex-shrink: 0;
+  margin-top: 0.5em;
+}
+
+.hero-desc-text {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.65;
+  max-width: 52ch;
+}
+
+.hero-cta-single {
+  margin-top: var(--space-lg);
+}
+
+/* ============================================================
+   Transitional Zone
+   ============================================================ */
+.section-transition {
+  padding: var(--space-xl) 0;
+}
+
+.transition-rule {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.transition-ornament {
+  max-width: 200px;
+}
+
+/* ============================================================
+   Thesis Section
+   ============================================================ */
+.thesis-section {
+  background: var(--paper);
+}
+
+.thesis-inner {
+  position: relative;
+  padding: var(--space-xl) var(--space-md);
+  max-width: 800px;
+}
+
+.paper-texture-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.thesis-headline {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  margin-bottom: var(--space-lg);
+  position: relative;
+  z-index: 1;
+}
+
+.thesis-pull-quote {
+  position: relative;
+  z-index: 1;
+  margin-bottom: var(--space-lg);
+  padding-left: var(--space-md);
+  border-left: 2px solid #B89B5E;
+}
+
+.thesis-pull-quote p {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.5;
+  max-width: 50ch;
+}
+
+.thesis-body {
+  font-size: 0.95rem;
+  line-height: 2.0;
+  color: var(--muted);
+  position: relative;
+  z-index: 1;
+  max-width: 60ch;
+}
+
+/* ============================================================
+   Section Break Ornament
+   ============================================================ */
+.section-break {
+  padding: var(--space-md) 0;
+}
+
+.section-break-ornament {
+  display: flex;
+  justify-content: center;
+}
+
+/* ============================================================
+   Frameworks Section
+   ============================================================ */
+.frameworks-section {
+  border-bottom: 1px solid var(--soft-gray);
+}
+
+.frameworks-header {
+  margin-bottom: var(--space-lg);
+}
+
+.frameworks-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin-bottom: var(--space-sm);
+}
+
+.frameworks-cross {
+  margin-top: var(--space-xs);
+}
+
+.framework-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.framework-card {
+  padding: var(--space-md);
+  border: 1px solid var(--soft-gray);
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  display: block;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.framework-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  text-decoration: none;
+}
+
+.framework-card-title {
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+  font-family: var(--font-serif);
+}
+
+.framework-subtitle {
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.framework-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.framework-arrow {
+  margin-top: var(--space-sm);
+  color: var(--gold);
+}
+
+/* ============================================================
+   Field Notes Section
+   ============================================================ */
+.field-notes-section {
+  border-bottom: 1px solid var(--soft-gray);
+}
+
+/* ============================================================
+   Expeditions Section
+   ============================================================ */
+.expeditions-section {
+  border-bottom: 1px solid var(--soft-gray);
+}
+
+/* ============================================================
+   Diagnostics Section
+   ============================================================ */
+.diagnostics-section {
+  background: var(--ink);
+  color: var(--paper);
+  position: relative;
+  overflow: hidden;
+}
+
+.diagnostics-texture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.diagnostics-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 680px;
+}
+
+/* ============================================================
+   Closing Section
+   ============================================================ */
+.closing-section {
+  padding: var(--space-2xl) 0;
+  background: var(--paper);
+  border-top: 1px solid var(--soft-gray);
+}
+
+.closing-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 720px;
+}
+
+.closing-ornament {
+  display: block;
+  margin: 0 auto var(--space-lg);
+}
+
+.closing-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--ink);
+  margin-bottom: var(--space-lg);
+  max-width: 28ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.closing-link {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.closing-link:hover {
+  color: var(--gold);
+  text-decoration: none;
+}
