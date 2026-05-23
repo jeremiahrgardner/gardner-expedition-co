@@ -15,6 +15,7 @@
   --border:     #E8E3D9;   /* section dividers */
   --muted:      #8a8580;    /* captions, labels, metadata */
   --margin:     #C8C4BC;   /* margin notes, annotations */
+  --divider:    #E8E3D9;   /* section dividers, subtle rules */
 
   /* Typography */
   --font-serif: 'Fraunces', Georgia, serif;
