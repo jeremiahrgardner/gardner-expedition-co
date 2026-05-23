@@ -56,6 +56,8 @@ function OrnamentCross({ className = '', color = '#B89B5E', opacity = 0.4 }: Fie
   return (
     <svg
       viewBox="0 0 16 16"
+      width="48"
+      height="48"
       className={className}
       aria-hidden="true"
       style={{ display: 'block' }}
@@ -108,6 +110,8 @@ function OrnamentAsterisk({ className = '', color = '#111111', opacity = 0.3 }: 
   return (
     <svg
       viewBox="0 0 20 20"
+      width="64"
+      height="64"
       className={className}
       aria-hidden="true"
       style={{ display: 'block' }}
