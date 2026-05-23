@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
+import ProgressMetricsDiagram from '@/components/diagrams/ProgressMetrics'
+import FieldNotebookOrnaments from '@/components/diagrams/FieldNotebookOrnaments'
 
 export default function ProgressMetricsPage() {
   return (
@@ -53,6 +55,18 @@ export default function ProgressMetricsPage() {
               <li><strong>Option Value</strong> — How many genuine strategic alternatives have been preserved versus foreclosed?</li>
               <li><strong>Movement Quality</strong> — Are the experiments being run actually testing the critical assumptions, or are they theater?</li>
             </ul>
+
+            {/* Framework diagram — measurement layers for uncertain work */}
+            <div style={{ margin: '2rem 0', display: 'flex', justifyContent: 'center' }}>
+              <ProgressMetricsDiagram width={440} height={300} />
+            </div>
+
+            {/* Section ornamental divider */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', margin: '2rem 0' }}>
+              <div style={{ flex: 1, height: '1px', background: 'var(--gold)', opacity: 0.3 }} />
+              <FieldNotebookOrnaments variant="divider" color="var(--gold)" opacity={0.5} />
+              <div style={{ flex: 1, height: '1px', background: 'var(--gold)', opacity: 0.3 }} />
+            </div>
 
             <h2>Connection to the Ecosystem</h2>
             <p>

@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
+import TheSearchSystemDiagram from '@/components/diagrams/TheSearchSystem'
+import FieldNotebookOrnaments from '@/components/diagrams/FieldNotebookOrnaments'
 
 export default function TheSearchPage() {
   return (
@@ -55,6 +57,18 @@ export default function TheSearchPage() {
               <li><strong>Uncertainty Budget</strong> — Every strategy should carry an explicit allocation for exploration and genuine option-building</li>
               <li><strong>Learning Metrics</strong> — Measure the quality of the learning system, not just the outcomes of individual bets</li>
             </ul>
+
+            {/* Framework diagram — visual anchor for the core concept */}
+            <div className="diagram-insert" style={{ margin: '2.5rem 0 2rem', display: 'flex', justifyContent: 'center' }}>
+              <TheSearchSystemDiagram width={480} height={310} />
+            </div>
+
+            {/* Section ornamental divider */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', margin: '2rem 0' }}>
+              <div style={{ flex: 1, height: '1px', background: 'var(--gold)', opacity: 0.3 }} />
+              <FieldNotebookOrnaments variant="divider" color="var(--gold)" opacity={0.5} />
+              <div style={{ flex: 1, height: '1px', background: 'var(--gold)', opacity: 0.3 }} />
+            </div>
 
             <h2>Connection to the Ecosystem</h2>
             <p>

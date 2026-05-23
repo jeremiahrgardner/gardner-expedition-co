@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
+import ProgramAsProductDiagram from '@/components/diagrams/ProgramAsProduct'
+import FieldNotebookOrnaments from '@/components/diagrams/FieldNotebookOrnaments'
 
 export default function ProgramAsProductPage() {
   return (
@@ -49,6 +51,18 @@ export default function ProgramAsProductPage() {
               prototyping, A/B testing, adoption metrics, iterative release —
               and applies them to organizational change.
             </p>
+
+            {/* Framework diagram — iteration spiral for transformation */}
+            <div style={{ margin: '2rem 0', display: 'flex', justifyContent: 'center' }}>
+              <ProgramAsProductDiagram width={400} height={400} />
+            </div>
+
+            {/* Section ornamental divider */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', margin: '2rem 0' }}>
+              <div style={{ flex: 1, height: '1px', background: 'var(--gold)', opacity: 0.3 }} />
+              <FieldNotebookOrnaments variant="divider" color="var(--gold)" opacity={0.5} />
+              <div style={{ flex: 1, height: '1px', background: 'var(--gold)', opacity: 0.3 }} />
+            </div>
 
             <h2>Key Principles</h2>
             <ul>

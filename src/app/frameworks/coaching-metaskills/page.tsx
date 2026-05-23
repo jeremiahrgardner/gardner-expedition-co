@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
+import CoachingMetaskillsDiagram from '@/components/diagrams/CoachingMetaskills'
+import FieldNotebookOrnaments from '@/components/diagrams/FieldNotebookOrnaments'
 
 export default function CoachingMetaskillsPage() {
   return (
@@ -54,6 +56,18 @@ export default function CoachingMetaskillsPage() {
               <li><strong>Intervention</strong> — The timing and framing of challenge or support that creates genuine movement without triggering defensiveness</li>
               <li><strong>Experimentation</strong> — Building the client's capacity to test new behaviors, beliefs, and strategies in low-stakes contexts before deploying them in high-stakes ones</li>
             </ul>
+
+            {/* Framework diagram — the metaskill rings as a visual system */}
+            <div style={{ margin: '2.5rem 0 2rem', display: 'flex', justifyContent: 'center' }}>
+              <CoachingMetaskillsDiagram width={400} height={400} />
+            </div>
+
+            {/* Section ornamental divider */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', margin: '2rem 0' }}>
+              <div style={{ flex: 1, height: '1px', background: 'var(--gold)', opacity: 0.3 }} />
+              <FieldNotebookOrnaments variant="divider" color="var(--gold)" opacity={0.5} />
+              <div style={{ flex: 1, height: '1px', background: 'var(--gold)', opacity: 0.3 }} />
+            </div>
 
             <h2>Practical Application</h2>
             <p>
