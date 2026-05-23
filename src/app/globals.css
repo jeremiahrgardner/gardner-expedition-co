@@ -1192,3 +1192,89 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   color: var(--gold);
   text-decoration: none;
 }
+
+/* ============================================================
+   Mobile Responsiveness — Phase 2.5 Optimization Pass
+   Covers: Hero editorial, section spacing, grid layouts,
+   forms, footer fine-tuning
+   ============================================================ */
+
+@media (max-width: 767px) {
+  /* ── Hero editorial (GEC homepage) ── */
+  .hero-editorial {
+    padding: var(--space-xl) 0 var(--space-lg);
+  }
+  .hero-headline {
+    font-size: clamp(2rem, 8vw, 3rem);
+    max-width: none;
+  }
+  .hero-description {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+  .pull-quote-bar {
+    display: block;
+    width: 2px;
+    height: 40px;
+    margin-bottom: var(--space-xs);
+  }
+  .hero-pull-quote p {
+    display: block;
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
+  }
+
+  /* ── Section spacing ── */
+  .section {
+    padding: var(--space-lg) 0;
+  }
+
+  /* ── Thesis section ── */
+  .thesis-section {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  /* ── Framework cards ── */
+  .framework-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+  .framework-card {
+    padding: var(--space-sm);
+  }
+
+  /* ── Essay / field notes cards ── */
+  .essay-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── Expedition list ── */
+  .expedition-card {
+    grid-template-columns: 1fr;
+    gap: var(--space-xs);
+  }
+
+  /* ── Media cards ── */
+  .media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── Kit form — stack inputs on mobile ── */
+  .kit-newsletter-form form {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+  .kit-newsletter-form input,
+  .kit-newsletter-form button {
+    width: 100%;
+  }
+
+  /* ── Closing quote section ── */
+  .closing-section {
+    padding: var(--space-xl) 0;
+  }
+  .closing-quote {
+    font-size: clamp(1.3rem, 5vw, 2rem);
+    padding: 0 var(--space-sm);
+  }
+}
