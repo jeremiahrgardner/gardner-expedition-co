@@ -56,11 +56,9 @@ function OrnamentCross({ className = '', color = '#F1C233', opacity = 0.4 }: Fie
   return (
     <svg
       viewBox="0 0 16 16"
-      width="48"
-      height="48"
       className={className}
       aria-hidden="true"
-      style={{ display: 'block' }}
+      style={{ display: 'block', maxWidth: '32px', maxHeight: '32px' }}
     >
       {/* Horizontal */}
       <line x1="2" y1="8" x2="14" y2="8" stroke={color} strokeWidth="0.8" opacity={opacity} />

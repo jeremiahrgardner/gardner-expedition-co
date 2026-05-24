@@ -554,7 +554,7 @@ html, body {
 .hero-headline {
   font-size: clamp(2.8rem, 6vw, 5rem) !important;
   font-weight: 700 !important;
-  max-width: 18ch;
+  max-width: 22ch;
   line-height: 1.08;
   margin-bottom: var(--space-md);
 }

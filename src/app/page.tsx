@@ -103,7 +103,7 @@ export default function HomePage() {
             
             <div className="hero-pull-quote">
               <div className="pull-quote-bar" />
-              <p>Built for leaders who cannot wait for certainty.</p>
+              <p>Frameworks and field systems for navigating complexity — from the individual to the enterprise.</p>
             </div>
             
             <div className="hero-description">

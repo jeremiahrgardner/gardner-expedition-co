@@ -104,7 +104,7 @@ export default function MediaPage() {
                 ))}
               </div>
               <div style={{ marginTop: 'var(--space-md)' }}>
-                <Link href="/about" className="btn-ghost" style={{ fontSize: '0.78rem' }}>
+                <Link href="https://jeremiahgardner.com" className="btn-ghost" style={{ fontSize: '0.78rem' }}>
                   Inquire About Speaking →
                 </Link>
               </div>
