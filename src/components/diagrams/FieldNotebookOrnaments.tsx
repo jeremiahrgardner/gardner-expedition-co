@@ -108,11 +108,9 @@ function OrnamentAsterisk({ className = '', color = '#0A0A0A', opacity = 0.3 }: 
   return (
     <svg
       viewBox="0 0 20 20"
-      width="64"
-      height="64"
       className={className}
       aria-hidden="true"
-      style={{ display: 'block' }}
+      style={{ display: 'block', maxWidth: '24px', maxHeight: '24px' }}
     >
       <line x1="10" y1="2" x2="10" y2="18" stroke={color} strokeWidth="0.75" opacity={opacity} />
       <line x1="3" y1="6" x2="17" y2="14" stroke={color} strokeWidth="0.75" opacity={opacity} />
