@@ -166,7 +166,6 @@ export default function HomePage() {
         {/* ─── Section Break ─── */}
         <div className="section-break">
           <div className="container">
-            <FieldNotebookOrnaments variant="diamond" className="section-break-ornament" color="#F1C233" opacity={0.3} />
           </div>
         </div>
 
@@ -198,7 +197,6 @@ export default function HomePage() {
         {/* ─── Section Break ─── */}
         <div className="section-break">
           <div className="container">
-            <FieldNotebookOrnaments variant="asterisk" className="section-break-ornament" color="#F1C233" opacity={0.25} />
           </div>
         </div>
 
@@ -228,7 +226,6 @@ export default function HomePage() {
         {/* ─── Section Break ─── */}
         <div className="section-break">
           <div className="container">
-            <FieldNotebookOrnaments variant="divider" className="section-break-ornament" color="#F1C233" opacity={0.3} />
           </div>
         </div>
 
@@ -255,7 +252,6 @@ export default function HomePage() {
         {/* ─── Section Break ─── */}
         <div className="section-break">
           <div className="container">
-            <FieldNotebookOrnaments variant="diamond" className="section-break-ornament" color="#F1C233" opacity={0.3} />
           </div>
         </div>
 
@@ -301,7 +297,6 @@ export default function HomePage() {
         {/* ─── Section Break ─── */}
         <div className="section-break">
           <div className="container">
-            <FieldNotebookOrnaments variant="divider" className="section-break-ornament" color="#F1C233" opacity={0.3} />
           </div>
         </div>
 
