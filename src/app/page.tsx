@@ -107,13 +107,11 @@ export default function HomePage() {
             </div>
             
             <div className="hero-description">
-              <FieldNotebookOrnaments variant="reading-mark" className="ornament-left" color="#F1C233" opacity={0.5} />
               <p className="hero-desc-text">
                 Frameworks, diagnostics, and field systems for seeing clearly,
                 deciding wisely, and moving through the unknown — from personal
                 clarity to enterprise-level exploration.
               </p>
-              <FieldNotebookOrnaments variant="reading-mark" className="ornament-right" color="#F1C233" opacity={0.5} />
             </div>
             
             <div className="hero-cta-single">
