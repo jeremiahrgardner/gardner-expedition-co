@@ -1382,6 +1382,16 @@ html, body {
   transition: opacity 0.2s;
 }
 
+.trust-logo {
+  color: var(--ink-subtle);
+  opacity: 0.55;
+  transition: opacity 0.2s;
+}
+
+.trust-logo:hover {
+  opacity: 0.85;
+}
+
 .trust-item:hover {
   opacity: 0.85;
 }
