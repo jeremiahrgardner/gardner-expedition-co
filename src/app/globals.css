@@ -674,7 +674,7 @@ html, body {
 }
 
 .section-break-ornament {
-  display: inline-block;
+  display: none;
 }
 
 /* Homepage: Frameworks section */
