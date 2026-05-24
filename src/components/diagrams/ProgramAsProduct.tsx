@@ -14,10 +14,10 @@ interface ProgramAsProductProps {
 }
 
 const phases = [
-  { label: 'STAKEHOLDER\nINSIGHT',     angle: 0,   color: '#111111', desc: 'Understand what people actually need from the change' },
-  { label: 'EXPERIMENT\nDESIGN',        angle: 90,  color: '#B89B5E', desc: 'Rapid prototypes and low-stakes tests before full rollout' },
-  { label: 'ADOPTION\nMETRICS',         angle: 180, color: '#111111', desc: 'Measure genuine use and value, not just delivery' },
-  { label: 'EVIDENCE\nREVIEW',          angle: 270, color: '#B89B5E', desc: 'What is working? What needs to change?' },
+  { label: 'STAKEHOLDER\nINSIGHT',     angle: 0,   color: '#0A0A0A', desc: 'Understand what people actually need from the change' },
+  { label: 'EXPERIMENT\nDESIGN',        angle: 90,  color: '#F1C233', desc: 'Rapid prototypes and low-stakes tests before full rollout' },
+  { label: 'ADOPTION\nMETRICS',         angle: 180, color: '#0A0A0A', desc: 'Measure genuine use and value, not just delivery' },
+  { label: 'EVIDENCE\nREVIEW',          angle: 270, color: '#F1C233', desc: 'What is working? What needs to change?' },
 ]
 
 export default function ProgramAsProduct({
@@ -39,7 +39,7 @@ export default function ProgramAsProduct({
       role="img"
     >
       {/* Outer reference ring */}
-      <circle cx={cx} cy={cy} r={outerR} fill="none" stroke="#111111"
+      <circle cx={cx} cy={cy} r={outerR} fill="none" stroke="#0A0A0A"
               strokeWidth="0.5" strokeDasharray="3 5" opacity="0.15" />
 
       {/* Spiral iteration arrows between phases */}
@@ -53,25 +53,25 @@ export default function ProgramAsProduct({
             key={i}
             d={`M ${cx + Math.cos(startAngle) * innerR} ${cy + Math.sin(startAngle) * innerR}
                 A ${innerR} ${innerR} 0 0 1 ${cx + Math.cos(endAngle) * innerR} ${cy + Math.sin(endAngle) * innerR}`}
-            fill="none" stroke="#B89B5E" strokeWidth="1.2" opacity="0.5"
+            fill="none" stroke="#F1C233" strokeWidth="1.2" opacity="0.5"
             strokeDasharray="4 3"
           />
         )
       })}
 
       {/* Inner iteration label */}
-      <circle cx={cx} cy={cy} r={innerR} fill="#111111" opacity="0.03"
-              stroke="#B89B5E" strokeWidth="0.7" strokeDasharray="2 2" />
-      <text x={cx} y={cy - 8} fontSize="7" fontFamily="DM Sans, sans-serif"
-            letterSpacing="0.12em" fill="#111111" opacity="0.4" textAnchor="middle" fontWeight="500">
+      <circle cx={cx} cy={cy} r={innerR} fill="#0A0A0A" opacity="0.03"
+              stroke="#F1C233" strokeWidth="0.7" strokeDasharray="2 2" />
+      <text x={cx} y={cy - 8} fontSize="7" fontFamily="EB Garamond, sans-serif"
+            letterSpacing="0.12em" fill="#0A0A0A" opacity="0.4" textAnchor="middle" fontWeight="500">
         PROGRAM
       </text>
-      <text x={cx} y={cy + 6} fontSize="7" fontFamily="DM Sans, sans-serif"
-            letterSpacing="0.12em" fill="#111111" opacity="0.4" textAnchor="middle" fontWeight="500">
+      <text x={cx} y={cy + 6} fontSize="7" fontFamily="EB Garamond, sans-serif"
+            letterSpacing="0.12em" fill="#0A0A0A" opacity="0.4" textAnchor="middle" fontWeight="500">
         AS
       </text>
-      <text x={cx} y={cy + 20} fontSize="7" fontFamily="DM Sans, sans-serif"
-            letterSpacing="0.12em" fill="#B89B5E" opacity="0.6" textAnchor="middle" fontWeight="600">
+      <text x={cx} y={cy + 20} fontSize="7" fontFamily="EB Garamond, sans-serif"
+            letterSpacing="0.12em" fill="#F1C233" opacity="0.6" textAnchor="middle" fontWeight="600">
         PRODUCT
       </text>
 
@@ -89,7 +89,7 @@ export default function ProgramAsProduct({
              style={{ cursor: 'default' }}>
             {/* Phase node */}
             <circle cx={nx} cy={ny} r={isHovered ? 28 : 24}
-                    fill={phase.color === '#B89B5E' ? '#B89B5E' : '#111111'}
+                    fill={phase.color === '#F1C233' ? '#F1C233' : '#0A0A0A'}
                     opacity={isHovered ? 0.12 : 0.06}
                     style={{ transition: 'r 0.5s ease, opacity 0.5s ease' }} />
             <circle cx={nx} cy={ny} r={isHovered ? 28 : 24}
@@ -100,7 +100,7 @@ export default function ProgramAsProduct({
             {/* Phase label */}
             {phase.label.split('\n').map((line, li) => (
               <text key={li} x={nx} y={ny - 8 + li * 11}
-                    fontSize="6.5" fontFamily="DM Sans, sans-serif"
+                    fontSize="6.5" fontFamily="EB Garamond, sans-serif"
                     letterSpacing="0.1em" fill={phase.color}
                     opacity={isHovered ? 0.9 : 0.55}
                     textAnchor="middle"
@@ -118,8 +118,8 @@ export default function ProgramAsProduct({
             {/* Hover description */}
             {isHovered && (
               <g>
-                <rect x="40" y={height - 60} width={width - 80} height="36" fill="#111111" opacity="0.04" rx="2" />
-                <text x={width / 2} y={height - 42} fontSize="7" fontFamily="DM Sans, sans-serif"
+                <rect x="40" y={height - 60} width={width - 80} height="36" fill="#0A0A0A" opacity="0.04" rx="2" />
+                <text x={width / 2} y={height - 42} fontSize="7" fontFamily="EB Garamond, sans-serif"
                       letterSpacing="0.06em" fill={phase.color} opacity="0.75" textAnchor="middle" fontStyle="italic">
                   {phase.desc}
                 </text>
@@ -130,14 +130,14 @@ export default function ProgramAsProduct({
       })}
 
       {/* Top label */}
-      <text x={width / 2} y="22" fontSize="7.5" fontFamily="DM Sans, sans-serif"
-            letterSpacing="0.2em" fill="#111111" opacity="0.35" textAnchor="middle" fontWeight="500">
+      <text x={width / 2} y="22" fontSize="7.5" fontFamily="EB Garamond, sans-serif"
+            letterSpacing="0.2em" fill="#0A0A0A" opacity="0.35" textAnchor="middle" fontWeight="500">
         ITERATION CYCLE
       </text>
 
       {/* Bottom annotation */}
-      <text x={width / 2} y={height - 14} fontSize="6.5" fontFamily="DM Sans, sans-serif"
-            letterSpacing="0.06em" fill="#111111" opacity="0.25" textAnchor="middle" fontStyle="italic">
+      <text x={width / 2} y={height - 14} fontSize="6.5" fontFamily="EB Garamond, sans-serif"
+            letterSpacing="0.06em" fill="#0A0A0A" opacity="0.25" textAnchor="middle" fontStyle="italic">
         hover phases to explore the cycle
       </text>
     </svg>

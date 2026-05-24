@@ -21,10 +21,10 @@ export default function CaveStructure({
   const [activeLayer, setActiveLayer] = useState<number | null>(null)
 
   const layers = [
-    { label: 'SURFACE', y: 40, color: '#111111', opacity: 0.3 },
-    { label: 'STRUCTURE 1', y: 110, color: '#111111', opacity: 0.25 },
-    { label: 'STRUCTURE 2', y: 180, color: '#111111', opacity: 0.2 },
-    { label: 'HIDDEN DYNAMICS', y: 250, color: '#B89B5E', opacity: 0.45 },
+    { label: 'SURFACE', y: 40, color: '#0A0A0A', opacity: 0.3 },
+    { label: 'STRUCTURE 1', y: 110, color: '#0A0A0A', opacity: 0.25 },
+    { label: 'STRUCTURE 2', y: 180, color: '#0A0A0A', opacity: 0.2 },
+    { label: 'HIDDEN DYNAMICS', y: 250, color: '#F1C233', opacity: 0.45 },
   ]
 
   return (
@@ -80,27 +80,27 @@ export default function CaveStructure({
       {/* Descending arrows between layers */}
       {[52, 122, 192, 262].map((y, i) => (
         <g key={i} opacity="0.2">
-          <line x1="440" y1={y + 4} x2="440" y2={y + 14} stroke="#111111" strokeWidth="0.6" />
-          <polygon points="436,14 440,20 444,14" fill="#111111" opacity="0.3" />
+          <line x1="440" y1={y + 4} x2="440" y2={y + 14} stroke="#0A0A0A" strokeWidth="0.6" />
+          <polygon points="436,14 440,20 444,14" fill="#0A0A0A" opacity="0.3" />
         </g>
       ))}
 
       {/* The CAVE label — pointing to the deepest layer */}
       <text x={width / 2} y="320" fontSize="8" fontFamily="Inter, sans-serif"
-            letterSpacing="0.22em" fill="#B89B5E" opacity="0.7" textAnchor="middle"
+            letterSpacing="0.22em" fill="#F1C233" opacity="0.7" textAnchor="middle"
             fontWeight="500">
         THE CAVE BENEATH
       </text>
 
       {/* Top label */}
       <text x={width / 2} y="20" fontSize="7" fontFamily="Inter, sans-serif"
-            letterSpacing="0.18em" fill="#111111" opacity="0.35" textAnchor="middle">
+            letterSpacing="0.18em" fill="#0A0A0A" opacity="0.35" textAnchor="middle">
         HIDDEN STRUCTURE MAP
       </text>
 
       {/* Legend */}
       <text x="32" y="345" fontSize="6.5" fontFamily="Inter, sans-serif"
-            letterSpacing="0.08em" fill="#111111" opacity="0.3" fontStyle="italic">
+            letterSpacing="0.08em" fill="#0A0A0A" opacity="0.3" fontStyle="italic">
         hover to reveal structure nodes
       </text>
     </svg>

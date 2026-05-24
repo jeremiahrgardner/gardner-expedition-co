@@ -107,13 +107,13 @@ export default function HomePage() {
             </div>
             
             <div className="hero-description">
-              <FieldNotebookOrnaments variant="reading-mark" className="ornament-left" color="#B89B5E" opacity={0.5} />
+              <FieldNotebookOrnaments variant="reading-mark" className="ornament-left" color="#F1C233" opacity={0.5} />
               <p className="hero-desc-text">
                 Frameworks, diagnostics, and field systems for seeing clearly,
                 deciding wisely, and moving through the unknown — from personal
                 clarity to enterprise-level exploration.
               </p>
-              <FieldNotebookOrnaments variant="reading-mark" className="ornament-right" color="#B89B5E" opacity={0.5} />
+              <FieldNotebookOrnaments variant="reading-mark" className="ornament-right" color="#F1C233" opacity={0.5} />
             </div>
             
             <div className="hero-cta-single">
@@ -128,7 +128,7 @@ export default function HomePage() {
         <div className="section-transition">
           <div className="container">
             <div className="transition-rule">
-              <FieldNotebookOrnaments variant="divider" className="transition-ornament" color="#B89B5E" opacity={0.5} />
+              <FieldNotebookOrnaments variant="divider" className="transition-ornament" color="#F1C233" opacity={0.5} />
             </div>
           </div>
         </div>
@@ -166,7 +166,7 @@ export default function HomePage() {
         {/* ─── Section Break ─── */}
         <div className="section-break">
           <div className="container">
-            <FieldNotebookOrnaments variant="diamond" className="section-break-ornament" color="#B89B5E" opacity={0.3} />
+            <FieldNotebookOrnaments variant="diamond" className="section-break-ornament" color="#F1C233" opacity={0.3} />
           </div>
         </div>
 
@@ -175,7 +175,7 @@ export default function HomePage() {
           <div className="container">
             <header className="frameworks-header">
               <h2 className="frameworks-title">Frameworks</h2>
-              <FieldNotebookOrnaments variant="cross" className="frameworks-cross" color="#B89B5E" opacity={0.4} />
+              <FieldNotebookOrnaments variant="cross" className="frameworks-cross" color="#F1C233" opacity={0.4} />
             </header>
             
             <div className="framework-grid">
@@ -199,7 +199,7 @@ export default function HomePage() {
         {/* ─── Section Break ─── */}
         <div className="section-break">
           <div className="container">
-            <FieldNotebookOrnaments variant="asterisk" className="section-break-ornament" color="#B89B5E" opacity={0.25} />
+            <FieldNotebookOrnaments variant="asterisk" className="section-break-ornament" color="#F1C233" opacity={0.25} />
           </div>
         </div>
 
@@ -208,7 +208,7 @@ export default function HomePage() {
           <div className="container">
             <header className="frameworks-header">
               <h2 className="frameworks-title">Field Notes</h2>
-              <FieldNotebookOrnaments variant="cross" className="frameworks-cross" color="#B89B5E" opacity={0.4} />
+              <FieldNotebookOrnaments variant="cross" className="frameworks-cross" color="#F1C233" opacity={0.4} />
             </header>
             <div className="essay-grid">
               {essays.map(({ href, title, date, excerpt }) => (
@@ -230,7 +230,7 @@ export default function HomePage() {
         {/* ─── Section Break ─── */}
         <div className="section-break">
           <div className="container">
-            <FieldNotebookOrnaments variant="divider" className="section-break-ornament" color="#B89B5E" opacity={0.3} />
+            <FieldNotebookOrnaments variant="divider" className="section-break-ornament" color="#F1C233" opacity={0.3} />
           </div>
         </div>
 
@@ -239,7 +239,7 @@ export default function HomePage() {
           <div className="container">
             <header className="frameworks-header">
               <h2 className="frameworks-title">Expeditions</h2>
-              <FieldNotebookOrnaments variant="cross" className="frameworks-cross" color="#B89B5E" opacity={0.4} />
+              <FieldNotebookOrnaments variant="cross" className="frameworks-cross" color="#F1C233" opacity={0.4} />
             </header>
             <div className="expedition-list">
               {expeditions.map(({ href, title, tag, desc }) => (
@@ -258,7 +258,7 @@ export default function HomePage() {
         {/* ─── Section Break ─── */}
         <div className="section-break">
           <div className="container">
-            <FieldNotebookOrnaments variant="diamond" className="section-break-ornament" color="#B89B5E" opacity={0.3} />
+            <FieldNotebookOrnaments variant="diamond" className="section-break-ornament" color="#F1C233" opacity={0.3} />
           </div>
         </div>
 
@@ -273,28 +273,28 @@ export default function HomePage() {
                 style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', opacity: 0.06 }}
               >
                 {/* Topographic contour lines */}
-                <ellipse cx="200" cy="150" rx="180" ry="120" fill="none" stroke="#B89B5E" strokeWidth="0.5" />
-                <ellipse cx="200" cy="150" rx="140" ry="95" fill="none" stroke="#B89B5E" strokeWidth="0.5" />
-                <ellipse cx="200" cy="150" rx="100" ry="70" fill="none" stroke="#B89B5E" strokeWidth="0.5" />
-                <ellipse cx="200" cy="150" rx="60" ry="45" fill="none" stroke="#B89B5E" strokeWidth="0.5" />
-                <ellipse cx="200" cy="150" rx="25" ry="20" fill="none" stroke="#B89B5E" strokeWidth="0.5" />
+                <ellipse cx="200" cy="150" rx="180" ry="120" fill="none" stroke="#F1C233" strokeWidth="0.5" />
+                <ellipse cx="200" cy="150" rx="140" ry="95" fill="none" stroke="#F1C233" strokeWidth="0.5" />
+                <ellipse cx="200" cy="150" rx="100" ry="70" fill="none" stroke="#F1C233" strokeWidth="0.5" />
+                <ellipse cx="200" cy="150" rx="60" ry="45" fill="none" stroke="#F1C233" strokeWidth="0.5" />
+                <ellipse cx="200" cy="150" rx="25" ry="20" fill="none" stroke="#F1C233" strokeWidth="0.5" />
                 {/* Cross contour lines for irregularity */}
-                <path d="M 30 100 Q 100 80 200 100 T 370 100" fill="none" stroke="#B89B5E" strokeWidth="0.3" />
-                <path d="M 50 180 Q 120 200 200 180 T 350 180" fill="none" stroke="#B89B5E" strokeWidth="0.3" />
-                <path d="M 80 250 Q 150 230 200 250 T 320 250" fill="none" stroke="#B89B5E" strokeWidth="0.3" />
+                <path d="M 30 100 Q 100 80 200 100 T 370 100" fill="none" stroke="#F1C233" strokeWidth="0.3" />
+                <path d="M 50 180 Q 120 200 200 180 T 350 180" fill="none" stroke="#F1C233" strokeWidth="0.3" />
+                <path d="M 80 250 Q 150 230 200 250 T 320 250" fill="none" stroke="#F1C233" strokeWidth="0.3" />
               </svg>
             </div>
             <div className="container diagnostics-inner">
-              <span className="eyebrow" style={{ color: 'var(--gold)' }}>Diagnostics</span>
+              <span className="eyebrow" style={{ color: 'var(--goldline)' }}>Diagnostics</span>
               <h2 style={{ color: 'var(--paper)', marginTop: 'var(--space-sm)', marginBottom: 'var(--space-md)' }}>
                 See your starting point clearly.
               </h2>
-              <p style={{ color: 'var(--margin)', fontSize: '1rem', maxWidth: '52ch', margin: '0 auto var(--space-md)' }}>
+              <p style={{ color: 'var(--ink-subtle)', fontSize: '1rem', maxWidth: '52ch', margin: '0 auto var(--space-md)' }}>
                 Gardner Expedition Co. develops diagnostics that help leaders and organizations
                 make uncertainty visible. Tools are available in pilot form or under active
                 development — designed for leaders who want accuracy before action.
               </p>
-              <Link href="/diagnostics" className="btn-primary" style={{ background: 'var(--gold)', color: 'var(--ink)' }}>
+              <Link href="/diagnostics" className="btn-primary" style={{ background: 'var(--goldline)', color: 'var(--ink)' }}>
                 Explore Diagnostics
               </Link>
             </div>
@@ -304,7 +304,7 @@ export default function HomePage() {
         {/* ─── Section Break ─── */}
         <div className="section-break">
           <div className="container">
-            <FieldNotebookOrnaments variant="divider" className="section-break-ornament" color="#B89B5E" opacity={0.3} />
+            <FieldNotebookOrnaments variant="divider" className="section-break-ornament" color="#F1C233" opacity={0.3} />
           </div>
         </div>
 
@@ -344,31 +344,31 @@ export default function HomePage() {
         {/* ─── Section Break ─── */}
         <div className="section-break">
           <div className="container">
-            <FieldNotebookOrnaments variant="cross" className="section-break-ornament" color="#B89B5E" opacity={0.4} />
+            <FieldNotebookOrnaments variant="cross" className="section-break-ornament" color="#F1C233" opacity={0.4} />
           </div>
         </div>
 
         {/* ─── WORK WITH US ─── */}
         <section className="section" style={{ background: 'var(--ink)', color: 'var(--paper)' }}>
           <div className="container" style={{ maxWidth: '680px', textAlign: 'center' }}>
-            <span className="eyebrow" style={{ color: 'var(--gold)' }}>Work With Us</span>
+            <span className="eyebrow" style={{ color: 'var(--goldline)' }}>Work With Us</span>
             <h2 style={{ color: 'var(--paper)', marginTop: 'var(--space-sm)', marginBottom: 'var(--space-md)' }}>
               Three ways to engage.
             </h2>
             <div style={{ display: 'grid', gap: 'var(--space-md)', textAlign: 'left', marginTop: 'var(--space-lg)' }}>
               <div style={{ borderTop: '1px solid var(--ink-light)', paddingTop: 'var(--space-md)' }}>
-                <p style={{ fontWeight: 600, color: 'var(--gold)', fontSize: '0.85rem', marginBottom: '0.25rem' }}>Speaking & Keynotes</p>
-                <p style={{ color: 'var(--margin)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>For conference planners and event teams.</p>
+                <p style={{ fontWeight: 600, color: 'var(--goldline)', fontSize: '0.85rem', marginBottom: '0.25rem' }}>Speaking & Keynotes</p>
+                <p style={{ color: 'var(--ink-subtle)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>For conference planners and event teams.</p>
                 <a href="https://jeremiahgardner.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--paper)', textDecoration: 'underline', fontSize: '0.85rem' }}>JeremiahGardner.com →</a>
               </div>
               <div style={{ borderTop: '1px solid var(--ink-light)', paddingTop: 'var(--space-md)' }}>
-                <p style={{ fontWeight: 600, color: 'var(--gold)', fontSize: '0.85rem', marginBottom: '0.25rem' }}>Enterprise Advisory</p>
-                <p style={{ color: 'var(--margin)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>For organizations seeking structured frameworks and diagnostic work.</p>
+                <p style={{ fontWeight: 600, color: 'var(--goldline)', fontSize: '0.85rem', marginBottom: '0.25rem' }}>Enterprise Advisory</p>
+                <p style={{ color: 'var(--ink-subtle)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>For organizations seeking structured frameworks and diagnostic work.</p>
                 <a href="https://www.deadreckon.io" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--paper)', textDecoration: 'underline', fontSize: '0.85rem' }}>DeadReckon.io →</a>
               </div>
               <div style={{ borderTop: '1px solid var(--ink-light)', paddingTop: 'var(--space-md)' }}>
-                <p style={{ fontWeight: 600, color: 'var(--gold)', fontSize: '0.85rem', marginBottom: '0.25rem' }}>Books & Publications</p>
-                <p style={{ color: 'var(--margin)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>For readers exploring the frameworks in depth.</p>
+                <p style={{ fontWeight: 600, color: 'var(--goldline)', fontSize: '0.85rem', marginBottom: '0.25rem' }}>Books & Publications</p>
+                <p style={{ color: 'var(--ink-subtle)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>For readers exploring the frameworks in depth.</p>
                 <a href="https://haloclinepress.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--paper)', textDecoration: 'underline', fontSize: '0.85rem' }}>HaloclinePress.com →</a>
               </div>
             </div>
@@ -387,7 +387,7 @@ export default function HomePage() {
           <div className="relative">
             <PaperTexture className="paper-texture-overlay" opacity={0.04} variant="fine" />
             <div className="container closing-inner">
-              <FieldNotebookOrnaments variant="cross" className="closing-ornament" color="#B89B5E" opacity={0.5} />
+              <FieldNotebookOrnaments variant="cross" className="closing-ornament" color="#F1C233" opacity={0.5} />
               <blockquote className="closing-quote">
                 The capacity to see clearly in uncertain conditions is not a talent. It is a practice.
               </blockquote>

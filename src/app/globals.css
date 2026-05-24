@@ -1,25 +1,23 @@
 /* ============================================================
    Gardner Expedition Co. — Global Styles
-   Design tokens locked before any component code was written.
+   Design System v2: monochromatic + goldline
    ============================================================ */
 
 :root {
-  /* Palette — warm archival, editorial authority */
-  --paper:      #F4F1EA;   /* warmer archival paper */
-  --paper-warm: #EDE9DF;   /* secondary backgrounds */
-  --ink:        #111111;   /* headlines, primary structure */
-  --ink-body:   var(--ink);   /* running body text */
-  --ink-light:  var(--ink-light);   /* secondary body, descriptions */
-  --gold:       #B89B5E;   /* signal only — ornaments, active states */
-  --soft-gray:  #D4CFC7;   /* borders, rules */
-  --border:     #E8E3D9;   /* section dividers */
-  --muted:      var(--margin);    /* captions, labels, metadata */
-  --margin:     #C8C4BC;   /* margin notes, annotations */
-  --divider:    #E8E3D9;   /* section dividers, subtle rules */
+  /* Palette — off-white / graphite monochromatic */
+  --paper:        #F8F8F4;   /* primary background — cool off-white */
+  --paper-alt:    #FAFAF7;   /* subtle section differentiation */
+  --ink:          #0A0A0A;   /* headlines, primary structure */
+  --ink-body:     #171717;   /* running body text */
+  --ink-light:    #2A2A2A;   /* secondary body, descriptions */
+  --ink-subtle:   #767676;   /* captions, labels, metadata */
+  --goldline:     #F1C233;   /* signal only — ornaments, active states, accents */
+  --border:       #E5E2DA;   /* borders, rules */
+  --border-light: #EDEDEA;   /* subtle dividers */
 
   /* Typography */
-  --font-serif: 'Fraunces', Georgia, serif;
-  --font-sans:  'DM Sans', system-ui, sans-serif;
+  --font-serif: 'EB Garamond', Georgia, serif;
+  --font-sans:  'Montserrat', system-ui, sans-serif;
 
   /* Spacing */
   --space-xs:  8px;
@@ -45,7 +43,7 @@ html {
 body {
   background-color: var(--paper);
   color: var(--ink);
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
   font-weight: 400;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
@@ -54,7 +52,7 @@ body {
 
 /* Typography scale — editorial hierarchy */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   line-height: 1.25;
   letter-spacing: -0.01em;
   font-synthesis: none;
@@ -81,9 +79,10 @@ h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
 h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
 h3 { font-size: clamp(1.3rem, 2.5vw, 1.9rem); }
 h4 { font-size: 1.2rem; font-family: var(--font-sans); font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; }
+
 /* Named type scale — shared editorial vocabulary */
 .text-display {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(3rem, 5vw, 4.5rem);
   font-weight: 700;
   line-height: 1.05;
@@ -92,7 +91,7 @@ h4 { font-size: 1.2rem; font-family: var(--font-sans); font-weight: 500; letter-
 }
 
 .text-headline {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   font-weight: 700;
   line-height: 1.15;
@@ -101,7 +100,7 @@ h4 { font-size: 1.2rem; font-family: var(--font-sans); font-weight: 500; letter-
 }
 
 .text-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(1.25rem, 2vw, 1.625rem);
   font-weight: 600;
   line-height: 1.3;
@@ -132,7 +131,7 @@ h4 { font-size: 1.2rem; font-family: var(--font-sans); font-weight: 500; letter-
   font-style: italic;
   line-height: 1.5;
   color: var(--ink);
-  border-left: 2px solid var(--gold);
+  border-left: 2px solid var(--goldline);
   padding-left: 1.5rem;
 }
 
@@ -142,21 +141,21 @@ h4 { font-size: 1.2rem; font-family: var(--font-sans); font-weight: 500; letter-
   font-weight: 400;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--ink-subtle);
 }
 
 .text-field-note {
   font-family: var(--font-sans);
   font-size: 0.75rem;
   font-style: italic;
-  color: var(--margin);
+  color: var(--ink-subtle);
   line-height: 1.5;
 }
 
 .annotation-box {
-  background: var(--paper-warm);
+  background: var(--paper-alt);
   border: 1px solid var(--border);
-  border-left: 2px solid var(--gold);
+  border-left: 2px solid var(--goldline);
   padding: 1rem 1.25rem;
   font-family: var(--font-sans);
   font-size: 0.8rem;
@@ -171,19 +170,19 @@ a { color: inherit; text-decoration: none; }
 a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 /* Selection */
-::selection { background: var(--gold); color: var(--ink); }
+::selection { background: var(--goldline); color: var(--ink); }
 
 /* Focus */
 :focus-visible {
-  outline: 2px solid var(--gold);
+  outline: 2px solid var(--goldline);
   outline-offset: 3px;
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--paper); }
-::-webkit-scrollbar-thumb { background: var(--soft-gray); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ink-subtle); }
 
 /* Utility */
 .container {
@@ -214,12 +213,12 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .section-sm { padding: var(--space-lg) 0; }
 .section-lg { padding: var(--space-2xl) 0; }
 
-/* Gold accent rule */
+/* Goldline accent rule */
 .gold-rule {
   display: block;
   width: 48px;
   height: 2px;
-  background: var(--gold);
+  background: var(--goldline);
   margin-bottom: var(--space-md);
 }
 
@@ -230,7 +229,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--ink-subtle);
 }
 
 /* Divider */
@@ -250,7 +249,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   padding: 3px 10px;
   border: 1px solid var(--border);
   border-radius: 2px;
-  color: var(--muted);
+  color: var(--ink-subtle);
 }
 
 /* ============================================================
@@ -263,7 +262,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   width: 100%;
   z-index: 100;
   background: var(--paper);
-  border-bottom: 1px solid var(--soft-gray);
+  border-bottom: 1px solid var(--border);
 }
 
 .site-nav-inner {
@@ -277,7 +276,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 }
 
 .site-nav-logo {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 1.1rem;
   font-weight: 400;
   letter-spacing: -0.01em;
@@ -287,7 +286,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .site-nav-logo:hover { text-decoration: none; }
 
 .site-nav-logo span {
-  color: var(--gold);
+  color: var(--goldline);
 }
 
 .site-nav-links {
@@ -305,7 +304,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   text-decoration: none;
   transition: color 0.15s;
 }
-.site-nav-links a:hover { color: var(--muted); text-decoration: none; }
+.site-nav-links a:hover { color: var(--ink-subtle); text-decoration: none; }
 
 .site-nav-links .nav-cta {
   font-size: 0.78rem;
@@ -318,7 +317,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   transition: background 0.15s, color 0.15s;
 }
 .site-nav-links .nav-cta:hover {
-  background: var(--gold);
+  background: var(--goldline);
   color: var(--ink);
   text-decoration: none;
 }
@@ -336,7 +335,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   display: none;
   flex-direction: column;
   gap: 0;
-  border-top: 1px solid var(--soft-gray);
+  border-top: 1px solid var(--border);
   background: var(--paper);
 }
 .mobile-menu.open { display: flex; }
@@ -344,27 +343,27 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   display: block;
   padding: 14px var(--space-md);
   font-size: 0.9rem;
-  border-bottom: 1px solid var(--soft-gray);
+  border-bottom: 1px solid var(--border);
   text-decoration: none;
   color: var(--ink);
   transition: background 0.15s;
 }
-.mobile-menu a:hover { background: var(--soft-gray); text-decoration: none; }
+.mobile-menu a:hover { background: var(--paper-alt); text-decoration: none; }
 
 @media (max-width: 767px) {
   .site-nav-links { display: none; }
   .hamburger { display: flex; }
 }
-  html, body {
-    overflow-x: hidden;
-  }
+html, body {
+  overflow-x: hidden;
+}
 
 
 /* ============================================================
    Footer
    ============================================================ */
 .site-footer {
-  border-top: 1px solid var(--soft-gray);
+  border-top: 1px solid var(--border);
   padding: var(--space-lg) 0 var(--space-md);
   margin-top: var(--space-2xl);
 }
@@ -379,13 +378,13 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 }
 
 .site-footer-brand {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 1rem;
 }
 .site-footer-brand p {
   font-family: var(--font-sans);
   font-size: 0.82rem;
-  color: var(--muted);
+  color: var(--ink-subtle);
   margin-top: var(--space-xs);
   max-width: 24ch;
 }
@@ -393,7 +392,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .site-footer-nav h4 {
   font-size: 0.7rem;
   margin-bottom: var(--space-sm);
-  color: var(--muted);
+  color: var(--ink-subtle);
 }
 .site-footer-nav ul {
   list-style: none;
@@ -407,13 +406,13 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   text-decoration: none;
   transition: color 0.15s;
 }
-.site-footer-nav a:hover { color: var(--muted); text-decoration: none; }
+.site-footer-nav a:hover { color: var(--ink-subtle); text-decoration: none; }
 
 .site-footer-bottom {
   max-width: var(--max-width);
   margin: var(--space-lg) auto 0;
   padding: var(--space-md) var(--space-md) 0;
-  border-top: 1px solid var(--soft-gray);
+  border-top: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -421,7 +420,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 .site-footer-bottom p {
   font-size: 0.75rem;
-  color: var(--muted);
+  color: var(--ink-subtle);
   max-width: none;
 }
 
@@ -449,7 +448,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
    ============================================================ */
 .hero {
   padding: var(--space-2xl) 0 var(--space-xl);
-  border-bottom: 1px solid var(--soft-gray);
+  border-bottom: 1px solid var(--border);
 }
 
 .hero-inner {
@@ -464,7 +463,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--goldline);
   margin-bottom: var(--space-sm);
 }
 
@@ -478,12 +477,12 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 .hero h1 em {
   font-style: italic;
-  color: var(--gold);
+  color: var(--goldline);
 }
 
 .hero p {
   font-size: 1.15rem;
-  color: var(--muted);
+  color: var(--ink-subtle);
   max-width: 52ch;
   line-height: 1.65;
 }
@@ -509,7 +508,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   transition: background 0.2s, color 0.2s;
 }
 .btn-primary:hover {
-  background: var(--gold);
+  background: var(--goldline);
   color: var(--ink);
   text-decoration: none;
 }
@@ -544,14 +543,14 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 .framework-card {
   padding: var(--space-md);
-  border: 1px solid var(--soft-gray);
+  border: 1px solid var(--border);
   text-decoration: none;
   color: var(--ink);
   transition: border-color 0.2s;
   display: block;
 }
 .framework-card:hover {
-  border-color: var(--gold);
+  border-color: var(--goldline);
   text-decoration: none;
 }
 
@@ -563,13 +562,13 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .framework-card .framework-subtitle {
   font-size: 0.82rem;
   font-style: italic;
-  color: var(--gold);
+  color: var(--goldline);
   margin-bottom: 8px;
 }
 
 .framework-card p {
   font-size: 0.9rem;
-  color: var(--muted);
+  color: var(--ink-subtle);
   margin-top: 8px;
 }
 
@@ -579,7 +578,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.06em;
-  color: var(--gold);
+  color: var(--goldline);
   transition: margin-left 0.2s;
 }
 .framework-card:hover .arrow { margin-left: 6px; }
@@ -599,11 +598,11 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   text-decoration: none;
   color: var(--ink);
   padding: var(--space-md);
-  border: 1px solid var(--soft-gray);
+  border: 1px solid var(--border);
   transition: border-color 0.2s;
 }
 .essay-card:hover {
-  border-color: var(--gold);
+  border-color: var(--goldline);
   text-decoration: none;
 }
 
@@ -612,7 +611,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--goldline);
   margin-bottom: 10px;
 }
 
@@ -623,7 +622,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 .essay-card p {
   font-size: 0.9rem;
-  color: var(--muted);
+  color: var(--ink-subtle);
   margin-top: 8px;
 }
 
@@ -643,24 +642,24 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   align-items: start;
   gap: var(--space-md);
   padding: var(--space-md) 0;
-  border-bottom: 1px solid var(--soft-gray);
+  border-bottom: 1px solid var(--border);
   text-decoration: none;
   color: var(--ink);
   transition: background 0.15s;
 }
-.expedition-card:first-child { border-top: 1px solid var(--soft-gray); }
+.expedition-card:first-child { border-top: 1px solid var(--border); }
 .expedition-card:hover { text-decoration: none; }
-.expedition-card:hover .expedition-title { color: var(--gold); }
+.expedition-card:hover .expedition-title { color: var(--goldline); }
 
 .expedition-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 1.3rem;
   transition: color 0.2s;
 }
 
 .expedition-desc {
   font-size: 0.9rem;
-  color: var(--muted);
+  color: var(--ink-subtle);
   margin-top: 4px;
   max-width: 60ch;
 }
@@ -672,7 +671,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   text-transform: uppercase;
   padding: 4px 10px;
   border: 1px solid var(--border);
-  color: var(--muted);
+  color: var(--ink-subtle);
   white-space: nowrap;
 }
 
@@ -689,7 +688,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 .section-header p {
   font-size: 1rem;
-  color: var(--muted);
+  color: var(--ink-subtle);
   margin-top: var(--space-sm);
   max-width: 56ch;
 }
@@ -721,7 +720,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   position: relative;
   overflow: hidden;
 }
-.media-card:hover .media-card-box { background: var(--gold); }
+.media-card:hover .media-card-box { background: var(--goldline); }
 .media-card-box span {
   font-size: 0.72rem;
   font-weight: 500;
@@ -733,13 +732,13 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .media-card:hover .media-card-box span { color: var(--ink); }
 
 .media-card-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 1.05rem;
   margin-top: var(--space-sm);
 }
 .media-card-sub {
   font-size: 0.8rem;
-  color: var(--muted);
+  color: var(--ink-subtle);
   margin-top: 2px;
 }
 
@@ -748,7 +747,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
    ============================================================ */
 .fw-hero {
   padding: var(--space-xl) 0 var(--space-lg);
-  border-bottom: 1px solid var(--soft-gray);
+  border-bottom: 1px solid var(--border);
 }
 
 .fw-hero-inner {
@@ -765,7 +764,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 .fw-hero .lead {
   font-size: 1.15rem;
-  color: var(--muted);
+  color: var(--ink-subtle);
   max-width: 58ch;
   line-height: 1.65;
 }
@@ -795,7 +794,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 .fw-main p {
   font-size: 1rem;
-  color: var(--muted);
+  color: var(--ink-subtle);
   line-height: 1.75;
 }
 
@@ -806,7 +805,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 .fw-main li {
   font-size: 1rem;
-  color: var(--muted);
+  color: var(--ink-subtle);
   line-height: 1.75;
   margin-bottom: 6px;
 }
@@ -819,7 +818,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .fw-sidebar-section {
   margin-bottom: var(--space-md);
   padding-bottom: var(--space-md);
-  border-bottom: 1px solid var(--soft-gray);
+  border-bottom: 1px solid var(--border);
 }
 .fw-sidebar-section:last-child { border-bottom: none; }
 
@@ -836,7 +835,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   text-decoration: none;
   transition: color 0.15s;
 }
-.fw-sidebar-section a:hover { color: var(--gold); text-decoration: none; }
+.fw-sidebar-section a:hover { color: var(--goldline); text-decoration: none; }
 
 @media (max-width: 767px) {
   .fw-body {
@@ -850,7 +849,6 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   .fw-hero h1 {
     font-size: clamp(1.8rem, 8vw, 2.5rem);
   }
-  /* Framework diagrams: scale to viewport width */
   .diagram-insert {
     margin: 1.5rem -1rem !important;
     overflow-x: auto;
@@ -886,7 +884,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--goldline);
 }
 
 .essay-page p {
@@ -903,13 +901,13 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 }
 
 .essay-page blockquote {
-  border-left: 3px solid var(--gold);
+  border-left: 3px solid var(--goldline);
   padding-left: var(--space-md);
   margin: var(--space-md) 0;
   font-family: var(--font-serif);
   font-size: 1.25rem;
   font-style: italic;
-  color: var(--muted);
+  color: var(--ink-light);
 }
 
 /* ============================================================
@@ -923,7 +921,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 }
 
 .diag-card {
-  border: 1px solid var(--soft-gray);
+  border: 1px solid var(--border);
   padding: var(--space-md);
   display: block;
   text-decoration: none;
@@ -931,7 +929,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   transition: border-color 0.2s;
 }
 .diag-card:hover {
-  border-color: var(--gold);
+  border-color: var(--goldline);
   text-decoration: none;
 }
 
@@ -941,7 +939,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 }
 .diag-card p {
   font-size: 0.9rem;
-  color: var(--muted);
+  color: var(--ink-subtle);
   max-width: 36ch;
 }
 
@@ -960,7 +958,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 .about-portrait {
   aspect-ratio: 3/4;
-  background: var(--soft-gray);
+  background: var(--border);
   overflow: hidden;
 }
 .about-portrait img {
@@ -979,7 +977,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .about-bio p {
   font-size: 1.05rem;
   line-height: 1.8;
-  color: var(--muted);
+  color: var(--ink-subtle);
 }
 
 .about-links {
@@ -998,405 +996,3 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
    Media Page
    ============================================================ */
 .media-section { margin-bottom: var(--space-xl); }
-.media-section h2 {
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: var(--space-md);
-  padding-bottom: var(--space-sm);
-  border-bottom: 1px solid var(--soft-gray);
-}
-
-/* ============================================================
-   Editorial Hero
-   ============================================================ */
-.hero-editorial {
-  padding: var(--space-2xl) 0 var(--space-xl);
-  border-bottom: 1px solid var(--soft-gray);
-}
-
-.eyebrow-label {
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--gold);
-  display: block;
-  margin-bottom: var(--space-sm);
-}
-
-.hero-headline {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 300;
-  line-height: 1.1;
-  margin-bottom: var(--space-lg);
-  max-width: 20ch;
-}
-
-.hero-pull-quote {
-  margin-bottom: var(--space-lg);
-}
-
-.pull-quote-bar {
-  width: 3px;
-  height: 100%;
-  min-height: 60px;
-  background: #B89B5E;
-  margin-right: var(--space-md);
-  display: inline-block;
-  vertical-align: top;
-}
-
-.hero-pull-quote p {
-  display: inline;
-  font-family: var(--font-serif);
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  font-style: italic;
-  line-height: 1.4;
-  color: var(--muted);
-  max-width: none;
-  vertical-align: top;
-}
-
-.hero-description {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  max-width: 600px;
-}
-
-.ornament-left,
-.ornament-right {
-  flex-shrink: 0;
-  margin-top: 0.5em;
-}
-
-.hero-desc-text {
-  font-size: 1.05rem;
-  color: var(--muted);
-  line-height: 1.65;
-  max-width: 52ch;
-}
-
-.hero-cta-single {
-  margin-top: var(--space-lg);
-}
-
-/* ============================================================
-   Transitional Zone
-   ============================================================ */
-.section-transition {
-  padding: var(--space-xl) 0;
-}
-
-.transition-rule {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.transition-ornament {
-  max-width: 200px;
-}
-
-/* ============================================================
-   Thesis Section
-   ============================================================ */
-.thesis-section {
-  background: var(--paper);
-}
-
-.thesis-inner {
-  position: relative;
-  padding: var(--space-xl) var(--space-md);
-  max-width: 800px;
-}
-
-.paper-texture-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-.thesis-headline {
-  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-  margin-bottom: var(--space-lg);
-  position: relative;
-  z-index: 1;
-}
-
-.thesis-pull-quote {
-  position: relative;
-  z-index: 1;
-  margin-bottom: var(--space-lg);
-  padding-left: var(--space-md);
-  border-left: 2px solid #B89B5E;
-}
-
-.thesis-pull-quote p {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-style: italic;
-  color: var(--ink);
-  line-height: 1.5;
-  max-width: 50ch;
-}
-
-.thesis-body {
-  font-size: 0.95rem;
-  line-height: 2.0;
-  color: var(--muted);
-  position: relative;
-  z-index: 1;
-  max-width: 60ch;
-}
-
-/* ============================================================
-   Section Break Ornament
-   ============================================================ */
-.section-break {
-  padding: var(--space-md) 0;
-}
-
-.section-break-ornament {
-  display: flex;
-  justify-content: center;
-}
-
-/* ============================================================
-   Frameworks Section
-   ============================================================ */
-.frameworks-section {
-  border-bottom: 1px solid var(--soft-gray);
-}
-
-.frameworks-header {
-  margin-bottom: var(--space-lg);
-}
-
-.frameworks-title {
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  margin-bottom: var(--space-sm);
-}
-
-.frameworks-cross {
-  margin-top: var(--space-xs);
-}
-
-.framework-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-md);
-  margin-top: var(--space-md);
-}
-
-.framework-card {
-  padding: var(--space-md);
-  border: 1px solid var(--soft-gray);
-  text-decoration: none;
-  color: var(--ink);
-  transition: border-color 0.2s, box-shadow 0.2s;
-  display: block;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-}
-
-.framework-card:hover {
-  border-color: var(--gold);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-  text-decoration: none;
-}
-
-.framework-card-title {
-  font-size: 1.3rem;
-  margin-bottom: 4px;
-  font-family: var(--font-serif);
-}
-
-.framework-subtitle {
-  font-size: 0.82rem;
-  font-style: italic;
-  color: var(--gold);
-  margin-bottom: 8px;
-}
-
-.framework-desc {
-  font-size: 0.9rem;
-  color: var(--muted);
-  margin-top: 8px;
-}
-
-.framework-arrow {
-  margin-top: var(--space-sm);
-  color: var(--gold);
-}
-
-/* ============================================================
-   Field Notes Section
-   ============================================================ */
-.field-notes-section {
-  border-bottom: 1px solid var(--soft-gray);
-}
-
-/* ============================================================
-   Expeditions Section
-   ============================================================ */
-.expeditions-section {
-  border-bottom: 1px solid var(--soft-gray);
-}
-
-/* ============================================================
-   Diagnostics Section
-   ============================================================ */
-.diagnostics-section {
-  background: var(--ink);
-  color: var(--paper);
-  position: relative;
-  overflow: hidden;
-}
-
-.diagnostics-texture {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.diagnostics-inner {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  max-width: 680px;
-}
-
-/* ============================================================
-   Closing Section
-   ============================================================ */
-.closing-section {
-  padding: var(--space-2xl) 0;
-  background: var(--paper);
-  border-top: 1px solid var(--soft-gray);
-}
-
-.closing-inner {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  max-width: 720px;
-}
-
-.closing-ornament {
-  display: block;
-  margin: 0 auto var(--space-lg);
-}
-
-.closing-quote {
-  font-family: var(--font-serif);
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
-  font-style: italic;
-  line-height: 1.5;
-  color: var(--ink);
-  margin-bottom: var(--space-lg);
-  max-width: 28ch;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.closing-link {
-  font-size: 0.85rem;
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.15s;
-}
-
-.closing-link:hover {
-  color: var(--gold);
-  text-decoration: none;
-}
-
-/* ============================================================
-   Mobile Responsiveness — Phase 2.5 Optimization Pass
-   Covers: Hero editorial, section spacing, grid layouts,
-   forms, footer fine-tuning
-   ============================================================ */
-
-@media (max-width: 767px) {
-  /* ── Hero editorial (GEC homepage) ── */
-  .hero-editorial {
-    padding: var(--space-xl) 0 var(--space-lg);
-  }
-  .hero-headline {
-    font-size: clamp(2rem, 8vw, 3rem);
-    max-width: none;
-  }
-  .hero-description {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-sm);
-  }
-  .pull-quote-bar {
-    display: block;
-    width: 2px;
-    height: 40px;
-    margin-bottom: var(--space-xs);
-  }
-  .hero-pull-quote p {
-    display: block;
-    font-size: clamp(1.2rem, 5vw, 1.8rem);
-  }
-
-  /* ── Section spacing ── */
-  .section {
-    padding: var(--space-lg) 0;
-  }
-
-  /* ── Thesis section ── */
-  .thesis-section {
-    padding: var(--space-lg) var(--space-sm);
-  }
-
-  /* ── Framework cards ── */
-  .framework-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-sm);
-  }
-  .framework-card {
-    padding: var(--space-sm);
-  }
-
-  /* ── Essay / field notes cards ── */
-  .essay-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* ── Expedition list ── */
-  .expedition-card {
-    grid-template-columns: 1fr;
-    gap: var(--space-xs);
-  }
-
-  /* ── Media cards ── */
-  .media-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* ── Kit form — stack inputs on mobile ── */
-  .kit-newsletter-form form {
-    flex-direction: column;
-    gap: var(--space-xs);
-  }
-  .kit-newsletter-form input,
-  .kit-newsletter-form button {
-    width: 100%;
-  }
-
-  /* ── Closing quote section ── */
-  .closing-section {
-    padding: var(--space-xl) 0;
-  }
-  .closing-quote {
-    font-size: clamp(1.3rem, 5vw, 2rem);
-    padding: 0 var(--space-sm);
-  }
-}

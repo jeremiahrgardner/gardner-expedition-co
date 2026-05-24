@@ -19,7 +19,7 @@ interface FieldNotebookOrnamentsProps {
   opacity?: number
 }
 
-function OrnamentDivider({ className = '', color = '#111111', opacity = 0.3 }: FieldNotebookOrnamentsProps) {
+function OrnamentDivider({ className = '', color = '#0A0A0A', opacity = 0.3 }: FieldNotebookOrnamentsProps) {
   return (
     <svg
       viewBox="0 0 120 8"
@@ -38,7 +38,7 @@ function OrnamentDivider({ className = '', color = '#111111', opacity = 0.3 }: F
   )
 }
 
-function OrnamentDiamond({ className = '', color = '#111111', opacity = 0.25 }: FieldNotebookOrnamentsProps) {
+function OrnamentDiamond({ className = '', color = '#0A0A0A', opacity = 0.25 }: FieldNotebookOrnamentsProps) {
   return (
     <svg
       viewBox="0 0 20 20"
@@ -52,7 +52,7 @@ function OrnamentDiamond({ className = '', color = '#111111', opacity = 0.25 }: 
   )
 }
 
-function OrnamentCross({ className = '', color = '#B89B5E', opacity = 0.4 }: FieldNotebookOrnamentsProps) {
+function OrnamentCross({ className = '', color = '#F1C233', opacity = 0.4 }: FieldNotebookOrnamentsProps) {
   return (
     <svg
       viewBox="0 0 16 16"
@@ -70,7 +70,7 @@ function OrnamentCross({ className = '', color = '#B89B5E', opacity = 0.4 }: Fie
   )
 }
 
-function OrnamentBracket({ className = '', color = '#111111', opacity = 0.2 }: FieldNotebookOrnamentsProps) {
+function OrnamentBracket({ className = '', color = '#0A0A0A', opacity = 0.2 }: FieldNotebookOrnamentsProps) {
   return (
     <svg
       viewBox="0 0 24 40"
@@ -88,7 +88,7 @@ function OrnamentBracket({ className = '', color = '#111111', opacity = 0.2 }: F
   )
 }
 
-function OrnamentReadingMark({ className = '', color = '#B89B5E', opacity = 0.35 }: FieldNotebookOrnamentsProps) {
+function OrnamentReadingMark({ className = '', color = '#F1C233', opacity = 0.35 }: FieldNotebookOrnamentsProps) {
   return (
     <svg
       viewBox="0 0 6 60"
@@ -106,7 +106,7 @@ function OrnamentReadingMark({ className = '', color = '#B89B5E', opacity = 0.35
   )
 }
 
-function OrnamentAsterisk({ className = '', color = '#111111', opacity = 0.3 }: FieldNotebookOrnamentsProps) {
+function OrnamentAsterisk({ className = '', color = '#0A0A0A', opacity = 0.3 }: FieldNotebookOrnamentsProps) {
   return (
     <svg
       viewBox="0 0 20 20"
@@ -126,7 +126,7 @@ function OrnamentAsterisk({ className = '', color = '#111111', opacity = 0.3 }: 
 export default function FieldNotebookOrnaments({
   variant = 'divider',
   className = '',
-  color = '#111111',
+  color = '#0A0A0A',
   opacity,
 }: FieldNotebookOrnamentsProps) {
   const defaultOpacity = {

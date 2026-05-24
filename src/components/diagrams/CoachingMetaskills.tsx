@@ -14,11 +14,11 @@ interface CoachingMetaskillsProps {
 }
 
 const metaskills = [
-  { name: 'SELF-AWARENESS',    ring: 5, color: '#111111', desc: 'Notice your own patterns in real time' },
-  { name: 'OBSERVATION',       ring: 4, color: '#111111', desc: 'Attend to what is actually present' },
-  { name: 'DIAGNOSIS',         ring: 3, color: '#B89B5E', desc: 'Distinguish what is from what appears' },
-  { name: 'INTERVENTION',      ring: 2, color: '#B89B5E', desc: 'Time and frame challenge deliberately' },
-  { name: 'EXPERIMENTATION',   ring: 1, color: '#B89B5E', desc: 'Build capacity to test and learn' },
+  { name: 'SELF-AWARENESS',    ring: 5, color: '#0A0A0A', desc: 'Notice your own patterns in real time' },
+  { name: 'OBSERVATION',       ring: 4, color: '#0A0A0A', desc: 'Attend to what is actually present' },
+  { name: 'DIAGNOSIS',         ring: 3, color: '#F1C233', desc: 'Distinguish what is from what appears' },
+  { name: 'INTERVENTION',      ring: 2, color: '#F1C233', desc: 'Time and frame challenge deliberately' },
+  { name: 'EXPERIMENTATION',   ring: 1, color: '#F1C233', desc: 'Build capacity to test and learn' },
 ]
 
 export default function CoachingMetaskills({
@@ -39,7 +39,7 @@ export default function CoachingMetaskills({
     >
       {/* Outer context ring */}
       <circle cx={cx} cy={cy} r="220" fill="none"
-              stroke="#111111" strokeWidth="0.5" strokeDasharray="4 4" opacity="0.15" />
+              stroke="#0A0A0A" strokeWidth="0.5" strokeDasharray="4 4" opacity="0.15" />
 
       {metaskills.map((skill, i) => {
         const r = 40 + skill.ring * 34
@@ -52,7 +52,7 @@ export default function CoachingMetaskills({
             {/* Ring fill */}
             <circle
               cx={cx} cy={cy} r={r}
-              fill={skill.color === '#B89B5E' ? '#B89B5E' : '#111111'}
+              fill={skill.color === '#F1C233' ? '#F1C233' : '#0A0A0A'}
               opacity={isHovered ? 0.09 : 0.04}
               style={{ transition: 'opacity 0.5s ease' }}
             />
@@ -69,7 +69,7 @@ export default function CoachingMetaskills({
             {/* Skill label on ring */}
             <text
               x={cx + 8} y={cy - r + 14}
-              fontSize="6.5" fontFamily="DM Sans, sans-serif"
+              fontSize="6.5" fontFamily="EB Garamond, sans-serif"
               letterSpacing="0.16em" fill={skill.color}
               opacity={isHovered ? 0.85 : 0.5}
               fontWeight={isHovered ? "600" : "400"}
@@ -79,7 +79,7 @@ export default function CoachingMetaskills({
             </text>
             {/* Hover description */}
             {isHovered && (
-              <text x={cx} y={cy + r + 18} fontSize="6.5" fontFamily="DM Sans, sans-serif"
+              <text x={cx} y={cy + r + 18} fontSize="6.5" fontFamily="EB Garamond, sans-serif"
                     letterSpacing="0.04em" fill={skill.color} opacity="0.65" textAnchor="middle" fontStyle="italic">
                 {skill.desc}
               </text>
@@ -89,26 +89,26 @@ export default function CoachingMetaskills({
       })}
 
       {/* Center — the primary instrument */}
-      <circle cx={cx} cy={cy} r="22" fill="#111111" opacity="0.12" />
-      <circle cx={cx} cy={cy} r="22" fill="none" stroke="#B89B5E" strokeWidth="1.2" opacity="0.6" />
-      <text x={cx} y={cy - 4} fontSize="6.5" fontFamily="DM Sans, sans-serif"
-            letterSpacing="0.1em" fill="#111111" opacity="0.6" textAnchor="middle" fontWeight="600">
+      <circle cx={cx} cy={cy} r="22" fill="#0A0A0A" opacity="0.12" />
+      <circle cx={cx} cy={cy} r="22" fill="none" stroke="#F1C233" strokeWidth="1.2" opacity="0.6" />
+      <text x={cx} y={cy - 4} fontSize="6.5" fontFamily="EB Garamond, sans-serif"
+            letterSpacing="0.1em" fill="#0A0A0A" opacity="0.6" textAnchor="middle" fontWeight="600">
         THE
       </text>
-      <text x={cx} y={cy + 7} fontSize="6.5" fontFamily="DM Sans, sans-serif"
-            letterSpacing="0.1em" fill="#111111" opacity="0.6" textAnchor="middle" fontWeight="600">
+      <text x={cx} y={cy + 7} fontSize="6.5" fontFamily="EB Garamond, sans-serif"
+            letterSpacing="0.1em" fill="#0A0A0A" opacity="0.6" textAnchor="middle" fontWeight="600">
         RELATIONSHIP
       </text>
 
       {/* Top label */}
-      <text x={width / 2} y="18" fontSize="7.5" fontFamily="DM Sans, sans-serif"
-            letterSpacing="0.2em" fill="#111111" opacity="0.35" textAnchor="middle" fontWeight="500">
+      <text x={width / 2} y="18" fontSize="7.5" fontFamily="EB Garamond, sans-serif"
+            letterSpacing="0.2em" fill="#0A0A0A" opacity="0.35" textAnchor="middle" fontWeight="500">
         HUMAN CAPABILITY ARCHITECTURE
       </text>
 
       {/* Bottom annotation */}
-      <text x={width / 2} y={height - 14} fontSize="6.5" fontFamily="DM Sans, sans-serif"
-            letterSpacing="0.06em" fill="#111111" opacity="0.25" textAnchor="middle" fontStyle="italic">
+      <text x={width / 2} y={height - 14} fontSize="6.5" fontFamily="EB Garamond, sans-serif"
+            letterSpacing="0.06em" fill="#0A0A0A" opacity="0.25" textAnchor="middle" fontStyle="italic">
         hover the rings to explore each metaskill
       </text>
     </svg>
