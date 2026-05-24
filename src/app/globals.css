@@ -1372,6 +1372,25 @@ html, body {
   gap: 1.5rem 2.5rem;
 }
 
+.trust-logo-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.45;
+  transition: opacity 0.2s;
+  padding: 4px;
+}
+
+.trust-logo-img img {
+  max-height: 24px;
+  width: auto;
+  display: block;
+}
+
+.trust-logo-img:hover {
+  opacity: 0.8;
+}
+
 .trust-item {
   font-family: var(--font-sans);
   font-size: 0.78rem;
@@ -1960,6 +1979,10 @@ html, body {
   
   .trust-item {
     font-size: 0.7rem;
+  }
+  
+  .trust-logo-img img {
+    max-height: 18px;
   }
   
   .method-details {

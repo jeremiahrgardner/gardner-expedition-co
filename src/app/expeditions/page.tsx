@@ -211,66 +211,42 @@ export default function ExpeditionsPage() {
           <div className="trust-strip-inner">
             <p className="trust-strip-label">Selected organizations connected to this body of work</p>
             <div className="trust-grid">
-              {/* GE */}
-              <svg className="trust-logo" viewBox="0 0 42 42" aria-hidden="true">
-                <rect x="3" y="3" width="36" height="36" rx="4" fill="currentColor" opacity="0.07"/>
-                <text x="21" y="27.5" textAnchor="middle" fontSize="16" fontWeight="900" fill="currentColor" fontFamily="system-ui,sans-serif" letterSpacing="-0.02em">GE</text>
-              </svg>
-              {/* ING */}
-              <svg className="trust-logo" viewBox="0 0 56 42" aria-hidden="true">
-                <rect x="2" y="3" width="52" height="36" rx="4" fill="currentColor" opacity="0.07"/>
-                <text x="28" y="27" textAnchor="middle" fontSize="16" fontWeight="800" fill="currentColor" fontFamily="system-ui,sans-serif" letterSpacing="0.08em">ING</text>
-              </svg>
-              {/* Roche */}
-              <svg className="trust-logo" viewBox="0 0 72 42" aria-hidden="true">
-                <text x="36" y="28" textAnchor="middle" fontSize="22" fontWeight="700" fill="currentColor" fontFamily="system-ui,sans-serif" letterSpacing="-0.03em">Roche</text>
-              </svg>
-              {/* Genentech */}
-              <svg className="trust-logo" viewBox="0 0 96 42" aria-hidden="true">
-                <text x="48" y="20" textAnchor="middle" fontSize="14.5" fontWeight="600" fill="currentColor" fontFamily="system-ui,sans-serif" letterSpacing="0.02em">Genentech</text>
-                <rect x="12" y="26" width="72" height="2" rx="1" fill="currentColor" opacity="0.1"/>
-                <text x="48" y="36" textAnchor="middle" fontSize="7" fontWeight="400" fill="currentColor" opacity="0.5" fontFamily="system-ui,sans-serif" letterSpacing="0.12em">A member of the Roche Group</text>
-              </svg>
-              {/* eBay */}
-              <svg className="trust-logo" viewBox="0 0 56 42" aria-hidden="true">
-                <text x="28" y="29" textAnchor="middle" fontSize="22" fontWeight="800" fill="currentColor" fontFamily="system-ui,sans-serif" letterSpacing="-0.03em" opacity="0.9">ebay</text>
-              </svg>
-              {/* Nike */}
-              <svg className="trust-logo" viewBox="0 0 80 42" aria-hidden="true">
-                <path d="M6 28 Q18 34 42 10 Q30 26 12 26Z" fill="currentColor" opacity="0.85"/>
-                <text x="56" y="26" textAnchor="start" fontSize="10" fontWeight="800" fill="currentColor" fontFamily="system-ui,sans-serif" letterSpacing="0.08em" opacity="0.6">NIKE</text>
-              </svg>
-              {/* American Family Insurance */}
-              <svg className="trust-logo" viewBox="0 0 140 48" aria-hidden="true">
-                <path d="M10 16 L24 6 L38 16 L38 36 L10 36Z" fill="currentColor" opacity="0.08"/>
-                <text x="53" y="24" textAnchor="start" fontSize="13" fontWeight="700" fill="currentColor" fontFamily="system-ui,sans-serif" letterSpacing="-0.01em">American Family</text>
-                <text x="53" y="37" textAnchor="start" fontSize="8.5" fontWeight="400" fill="currentColor" opacity="0.55" fontFamily="system-ui,sans-serif" letterSpacing="0.1em">INSURANCE</text>
-              </svg>
-              {/* WD-40 */}
-              <svg className="trust-logo" viewBox="0 0 72 42" aria-hidden="true">
-                <rect x="4" y="6" width="64" height="30" rx="15" fill="currentColor" opacity="0.07"/>
-                <text x="36" y="26.5" textAnchor="middle" fontSize="17" fontWeight="900" fill="currentColor" fontFamily="system-ui,sans-serif" letterSpacing="-0.02em">WD-40</text>
-              </svg>
-              {/* John Deere */}
-              <svg className="trust-logo" viewBox="0 0 100 42" aria-hidden="true">
-                <text x="50" y="20" textAnchor="middle" fontSize="12" fontWeight="700" fill="currentColor" fontFamily="system-ui,sans-serif" letterSpacing="-0.01em">John Deere</text>
-                <rect x="14" y="25" width="72" height="2" rx="1" fill="currentColor" opacity="0.1"/>
-                <text x="50" y="35" textAnchor="middle" fontSize="7" fontWeight="400" fill="currentColor" opacity="0.5" fontFamily="system-ui,sans-serif" letterSpacing="0.12em">NOTHING RUNS LIKE A DEERE</text>
-              </svg>
-              {/* Siemens */}
-              <svg className="trust-logo" viewBox="0 0 92 42" aria-hidden="true">
-                <text x="46" y="28" textAnchor="middle" fontSize="18" fontWeight="700" fill="currentColor" fontFamily="system-ui,sans-serif" letterSpacing="0.06em">SIEMENS</text>
-              </svg>
-              {/* AIA */}
-              <svg className="trust-logo" viewBox="0 0 48 42" aria-hidden="true">
-                <rect x="4" y="4" width="40" height="34" rx="4" fill="currentColor" opacity="0.07"/>
-                <text x="24" y="28.5" textAnchor="middle" fontSize="17" fontWeight="900" fill="currentColor" fontFamily="system-ui,sans-serif" letterSpacing="0.06em">AIA</text>
-              </svg>
-              {/* Transavia */}
-              <svg className="trust-logo" viewBox="0 0 96 42" aria-hidden="true">
-                <text x="48" y="22" textAnchor="middle" fontSize="13" fontWeight="700" fill="currentColor" fontFamily="system-ui,sans-serif" letterSpacing="0.02em">transavia</text>
-                <text x="48" y="35" textAnchor="middle" fontSize="8" fontWeight="400" fill="currentColor" opacity="0.5" fontFamily="system-ui,sans-serif" letterSpacing="0.06em">airlines</text>
-              </svg>
+              <a className="trust-logo-img" href="https://en.wikipedia.org/wiki/General_Electric" target="_blank" rel="noopener noreferrer" aria-label="General Electric">
+                <img src="/images/logos/ge.svg" alt="GE" loading="lazy" />
+              </a>
+              <a className="trust-logo-img" href="https://en.wikipedia.org/wiki/ING_Group" target="_blank" rel="noopener noreferrer" aria-label="ING">
+                <img src="/images/logos/ing.svg" alt="ING" loading="lazy" />
+              </a>
+              <a className="trust-logo-img" href="https://en.wikipedia.org/wiki/Roche" target="_blank" rel="noopener noreferrer" aria-label="Roche">
+                <img src="/images/logos/roche.svg" alt="Roche" loading="lazy" />
+              </a>
+              <a className="trust-logo-img" href="https://en.wikipedia.org/wiki/Genentech" target="_blank" rel="noopener noreferrer" aria-label="Genentech">
+                <img src="/images/logos/genentech.svg" alt="Genentech" loading="lazy" />
+              </a>
+              <a className="trust-logo-img" href="https://en.wikipedia.org/wiki/EBay" target="_blank" rel="noopener noreferrer" aria-label="eBay">
+                <img src="/images/logos/ebay.svg" alt="eBay" loading="lazy" />
+              </a>
+              <a className="trust-logo-img" href="https://en.wikipedia.org/wiki/Nike,_Inc." target="_blank" rel="noopener noreferrer" aria-label="Nike">
+                <img src="/images/logos/nike.svg" alt="Nike" loading="lazy" />
+              </a>
+              <a className="trust-logo-img" href="https://en.wikipedia.org/wiki/American_Family_Insurance" target="_blank" rel="noopener noreferrer" aria-label="American Family Insurance">
+                <img src="/images/logos/american-family.svg" alt="American Family Insurance" loading="lazy" />
+              </a>
+              <a className="trust-logo-img" href="https://en.wikipedia.org/wiki/WD-40_Company" target="_blank" rel="noopener noreferrer" aria-label="WD-40">
+                <img src="/images/logos/wd40.svg" alt="WD-40" loading="lazy" />
+              </a>
+              <a className="trust-logo-img" href="https://en.wikipedia.org/wiki/John_Deere" target="_blank" rel="noopener noreferrer" aria-label="John Deere">
+                <img src="/images/logos/john-deere.svg" alt="John Deere" loading="lazy" />
+              </a>
+              <a className="trust-logo-img" href="https://en.wikipedia.org/wiki/Siemens" target="_blank" rel="noopener noreferrer" aria-label="Siemens">
+                <img src="/images/logos/siemens.svg" alt="Siemens" loading="lazy" />
+              </a>
+              <a className="trust-logo-img" href="https://en.wikipedia.org/wiki/AIA_Group" target="_blank" rel="noopener noreferrer" aria-label="AIA">
+                <img src="/images/logos/aia.svg" alt="AIA" loading="lazy" />
+              </a>
+              <a className="trust-logo-img" href="https://en.wikipedia.org/wiki/Transavia" target="_blank" rel="noopener noreferrer" aria-label="Transavia">
+                <img src="/images/logos/transavia.svg" alt="Transavia" loading="lazy" />
+              </a>
             </div>
           </div>
         </section>
