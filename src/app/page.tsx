@@ -175,7 +175,6 @@ export default function HomePage() {
           <div className="container">
             <header className="frameworks-header">
               <h2 className="frameworks-title">Frameworks</h2>
-              <FieldNotebookOrnaments variant="cross" className="frameworks-cross" color="#F1C233" opacity={0.4} />
             </header>
             
             <div className="framework-grid">
@@ -208,7 +207,6 @@ export default function HomePage() {
           <div className="container">
             <header className="frameworks-header">
               <h2 className="frameworks-title">Field Notes</h2>
-              <FieldNotebookOrnaments variant="cross" className="frameworks-cross" color="#F1C233" opacity={0.4} />
             </header>
             <div className="essay-grid">
               {essays.map(({ href, title, date, excerpt }) => (
@@ -239,7 +237,6 @@ export default function HomePage() {
           <div className="container">
             <header className="frameworks-header">
               <h2 className="frameworks-title">Expeditions</h2>
-              <FieldNotebookOrnaments variant="cross" className="frameworks-cross" color="#F1C233" opacity={0.4} />
             </header>
             <div className="expedition-list">
               {expeditions.map(({ href, title, tag, desc }) => (
@@ -344,7 +341,6 @@ export default function HomePage() {
         {/* ─── Section Break ─── */}
         <div className="section-break">
           <div className="container">
-            <FieldNotebookOrnaments variant="cross" className="section-break-ornament" color="#F1C233" opacity={0.4} />
           </div>
         </div>
 
@@ -387,7 +383,6 @@ export default function HomePage() {
           <div className="relative">
             <PaperTexture className="paper-texture-overlay" opacity={0.04} variant="fine" />
             <div className="container closing-inner">
-              <FieldNotebookOrnaments variant="cross" className="closing-ornament" color="#F1C233" opacity={0.5} />
               <blockquote className="closing-quote">
                 The capacity to see clearly in uncertain conditions is not a talent. It is a practice.
               </blockquote>
