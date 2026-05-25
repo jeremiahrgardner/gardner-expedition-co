@@ -918,6 +918,41 @@ html, body {
   margin-top: var(--space-md);
 }
 
+/* ─── Expeditions Intro ─── */
+.expeditions-intro {
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--soft-gray);
+}
+
+.expeditions-intro-label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--goldline);
+  margin-bottom: var(--space-xs);
+}
+
+.expeditions-intro-quote {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.5;
+  margin-bottom: var(--space-xs);
+}
+
+.expeditions-intro-line {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--ink-subtle);
+}
+
+.expeditions-intro + .expedition-list {
+  margin-top: 0;
+}
+
 .expedition-card {
   display: grid;
   grid-template-columns: 1fr auto;

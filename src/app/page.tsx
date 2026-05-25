@@ -227,12 +227,17 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* ─── EXPEDITIONS ─── */}
+        {/* ─── EXPEDITIONS — Evidence surfacing ─── */}
         <section className="section expeditions-section">
           <div className="container">
             <header className="frameworks-header">
               <h2 className="frameworks-title">Expeditions</h2>
             </header>
+            <div className="expeditions-intro">
+              <p className="expeditions-intro-label">Built in the Field</p>
+              <p className="expeditions-intro-quote">FastWorks. Ignite. PACE. The names change. The pattern stays the same.</p>
+              <p className="expeditions-intro-line">Enterprise transformation work with Roche, Genentech, ING, Nike, GE, and more.</p>
+            </div>
             <div className="expedition-list">
               {expeditions.map(({ href, title, tag, desc }) => (
                 <Link key={title} href={href} className="expedition-card">
@@ -243,6 +248,11 @@ export default function HomePage() {
                   <span className="expedition-tag">{tag}</span>
                 </Link>
               ))}
+            </div>
+            <div style={{ marginTop: 'var(--space-md)' }}>
+              <Link href="/expeditions" className="btn-ghost" style={{ fontSize: '0.78rem' }}>
+                See all expeditions →
+              </Link>
             </div>
           </div>
         </section>
