@@ -122,6 +122,46 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* ─── TRUST STRIP — Authority signals before philosophy ─── */}
+        <section className="trust-strip-home">
+          <div className="trust-strip-home-inner">
+            <p className="trust-strip-home-label">Frameworks developed through work with</p>
+            <div className="trust-strip-home-logos">
+              <span className="trust-strip-org">Roche</span>
+              <span className="trust-strip-dot">·</span>
+              <span className="trust-strip-org">Genentech</span>
+              <span className="trust-strip-dot">·</span>
+              <span className="trust-strip-org">Nike</span>
+              <span className="trust-strip-dot">·</span>
+              <span className="trust-strip-org">GE</span>
+              <span className="trust-strip-dot">·</span>
+              <span className="trust-strip-org">ING</span>
+              <span className="trust-strip-dot">·</span>
+              <span className="trust-strip-org">eBay</span>
+              <span className="trust-strip-dot">·</span>
+              <span className="trust-strip-org">American Family</span>
+              <span className="trust-strip-dot">·</span>
+              <span className="trust-strip-org">WD-40</span>
+            </div>
+            <div className="trust-strip-outcomes">
+              <div className="trust-outcome">
+                <span className="trust-outcome-num">$50M</span>
+                <span className="trust-outcome-label">new NPV identified</span>
+              </div>
+              <span className="trust-strip-divider"></span>
+              <div className="trust-outcome">
+                <span className="trust-outcome-num">10x</span>
+                <span className="trust-outcome-label">portfolio growth in new areas</span>
+              </div>
+              <span className="trust-strip-divider"></span>
+              <div className="trust-outcome">
+                <span className="trust-outcome-num">30x</span>
+                <span className="trust-outcome-label">acceleration in evidence-based decisions</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ─── Transitional Zone ─── */}
         <div className="section-transition">
           <div className="container">

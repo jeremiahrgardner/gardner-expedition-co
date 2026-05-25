@@ -620,6 +620,93 @@ html, body {
 }
 
 /* Section transitions */
+/* ─── Trust Strip Home — Authority signals before philosophy ─── */
+.trust-strip-home {
+  background: var(--paper-alt);
+  border-top: 1px solid var(--soft-gray);
+  border-bottom: 1px solid var(--soft-gray);
+  padding: var(--space-md) 0;
+}
+
+.trust-strip-home-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+  text-align: center;
+}
+
+.trust-strip-home-label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-subtle);
+  margin-bottom: var(--space-xs);
+}
+
+.trust-strip-home-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.trust-strip-org {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0.03em;
+}
+
+.trust-strip-dot {
+  color: var(--soft-gray);
+  font-size: 0.75rem;
+}
+
+.trust-strip-outcomes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-lg);
+  padding-top: var(--space-xs);
+  border-top: 1px solid var(--soft-gray);
+}
+
+.trust-outcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.trust-outcome-num {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--goldline);
+  line-height: 1;
+}
+
+.trust-outcome-label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  color: var(--ink-subtle);
+  letter-spacing: 0.05em;
+  text-align: center;
+  max-width: 18ch;
+  line-height: 1.4;
+}
+
+.trust-strip-divider {
+  display: block;
+  width: 1px;
+  height: 32px;
+  background: var(--soft-gray);
+}
+
 .section-transition {
   padding: 0;
 }
