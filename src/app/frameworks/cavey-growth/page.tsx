@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
+import CAVEGrowthDiagram from '@/components/diagrams/CAVEGrowth'
 
 export default function CAVEGrowthPage() {
   return (
@@ -33,6 +34,14 @@ export default function CAVEGrowthPage() {
               wrong decisions is real. The system does not eliminate uncertainty —
               it gives organizations the capability to navigate through it.
             </p>
+
+            {/* Field diagram — the five-phase navigation cycle */}
+            <div className="fw-diagram-container">
+              <CAVEGrowthDiagram width={520} height={400} />
+              <p className="fw-diagram-caption">
+                CAVE navigation protocol — the five-phase cycle for finding direction when the path is not yet visible.
+              </p>
+            </div>
 
             <h2>Core Components</h2>
             <ul>

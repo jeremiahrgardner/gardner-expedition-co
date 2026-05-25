@@ -2213,3 +2213,70 @@ html, body {
     grid-template-columns: 1.2fr 1fr;
   }
 }
+/* ─── Framework Diagram Containers ───────────────────────────────── */
+
+.fw-diagram-container {
+  margin: 2.5rem 0 1.25rem;
+  padding: 1.5rem 1.5rem 1rem;
+  background: #fafaf8;
+  border: 1px solid #e8e6e0;
+  border-left: 3px solid #F1C233;
+}
+
+.fw-diagram-container svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.fw-diagram-caption {
+  margin-top: 0.75rem;
+  font-size: 0.72rem;
+  font-style: italic;
+  color: #666;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+}
+
+/* ─── Framework expedition list items ────────────────────────────── */
+
+.fw-expedition-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fw-expedition-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.fw-expedition-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+  text-decoration: none;
+}
+
+.fw-exp-name {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #111;
+  letter-spacing: 0.01em;
+}
+
+.fw-exp-sub {
+  font-size: 0.7rem;
+  color: #888;
+  font-style: italic;
+}
+
+.fw-exp-tag {
+  display: inline-block;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #F1C233;
+  margin-top: 0.1rem;
+}

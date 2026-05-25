@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
+import CaveStructure from '@/components/diagrams/CaveStructure'
 
 export default function ExplorationImperativePage() {
   return (
@@ -35,6 +36,14 @@ export default function ExplorationImperativePage() {
               the logic, the vocabulary, and the practical architecture for organizations
               that want to build genuine adaptive capacity — not just efficiency.
             </p>
+
+            {/* Field diagram — the hidden structure beneath the surface */}
+            <div className="fw-diagram-container">
+              <CaveStructure width={480} height={360} />
+              <p className="fw-diagram-caption">
+                The cave beneath the map — layers of hidden structure that determine what is actually possible.
+              </p>
+            </div>
 
             <h2>Core Philosophy</h2>
             <p>

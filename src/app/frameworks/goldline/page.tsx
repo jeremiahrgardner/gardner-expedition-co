@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
+import GoldlineDiagram from '@/components/diagrams/GoldlineDiagram'
 
 export default function GoldlinePage() {
   return (
@@ -33,6 +34,14 @@ export default function GoldlinePage() {
               the goldline is the through-line of deepest contribution — the pattern
               that connects your most effective work across time.
             </p>
+
+            {/* Field diagram — signature intellectual artifact */}
+            <div className="fw-diagram-container">
+              <GoldlineDiagram width={520} height={280} />
+              <p className="fw-diagram-caption">
+                The goldline in cave diving — the anchored thread that makes return possible when all other orientation fails.
+              </p>
+            </div>
 
             <h2>The Three Parts</h2>
             <ul>

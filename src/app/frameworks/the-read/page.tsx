@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
+import PerceptionMap from '@/components/diagrams/PerceptionMap'
 
 export default function TheReadPage() {
   return (
@@ -32,6 +33,14 @@ export default function TheReadPage() {
               accordingly. The Read is a trained skill — not intuition, not
               personality, not experience. A disciplined practice of seeing clearly.
             </p>
+
+            {/* Field diagram — the perception gap at the heart of The Read */}
+            <div className="fw-diagram-container">
+              <PerceptionMap width={480} height={320} />
+              <p className="fw-diagram-caption">
+                The gap between what is observed and what is interpreted — the core perceptual failure The Read addresses.
+              </p>
+            </div>
 
             <h2>Core Philosophy</h2>
             <p>
