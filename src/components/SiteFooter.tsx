@@ -35,6 +35,17 @@ export default function SiteFooter() {
         </div>
 
         <div className="site-footer-nav">
+          <h4>Ecosystem</h4>
+          <ul>
+            <li><Link href="/">Gardner Expedition Co.<span className="footer-tag">Intellectual Hub</span></Link></li>
+            <li><a href="https://haloclinepress.com" target="_blank" rel="noopener noreferrer">Halocline Press<span className="footer-tag">Publishing</span></a></li>
+            <li><a href="https://jeremiahgardner.com" target="_blank" rel="noopener noreferrer">Jeremiah Gardner<span className="footer-tag">Speaking</span></a></li>
+            <li><a href="https://asknoema.ai" target="_blank" rel="noopener noreferrer">AskNoema.ai<span className="footer-tag">Coaching</span></a></li>
+            <li><a href="https://www.deadreckon.io" target="_blank" rel="noopener noreferrer">DeadReckon<span className="footer-tag">Advisory</span></a></li>
+          </ul>
+        </div>
+
+        <div className="site-footer-nav">
           <h4>The Work</h4>
           <ul>
             <li><Link href="/frameworks/goldline">Goldline™</Link></li>

@@ -7,6 +7,9 @@ export const metadata: Metadata = {
     template: '%s | Gardner Expedition Co.',
   },
   description: 'An intellectual ecosystem for frameworks, diagnostics, essays, and applied exploration in organizational growth and human development.',
+  alternates: {
+    canonical: 'https://gardnerexpedition.co',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',

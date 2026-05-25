@@ -409,6 +409,18 @@ html, body {
 }
 .site-footer-nav a:hover { color: var(--ink-subtle); text-decoration: none; }
 
+.footer-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-family: var(--font-sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-subtle);
+  margin-left: 0.5em;
+  vertical-align: middle;
+}
+
+
 .site-footer-bottom {
   max-width: var(--max-width);
   margin: var(--space-lg) auto 0;
