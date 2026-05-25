@@ -80,6 +80,32 @@ export default function CoachingMetaskillsPage() {
 
           <aside className="fw-sidebar">
             <div className="fw-sidebar-section">
+              <h4>Field Work Evidence</h4>
+              <div className="fw-expedition-list">
+              <div className="fw-expedition-item">
+                <Link href="/expeditions" className="fw-expedition-link">
+                  <span className="fw-exp-name">Regional Health System</span>
+                  <span className="fw-exp-sub">Capability Architecture</span>
+                </Link>
+                <span className="fw-exp-tag">Healthcare</span>
+              </div>
+              <div className="fw-expedition-item">
+                <Link href="/expeditions" className="fw-expedition-link">
+                  <span className="fw-exp-name">AIA Insurance</span>
+                  <span className="fw-exp-sub">Coaching Capability Network</span>
+                </Link>
+                <span className="fw-exp-tag">Insurance</span>
+              </div>
+              <div className="fw-expedition-item">
+                <Link href="/expeditions" className="fw-expedition-link">
+                  <span className="fw-exp-name">Roche Diabetes Care</span>
+                  <span className="fw-exp-sub">Organizational Navigation</span>
+                </Link>
+                <span className="fw-exp-tag">Healthcare</span>
+              </div>
+              </div>
+            </div>
+            <div className="fw-sidebar-section">
               <h4>Explore Further</h4>
               <Link href="/frameworks">← All Frameworks</Link>
               <Link href="/frameworks/goldline">Goldline™</Link>

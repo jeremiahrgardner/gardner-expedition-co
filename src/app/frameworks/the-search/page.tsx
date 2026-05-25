@@ -83,6 +83,32 @@ export default function TheSearchPage() {
 
           <aside className="fw-sidebar">
             <div className="fw-sidebar-section">
+              <h4>Field Work Evidence</h4>
+              <div className="fw-expedition-list">
+              <div className="fw-expedition-item">
+                <Link href="/expeditions" className="fw-expedition-link">
+                  <span className="fw-exp-name">eBay</span>
+                  <span className="fw-exp-sub">Global Growth & Search Systems</span>
+                </Link>
+                <span className="fw-exp-tag">E-Commerce</span>
+              </div>
+              <div className="fw-expedition-item">
+                <Link href="/expeditions" className="fw-expedition-link">
+                  <span className="fw-exp-name">ING</span>
+                  <span className="fw-exp-sub">PACE Transformation</span>
+                </Link>
+                <span className="fw-exp-tag">Financial Services</span>
+              </div>
+              <div className="fw-expedition-item">
+                <Link href="/expeditions" className="fw-expedition-link">
+                  <span className="fw-exp-name">American Family Insurance</span>
+                  <span className="fw-exp-sub">Ignite Leadership Academy</span>
+                </Link>
+                <span className="fw-exp-tag">Insurance</span>
+              </div>
+              </div>
+            </div>
+            <div className="fw-sidebar-section">
               <h4>Explore Further</h4>
               <Link href="/frameworks">← All Frameworks</Link>
               <Link href="/frameworks/cave-growth">CAVE Growth System™</Link>

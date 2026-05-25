@@ -84,6 +84,32 @@ export default function ProgramAsProductPage() {
 
           <aside className="fw-sidebar">
             <div className="fw-sidebar-section">
+              <h4>Field Work Evidence</h4>
+              <div className="fw-expedition-list">
+              <div className="fw-expedition-item">
+                <Link href="/expeditions" className="fw-expedition-link">
+                  <span className="fw-exp-name">American Family Insurance</span>
+                  <span className="fw-exp-sub">Ignite Leadership Academy</span>
+                </Link>
+                <span className="fw-exp-tag">Insurance</span>
+              </div>
+              <div className="fw-expedition-item">
+                <Link href="/expeditions" className="fw-expedition-link">
+                  <span className="fw-exp-name">Siemens</span>
+                  <span className="fw-exp-sub">Transformation Program Architecture</span>
+                </Link>
+                <span className="fw-exp-tag">Industrial</span>
+              </div>
+              <div className="fw-expedition-item">
+                <Link href="/expeditions" className="fw-expedition-link">
+                  <span className="fw-exp-name">John Deere</span>
+                  <span className="fw-exp-sub">Enterprise Transformation Rhythm</span>
+                </Link>
+                <span className="fw-exp-tag">Agriculture</span>
+              </div>
+              </div>
+            </div>
+            <div className="fw-sidebar-section">
               <h4>Explore Further</h4>
               <Link href="/frameworks">← All Frameworks</Link>
               <Link href="/frameworks/cave-growth">CAVE Growth System™</Link>

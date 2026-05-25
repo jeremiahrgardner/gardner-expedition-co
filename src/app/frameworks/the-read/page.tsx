@@ -67,6 +67,32 @@ export default function TheReadPage() {
 
           <aside className="fw-sidebar">
             <div className="fw-sidebar-section">
+              <h4>Field Work Evidence</h4>
+              <div className="fw-expedition-list">
+              <div className="fw-expedition-item">
+                <Link href="/expeditions" className="fw-expedition-link">
+                  <span className="fw-exp-name">Roche Diabetes Care</span>
+                  <span className="fw-exp-sub">Organizational Navigation</span>
+                </Link>
+                <span className="fw-exp-tag">Healthcare</span>
+              </div>
+              <div className="fw-expedition-item">
+                <Link href="/expeditions" className="fw-expedition-link">
+                  <span className="fw-exp-name">Genentech PHC</span>
+                  <span className="fw-exp-sub">Product & Customer System Design</span>
+                </Link>
+                <span className="fw-exp-tag">Biopharma</span>
+              </div>
+              <div className="fw-expedition-item">
+                <Link href="/expeditions" className="fw-expedition-link">
+                  <span className="fw-exp-name">Nike Innovation Lab</span>
+                  <span className="fw-exp-sub">Exploration Systems</span>
+                </Link>
+                <span className="fw-exp-tag">Consumer</span>
+              </div>
+              </div>
+            </div>
+            <div className="fw-sidebar-section">
               <h4>Explore Further</h4>
               <Link href="/frameworks">← All Frameworks</Link>
               <Link href="/frameworks/goldline">Goldline™</Link>
