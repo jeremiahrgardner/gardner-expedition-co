@@ -2610,6 +2610,306 @@ html, body {
     grid-template-columns: 1.2fr 1fr;
   }
 }
+
+/* ── Field Notes split layout (desktop default) ── */
+.field-notes-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+
+/* ============================================================
+   MOBILE OPTIMIZATION — 375px primary target
+   Covers: homepage, framework pages, expeditions, nav, footer
+   ============================================================ */
+
+@media (max-width: 767px) {
+
+  /* ── Spacing scale compression ── */
+  :root {
+    --space-xl: 72px;
+    --space-lg: 48px;
+    --space-md: 20px;
+    --space-sm: 12px;
+    --space-xs: 6px;
+  }
+
+  /* ── Global body ── */
+  body {
+    font-size: 15px;
+  }
+
+  /* ── Navigation ── */
+  .site-nav {
+    height: 54px;
+  }
+  .page-wrapper {
+    padding-top: 54px;
+  }
+  .site-nav-inner {
+    height: 54px;
+    padding: 0 var(--space-md);
+  }
+
+  /* ── Hero editorial ── */
+  .hero-editorial {
+    padding: 72px 0 48px;
+  }
+  .hero-editorial h1 {
+    font-size: clamp(2rem, 9vw, 3rem) !important;
+    max-width: 28ch;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .hero-editorial .hero-sub {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+  .hero-cta-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+  .hero-cta-row .btn-primary,
+  .hero-cta-row .btn-ghost {
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+  }
+
+  /* ── Routing section ── */
+  .routing-section {
+    padding: 48px 0;
+  }
+  .routing-section-label {
+    font-size: 0.7rem;
+    margin-bottom: var(--space-sm);
+  }
+  .routing-card {
+    padding: var(--space-sm) var(--space-md);
+  }
+  .routing-card-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+  .routing-card-desc {
+    font-size: 0.82rem;
+  }
+
+  /* ── Problem section ── */
+  .problem-section {
+    padding: 48px 0;
+  }
+  .problem-headline {
+    font-size: clamp(1.5rem, 6vw, 2.2rem) !important;
+    line-height: 1.2;
+  }
+  .problem-body {
+    font-size: 0.92rem;
+    max-width: 100%;
+  }
+  .problem-closing {
+    font-size: 0.92rem;
+  }
+
+  /* ── Field Systems ── */
+  .fieldsystems-section {
+    padding: 48px 0;
+  }
+  .fieldsystems-title {
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
+  }
+  .fieldsystem-card {
+    padding: var(--space-sm) var(--space-md);
+  }
+  .fieldsystem-name {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .fieldsystem-job {
+    font-size: 0.8rem;
+    font-style: italic;
+  }
+  .fieldsystem-desc {
+    font-size: 0.85rem;
+  }
+
+  /* ── Proof section ── */
+  .proof-section {
+    padding: 48px 0;
+  }
+  .proof-label {
+    font-size: 0.7rem;
+  }
+  .proof-logos {
+    gap: 6px;
+    margin-bottom: var(--space-sm);
+  }
+  .proof-logos span {
+    font-size: 0.72rem;
+  }
+  .proof-logos .dot {
+    font-size: 0.4rem;
+  }
+  .proof-text {
+    font-size: 0.88rem;
+  }
+
+  /* ── Field Notes split layout ── */
+  .field-notes-split {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    align-items: start;
+  }
+  .field-notes-right {
+    margin-top: 0;
+  }
+
+  /* ── Ecosystem section ── */
+  .ecosystem-section {
+    padding: 48px 0;
+  }
+  .ecosystem-headline {
+    font-size: clamp(1.4rem, 5vw, 2rem);
+    margin-bottom: var(--space-md);
+  }
+  .ecosystem-item {
+    padding: var(--space-sm) 0;
+  }
+  .ecosystem-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+  .ecosystem-desc {
+    font-size: 0.8rem;
+  }
+
+  /* ── Newsletter section ── */
+  .section {
+    padding: 48px 0 !important;
+  }
+
+  /* ── Footer ── */
+  .site-footer {
+    padding: var(--space-lg) 0 var(--space-sm);
+    margin-top: var(--space-xl);
+  }
+  .site-footer-inner {
+    padding: 0 var(--space-md);
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  .site-footer-nav h4 {
+    font-size: 0.65rem;
+    margin-bottom: var(--space-xs);
+  }
+  .site-footer-nav a {
+    font-size: 0.82rem;
+  }
+
+  /* ── Framework pages ── */
+  .fw-hero {
+    padding: 60px 0 var(--space-md);
+  }
+  .fw-body {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    padding: 0 var(--space-md);
+  }
+  .fw-sidebar {
+    position: static;
+    padding: var(--space-md) 0;
+    border-top: 1px solid var(--border);
+  }
+  .fw-main h2 {
+    font-size: clamp(1.4rem, 5vw, 1.9rem);
+  }
+  .fw-main p {
+    font-size: 0.95rem;
+  }
+  .fw-diagram-container {
+    margin: 1.5rem 0 1rem;
+    padding: 1rem;
+  }
+
+  /* ── Expeditions page ── */
+  .exp-hero {
+    padding: 80px 0 48px;
+  }
+  .exp-hero-inner {
+    padding: 0 var(--space-md);
+  }
+  .trust-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .trust-item p:first-child {
+    font-size: 1.4rem;
+  }
+  .trust-item p:last-child {
+    font-size: 0.7rem;
+  }
+  .exp-narrative,
+  .exp-explored {
+    font-size: 0.92rem;
+  }
+
+  /* ── Buttons ── */
+  .btn-primary,
+  .btn-ghost {
+    padding: 13px 20px;
+    font-size: 0.74rem;
+    display: block;
+    text-align: center;
+  }
+
+  /* ── Tables ── */
+  table {
+    font-size: 0.78rem;
+  }
+  th, td {
+    padding: 8px 10px;
+  }
+
+  /* ── SiteNav mobile menu ── */
+  .mobile-menu {
+    padding-bottom: var(--space-sm);
+  }
+
+  /* ── Articles page ── */
+  .articles-list-item {
+    padding: var(--space-sm) 0;
+  }
+  .articles-list-item h3 {
+    font-size: 1rem;
+  }
+}
+
+/* ── Extra small screens 375px and below ── */
+@media (max-width: 480px) {
+  .hero-editorial h1 {
+    font-size: clamp(1.85rem, 10vw, 2.5rem) !important;
+  }
+  .routing-grid {
+    grid-template-columns: 1fr;
+  }
+  .proof-logos span {
+    font-size: 0.68rem;
+  }
+  .proof-logos .dot {
+    display: none;
+  }
+  .field-notes-split {
+    gap: var(--space-md);
+  }
+  .ecosystem-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ─── Framework Diagram Containers ───────────────────────────────── */
 
 .fw-diagram-container {

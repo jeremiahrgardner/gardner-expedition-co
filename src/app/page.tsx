@@ -203,8 +203,8 @@ export default function HomePage() {
         {/* ─── FIELD NOTES TEASER ──────────────────────────── */}
         <section className="section" style={{ padding: 'var(--space-xl) 0' }}>
           <div className="container">
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-xl)', alignItems: 'start' }}>
-              <div>
+            <div className="field-notes-split">
+              <div className="field-notes-left">
                 <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', fontWeight: 700, marginBottom: 'var(--space-sm)' }}>
                   Field Notes
                 </h2>
@@ -218,7 +218,7 @@ export default function HomePage() {
                   </Link>
                 </div>
               </div>
-              <div>
+              <div className="field-notes-right">
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 0, borderTop: '1px solid var(--border)' }}>
                   {[
                     { title: 'On Navigating Uncertainty Without a Map', date: 'Field Notes', href: '/articles/navigating-uncertainty' },
