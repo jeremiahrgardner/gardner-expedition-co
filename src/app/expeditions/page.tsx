@@ -327,7 +327,7 @@ export default function ExpeditionsPage() {
                       <span className="tag">{exp.tag}</span>
                       {exp.year && <span className="exp-year">{exp.year}</span>}
                     </div>
-                    <h3 className="featured-exp-title">{exp.name} \u2014 {exp.subtitle}</h3>
+                    <h3 className="featured-exp-title">{exp.name} — {exp.subtitle}</h3>
                     <p className="featured-exp-subtitle">{exp.tagline}</p>
                     <p className="featured-exp-narrative">{exp.narrative}</p>
                     {exp.extraNarrative && <p className="featured-exp-narrative">{exp.extraNarrative}</p>}
