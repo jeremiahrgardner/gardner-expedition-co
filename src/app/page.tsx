@@ -2,87 +2,88 @@ import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 import KitNewsletterForm from '@/components/KitNewsletterForm'
-import FieldNotebookOrnaments from '@/components/diagrams/FieldNotebookOrnaments'
-import PaperTexture from '@/components/diagrams/PaperTexture'
 
-const frameworks = [
+const fieldSystems = [
   {
     href: '/frameworks/goldline',
-    name: 'Goldline™',
-    subtitle: 'Find the center that lets you explore.',
-    desc: 'A personal clarity and alignment framework for identifying your central contribution, building the systems that support it, and navigating growth without losing your center.',
+    name: 'The Goldline Framework™',
+    job: 'For personal clarity and centered contribution.',
+    desc: 'Identify your central contribution, build the systems that support it, and navigate growth without losing your center.',
   },
   {
     href: '/frameworks/the-read',
     name: 'The Read™',
-    subtitle: 'See what the moment is really telling you.',
-    desc: 'A diagnostic leadership framework for observing beneath the surface, separating symptoms from signals, and choosing the intervention the moment actually needs.',
+    job: 'For diagnosing what is really happening in a room, team, or system.',
+    desc: 'Observe beneath the surface, separate symptoms from signals, and choose the intervention the moment actually needs.',
   },
   {
     href: '/frameworks/cave-growth',
     name: 'CAVE Growth System™',
-    subtitle: 'Navigate growth when the path is not yet visible.',
-    desc: 'An organizational growth system that helps teams surface assumptions, learn from customers, run rapid experiments, and make evidence-based decisions under uncertainty.',
+    job: 'For building evidence-led growth capability.',
+    desc: 'Surface assumptions, learn from customers, run rapid experiments, and make evidence-based decisions under uncertainty.',
   },
   {
     href: '/frameworks/the-search',
     name: 'The Search System™',
-    subtitle: 'Make exploration a permanent enterprise function.',
-    desc: 'An operating model for organizations that need to continuously discover, validate, and invest in new opportunities alongside the work of execution.',
-  },
-  {
-    href: '/frameworks/coaching-metaskills',
-    name: 'Coaching Metaskills™',
-    subtitle: 'Build the human capability to lead through uncertainty.',
-    desc: 'A capability-building system for leaders and coaches who need to observe clearly, diagnose accurately, intervene deliberately, and help teams learn from evidence.',
+    job: 'For turning uncertainty into disciplined exploration.',
+    desc: 'An operating model for organizations that need to continuously discover, validate, and invest in new opportunities.',
   },
   {
     href: '/frameworks/progress-metrics',
     name: 'Progress Metrics™',
-    subtitle: 'Measure evidence before certainty arrives.',
-    desc: 'A measurement system for tracking learning, confidence, and opportunity progress before traditional business metrics are available.',
-  },
-  {
-    href: '/frameworks/program-as-product',
-    name: 'Program as a Product™',
-    subtitle: 'Build transformation systems that evolve.',
-    desc: 'A change philosophy that treats organizational programs as evolving products shaped by stakeholder insight, adoption patterns, experimentation, and evidence.',
+    job: 'For measuring learning before outcomes arrive.',
+    desc: 'Track learning, confidence, and opportunity progress before traditional business metrics are available.',
   },
 ]
 
-const essays = [
+const routingCards = [
   {
-    href: '/articles/navigating-uncertainty',
-    title: 'On Navigating Uncertainty Without a Map',
-    date: 'Field Notes',
-    excerpt: 'The absence of certainty is not the absence of direction. It is the condition under which direction is most honestly discovered.',
+    href: 'https://jeremiahgardner.com',
+    title: 'Book Jeremiah to Speak',
+    desc: 'For conferences, leadership events, and offsites.',
   },
   {
-    href: '/articles/the-intelligence-of-systems',
-    title: 'The Intelligence of Systems',
-    date: 'Field Notes',
-    excerpt: "Every organization is a living system with its own gravity, resistance, and momentum. The leader's task is not to control it — but to read it.",
+    href: 'https://haloclinepress.com',
+    title: 'Read the Books',
+    desc: 'For leaders who want the ideas in a practical, durable form.',
   },
   {
-    href: '/articles/alignment-as-practice',
-    title: 'Alignment as Practice',
-    date: 'Field Notes',
-    excerpt: 'Alignment is not a state you reach. It is a discipline you practice — daily, in the face of evidence that suggests you are off course.',
+    href: '/diagnostics',
+    title: 'Use a Diagnostic',
+    desc: 'For individuals or teams trying to see their current pattern clearly.',
+  },
+  {
+    href: 'https://www.deadreckon.io',
+    title: 'Bring This Into Your Organization',
+    desc: 'For teams navigating uncertainty, change, evidence, and growth.',
   },
 ]
 
-const expeditions = [
+const ecosystemItems = [
   {
-    href: '/expeditions',
-    title: 'Roche Diabetes Care — Organizational Navigation',
-    tag: 'Healthcare',
-    desc: 'A multi-year engagement navigating the intersection of culture, capability, and large-scale change in a global healthcare organization.',
+    href: 'https://jeremiahgardner.com',
+    name: 'JeremiahGardner.com',
+    desc: 'Speaking and event booking',
   },
   {
-    href: '/expeditions',
-    title: 'Regional Health System — Capability Architecture',
-    tag: 'Healthcare',
-    desc: 'Designing a leadership development architecture that could sustain growth across a rapidly expanding regional footprint.',
+    href: 'https://haloclinepress.com',
+    name: 'Halocline Press',
+    desc: 'Books and publishing',
+  },
+  {
+    href: 'https://asknoema.ai',
+    name: 'AskNoema.ai',
+    desc: 'AI-guided leadership reflection',
+  },
+  {
+    href: 'https://www.deadreckon.io',
+    name: 'DeadReckon',
+    desc: 'Organizational systems and advisory work',
+  },
+  {
+    href: 'https://gardnerunderwater.com',
+    name: 'Gardner Underwater',
+    desc: 'Exploration, training, and source metaphor',
   },
 ]
 
@@ -92,347 +93,168 @@ export default function HomePage() {
       <SiteNav />
       <div className="page-wrapper">
 
-        {/* ─── HERO — Asymmetric Editorial Composition ─── */}
+        {/* ─── HERO ───────────────────────────────────────── */}
         <section className="hero-editorial">
-          <div className="container">
-            <span className="eyebrow-label">Gardner Expedition Co.</span>
-            
-            <h1 className="hero-headline">
-              Built for leaders who cannot wait for certainty.
-            </h1>
-            
-            <div className="hero-pull-quote">
-              <div className="pull-quote-bar" />
-              <p>Frameworks and field systems for navigating complexity — from the individual to the enterprise.</p>
-            </div>
-            
-            <div className="hero-description">
-              <p className="hero-desc-text">
-                Frameworks, diagnostics, and field systems for seeing clearly,
-                deciding wisely, and moving through the unknown — from personal
-                clarity to enterprise-level exploration.
-              </p>
-            </div>
-            
-            <div className="hero-cta-single">
+          <div className="hero-editorial-inner">
+            <h1>Navigate uncertainty before it becomes drift.</h1>
+            <p className="hero-sub">
+              Gardner Expedition Co. builds field-tested frameworks, books, diagnostics,
+              and advisory systems that help leaders see what is really happening, decide
+              what matters, and move with confidence.
+            </p>
+            <div className="hero-cta-row">
               <Link href="/frameworks" className="btn-primary">
-                Explore the Frameworks
+                Explore the Field Systems
+              </Link>
+              <Link href="https://jeremiahgardner.com" className="btn-ghost">
+                Book Jeremiah to Speak
               </Link>
             </div>
           </div>
         </section>
 
-        {/* ─── TRUST STRIP — Authority signals before philosophy ─── */}
-        <section className="trust-strip-home">
-          <div className="trust-strip-home-inner">
-            <p className="trust-strip-home-label">Frameworks developed through work with</p>
-            <div className="trust-strip-home-logos">
-              <span className="trust-strip-org">Roche</span>
-              <span className="trust-strip-dot">·</span>
-              <span className="trust-strip-org">Genentech</span>
-              <span className="trust-strip-dot">·</span>
-              <span className="trust-strip-org">Nike</span>
-              <span className="trust-strip-dot">·</span>
-              <span className="trust-strip-org">GE</span>
-              <span className="trust-strip-dot">·</span>
-              <span className="trust-strip-org">ING</span>
-              <span className="trust-strip-dot">·</span>
-              <span className="trust-strip-org">eBay</span>
-              <span className="trust-strip-dot">·</span>
-              <span className="trust-strip-org">American Family</span>
-              <span className="trust-strip-dot">·</span>
-              <span className="trust-strip-org">WD-40</span>
-            </div>
-            <div className="trust-strip-outcomes">
-              <div className="trust-outcome">
-                <span className="trust-outcome-num">$50M</span>
-                <span className="trust-outcome-label">new NPV identified</span>
-              </div>
-              <span className="trust-strip-divider"></span>
-              <div className="trust-outcome">
-                <span className="trust-outcome-num">10x</span>
-                <span className="trust-outcome-label">portfolio growth in new areas</span>
-              </div>
-              <span className="trust-strip-divider"></span>
-              <div className="trust-outcome">
-                <span className="trust-outcome-num">30x</span>
-                <span className="trust-outcome-label">acceleration in evidence-based decisions</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ─── Transitional Zone ─── */}
-        <div className="section-transition">
-          <div className="container">
-            <div className="transition-rule">
-              <FieldNotebookOrnaments variant="divider" className="transition-ornament" color="#F1C233" opacity={0.5} />
-            </div>
-          </div>
-        </div>
-
-        {/* ─── CORE THESIS — Left-offset with paper texture ─── */}
-        <section className="section thesis-section">
-          <div className="relative">
-            <PaperTexture className="paper-texture-overlay" opacity={0.035} variant="fine" />
-            <div className="container thesis-inner">
-              <span className="gold-rule" />
-              <h2 className="thesis-headline">
-                The work begins with a single observation.
-              </h2>
-              <div className="thesis-pull-quote">
-                <p>
-                  Most organizational struggle is not a competence problem. It is a clarity problem.
-                </p>
-              </div>
-              <p className="thesis-body">
-                Most organizational struggle is not a competence problem. It is a
-                clarity problem — a failure to accurately read the system you are
-                operating within, to distinguish signal from noise, and to act with
-                conviction in the absence of complete information.
-              </p>
-              <p className="thesis-body">
-                Gardner Expedition Co. exists to build the intellectual infrastructure
-                that makes high-quality navigation possible: frameworks that bring
-                structure to complexity, diagnostics that reveal what is actually
-                happening, and field notes that document the patterns worth knowing.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* ─── Section Break ─── */}
-        <div className="section-break">
-          <div className="container">
-          </div>
-        </div>
-
-        {/* ─── FRAMEWORKS — Sparse header, field notebook cards ─── */}
-        <section className="section frameworks-section">
-          <div className="container">
-            <header className="frameworks-header">
-              <h2 className="frameworks-title">Frameworks</h2>
-            </header>
-            
-            <div className="framework-grid">
-              {frameworks.map(({ href, name, subtitle, desc }) => (
-                <Link key={href} href={href} className="framework-card">
-                  <h3 className="framework-card-title">{name}</h3>
-                  <p className="framework-subtitle">{subtitle}</p>
-                  <p className="framework-desc">{desc}</p>
-                  <div className="framework-arrow">
-                    <svg width="24" height="8" viewBox="0 0 24 8" aria-hidden="true">
-                      <line x1="0" y1="4" x2="18" y2="4" stroke="currentColor" strokeWidth="0.75" opacity={0.6} />
-                      <polyline points="14,1 18,4 14,7" fill="none" stroke="currentColor" strokeWidth="0.75" opacity={0.6} />
-                    </svg>
-                  </div>
-                </Link>
+        {/* ─── ROUTING CARDS ────────────────────────────────── */}
+        <section className="routing-section">
+          <div className="routing-section-inner">
+            <p className="routing-section-label">Where are you trying to move?</p>
+            <div className="routing-grid">
+              {routingCards.map(({ href, title, desc }) => (
+                <a key={title} href={href} className="routing-card" target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}>
+                  <p className="routing-card-title">{title}</p>
+                  <p className="routing-card-desc">{desc}</p>
+                  <span className="routing-card-arrow">Explore →</span>
+                </a>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ─── Section Break ─── */}
-        <div className="section-break">
-          <div className="container">
-          </div>
-        </div>
-
-        {/* ─── FIELD NOTES ─── */}
-        <section className="section field-notes-section">
-          <div className="container">
-            <header className="frameworks-header">
-              <h2 className="frameworks-title">Field Notes</h2>
-            </header>
-            <div className="essay-grid">
-              {essays.map(({ href, title, date, excerpt }) => (
-                <Link key={title} href={href} className="essay-card">
-                  <p className="essay-card-meta">{date}</p>
-                  <h3>{title}</h3>
-                  <p>{excerpt}</p>
-                </Link>
-              ))}
-            </div>
-            <div style={{ marginTop: 'var(--space-md)' }}>
-              <Link href="/articles" className="btn-ghost" style={{ fontSize: '0.78rem' }}>
-                All Field Notes →
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* ─── Section Break ─── */}
-        <div className="section-break">
-          <div className="container">
-          </div>
-        </div>
-
-        {/* ─── EXPEDITIONS — Evidence surfacing ─── */}
-        <section className="section expeditions-section">
-          <div className="container">
-            <header className="frameworks-header">
-              <h2 className="frameworks-title">Expeditions</h2>
-            </header>
-            <div className="expeditions-intro">
-              <p className="expeditions-intro-label">Built in the Field</p>
-              <p className="expeditions-intro-quote">FastWorks. Ignite. PACE. The names change. The pattern stays the same.</p>
-              <p className="expeditions-intro-line">Enterprise transformation work with Roche, Genentech, ING, Nike, GE, and more.</p>
-            </div>
-            <div className="expedition-list">
-              {expeditions.map(({ href, title, tag, desc }) => (
-                <Link key={title} href={href} className="expedition-card">
-                  <div>
-                    <div className="expedition-title">{title}</div>
-                    <div className="expedition-desc">{desc}</div>
-                  </div>
-                  <span className="expedition-tag">{tag}</span>
-                </Link>
-              ))}
-            </div>
-            <div style={{ marginTop: 'var(--space-md)' }}>
-              <Link href="/expeditions" className="btn-ghost" style={{ fontSize: '0.78rem' }}>
-                See all expeditions →
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* ─── Section Break ─── */}
-        <div className="section-break">
-          <div className="container">
-          </div>
-        </div>
-
-        {/* ─── DIAGNOSTICS TEASER — Dark section with texture ─── */}
-        <section className="section diagnostics-section">
-          <div className="relative">
-            <div className="diagnostics-texture">
-              <svg
-                viewBox="0 0 400 300"
-                preserveAspectRatio="xMidYMid slice"
-                aria-hidden="true"
-                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', opacity: 0.06 }}
-              >
-                {/* Topographic contour lines */}
-                <ellipse cx="200" cy="150" rx="180" ry="120" fill="none" stroke="#F1C233" strokeWidth="0.5" />
-                <ellipse cx="200" cy="150" rx="140" ry="95" fill="none" stroke="#F1C233" strokeWidth="0.5" />
-                <ellipse cx="200" cy="150" rx="100" ry="70" fill="none" stroke="#F1C233" strokeWidth="0.5" />
-                <ellipse cx="200" cy="150" rx="60" ry="45" fill="none" stroke="#F1C233" strokeWidth="0.5" />
-                <ellipse cx="200" cy="150" rx="25" ry="20" fill="none" stroke="#F1C233" strokeWidth="0.5" />
-                {/* Cross contour lines for irregularity */}
-                <path d="M 30 100 Q 100 80 200 100 T 370 100" fill="none" stroke="#F1C233" strokeWidth="0.3" />
-                <path d="M 50 180 Q 120 200 200 180 T 350 180" fill="none" stroke="#F1C233" strokeWidth="0.3" />
-                <path d="M 80 250 Q 150 230 200 250 T 320 250" fill="none" stroke="#F1C233" strokeWidth="0.3" />
-              </svg>
-            </div>
-            <div className="container diagnostics-inner">
-              <span className="eyebrow" style={{ color: 'var(--goldline)' }}>Diagnostics</span>
-              <h2 style={{ color: 'var(--paper)', marginTop: 'var(--space-sm)', marginBottom: 'var(--space-md)' }}>
-                See your starting point clearly.
-              </h2>
-              <p style={{ color: 'var(--ink-subtle)', fontSize: '1rem', maxWidth: '52ch', margin: '0 auto var(--space-md)' }}>
-                Gardner Expedition Co. develops diagnostics that help leaders and organizations
-                make uncertainty visible. Tools are available in pilot form or under active
-                development — designed for leaders who want accuracy before action.
-              </p>
-              <Link href="/diagnostics" className="btn-primary" style={{ background: 'var(--goldline)', color: 'var(--ink)' }}>
-                Explore Diagnostics
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* ─── Section Break ─── */}
-        <div className="section-break">
-          <div className="container">
-          </div>
-        </div>
-
-        {/* ─── MEDIA STRIP ─── */}
-        <section className="section media-section">
-          <div className="container">
-            <div className="section-header">
-              <span className="eyebrow">Books, Speaking, Podcast</span>
-              <h2>Media</h2>
-            </div>
-            <div className="media-grid">
-              <Link href="https://haloclinepress.com/books/the-read" className="media-card" target="_blank" rel="noopener noreferrer">
-                <div className="media-card-box" style={{ background: 'var(--ink)' }}>
-                  <span>The Read</span>
-                </div>
-                <div className="media-card-title">The Read</div>
-                <div className="media-card-sub">Book · October 2026</div>
-              </Link>
-              <Link href="/media" className="media-card">
-                <div className="media-card-box" style={{ background: 'var(--ink-light)' }}>
-                  <span>Podcast</span>
-                </div>
-                <div className="media-card-title">Exploration Imperative Podcast</div>
-                <div className="media-card-sub">Podcast Series</div>
-              </Link>
-              <Link href="/media" className="media-card">
-                <div className="media-card-box" style={{ background: 'var(--ink-light)' }}>
-                  <span>Speaking</span>
-                </div>
-                <div className="media-card-title">Keynote Speaking</div>
-                <div className="media-card-sub">Conferences & Organizations</div>
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* ─── Section Break ─── */}
-        <div className="section-break">
-          <div className="container">
-          </div>
-        </div>
-
-        {/* ─── WORK WITH US ─── */}
-        <section className="section" style={{ background: 'var(--ink)', color: 'var(--paper)' }}>
-          <div className="container" style={{ maxWidth: '680px', textAlign: 'center' }}>
-            <span className="eyebrow" style={{ color: 'var(--goldline)' }}>Work With Us</span>
-            <h2 style={{ color: 'var(--paper)', marginTop: 'var(--space-sm)', marginBottom: 'var(--space-md)' }}>
-              Three ways to engage.
+        {/* ─── PROBLEM SECTION ─────────────────────────────── */}
+        <section className="problem-section">
+          <div className="problem-inner">
+            <h2 className="problem-headline">
+              The problem is not uncertainty. The problem is misreading it.
             </h2>
-            <div style={{ display: 'grid', gap: 'var(--space-md)', textAlign: 'left', marginTop: 'var(--space-lg)' }}>
-              <div style={{ borderTop: '1px solid var(--ink-light)', paddingTop: 'var(--space-md)' }}>
-                <p style={{ fontWeight: 600, color: 'var(--goldline)', fontSize: '0.85rem', marginBottom: '0.25rem' }}>Speaking & Keynotes</p>
-                <p style={{ color: 'var(--ink-subtle)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>For conference planners and event teams.</p>
-                <a href="https://jeremiahgardner.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--paper)', textDecoration: 'underline', fontSize: '0.85rem' }}>JeremiahGardner.com →</a>
+            <p className="problem-body">
+              Most leaders do not fail because they lack intelligence, effort, or ambition.
+              They fail because <strong>the room is sending signals they have not learned to read</strong>.
+              Teams drift. Decisions slow down. Evidence gets replaced by opinion.
+              People perform alignment while quietly disengaging.
+            </p>
+            <p className="problem-body" style={{ marginBottom: '2rem' }}>
+              Gardner Expedition Co. exists to help leaders read the terrain,
+              find the line, and move.
+            </p>
+            <p className="problem-closing">
+              The capacity to see clearly in uncertain conditions is not a talent.
+              It is a practice — and it can be learned.
+            </p>
+          </div>
+        </section>
+
+        {/* ─── FIELD SYSTEMS ──────────────────────────────── */}
+        <section className="fieldsystems-section">
+          <div className="fieldsystems-section-inner">
+            <div className="fieldsystems-header">
+              <h2 className="fieldsystems-title">Field Systems</h2>
+              <p className="fieldsystems-sub">
+                Tools for specific jobs — not a library to browse, but a set of instruments
+                calibrated for real leadership situations.
+              </p>
+            </div>
+            <div className="fieldsystem-grid">
+              {fieldSystems.map(({ href, name, job, desc }) => (
+                <a key={href} href={href} className="fieldsystem-card">
+                  <p className="fieldsystem-name">{name}</p>
+                  <p className="fieldsystem-job">{job}</p>
+                  <p className="fieldsystem-desc">{desc}</p>
+                  <span className="fieldsystem-arrow">→</span>
+                </a>
+              ))}
+            </div>
+            <div style={{ marginTop: 'var(--space-md)' }}>
+              <Link href="/frameworks" className="btn-ghost" style={{ fontSize: '0.78rem' }}>
+                See all frameworks →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── PROOF LAYER ────────────────────────────────── */}
+        <section className="proof-section">
+          <div className="proof-inner">
+            <p className="proof-label">Field-tested with teams and leaders across</p>
+            <div className="proof-logos">
+              {['Roche', 'Nike', 'ING', 'eBay', 'GE', 'Genentech'].map((org, i) => (
+                <span key={org}>
+                  {i > 0 && <span className="dot">·</span>}
+                  <span>{org}</span>
+                </span>
+              ))}
+            </div>
+            <p className="proof-text">
+              These systems were not built in theory. They emerged from keynote stages,
+              executive rooms, innovation programs, leadership offsites, and high-pressure
+              environments where clarity had to become action.
+            </p>
+          </div>
+        </section>
+
+        {/* ─── FIELD NOTES TEASER ──────────────────────────── */}
+        <section className="section" style={{ padding: 'var(--space-xl) 0' }}>
+          <div className="container">
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-xl)', alignItems: 'start' }}>
+              <div>
+                <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', fontWeight: 700, marginBottom: 'var(--space-sm)' }}>
+                  Field Notes
+                </h2>
+                <p style={{ fontFamily: 'var(--font-serif)', color: 'var(--ink-subtle)', fontSize: '1.05rem', lineHeight: 1.7 }}>
+                  Essays written when something is worth saying — on reading rooms,
+                  navigating uncertainty, and the discipline of evidence-based movement.
+                </p>
+                <div style={{ marginTop: 'var(--space-md)' }}>
+                  <Link href="/articles" className="btn-ghost" style={{ fontSize: '0.78rem' }}>
+                    Read Field Notes →
+                  </Link>
+                </div>
               </div>
-              <div style={{ borderTop: '1px solid var(--ink-light)', paddingTop: 'var(--space-md)' }}>
-                <p style={{ fontWeight: 600, color: 'var(--goldline)', fontSize: '0.85rem', marginBottom: '0.25rem' }}>Enterprise Advisory</p>
-                <p style={{ color: 'var(--ink-subtle)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>For organizations seeking structured frameworks and diagnostic work.</p>
-                <a href="https://www.deadreckon.io" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--paper)', textDecoration: 'underline', fontSize: '0.85rem' }}>DeadReckon.io →</a>
-              </div>
-              <div style={{ borderTop: '1px solid var(--ink-light)', paddingTop: 'var(--space-md)' }}>
-                <p style={{ fontWeight: 600, color: 'var(--goldline)', fontSize: '0.85rem', marginBottom: '0.25rem' }}>Books & Publications</p>
-                <p style={{ color: 'var(--ink-subtle)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>For readers exploring the frameworks in depth.</p>
-                <a href="https://haloclinepress.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--paper)', textDecoration: 'underline', fontSize: '0.85rem' }}>HaloclinePress.com →</a>
+              <div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 0, borderTop: '1px solid var(--border)' }}>
+                  {[
+                    { title: 'On Navigating Uncertainty Without a Map', date: 'Field Notes', href: '/articles/navigating-uncertainty' },
+                    { title: 'The Intelligence of Systems', date: 'Field Notes', href: '/articles/the-intelligence-of-systems' },
+                    { title: 'Alignment as Practice', date: 'Field Notes', href: '/articles/alignment-as-practice' },
+                  ].map(({ title, date, href }) => (
+                    <a key={title} href={href} style={{ display: 'block', padding: 'var(--space-sm) 0', borderBottom: '1px solid var(--border)', textDecoration: 'none', color: 'var(--ink)' }}>
+                      <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--goldline)', marginBottom: '4px' }}>{date}</p>
+                      <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', fontWeight: 600 }}>{title}</p>
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ─── FIELD NOTES NEWSLETTER ─── */}
-        <section className="section" style={{ background: 'var(--paper)', borderTop: '1px solid var(--soft-gray)', borderBottom: '1px solid var(--soft-gray)' }}>
+        {/* ─── ECOSYSTEM MAP ──────────────────────────────── */}
+        <section className="ecosystem-section">
+          <div className="ecosystem-inner">
+            <h2 className="ecosystem-headline">The Gardner Expedition Co. ecosystem</h2>
+            <div className="ecosystem-grid">
+              {ecosystemItems.map(({ href, name, desc }) => (
+                <a key={name} href={href} className="ecosystem-item" target="_blank" rel="noopener noreferrer">
+                  <p className="ecosystem-name">{name}</p>
+                  <p className="ecosystem-desc">{desc}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ─── NEWSLETTER ─────────────────────────────────── */}
+        <section className="section" style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
           <div className="container" style={{ maxWidth: '640px' }}>
             <KitNewsletterForm source="gec" heading="Stay in the field." subtext="Essays, frameworks, and observations — written when something is worth saying." />
-          </div>
-        </section>
-
-        {/* ─── CLOSING — Atmospheric pull quote ─── */}
-        <section className="closing-section">
-          <div className="relative">
-            <PaperTexture className="paper-texture-overlay" opacity={0.04} variant="fine" />
-            <div className="container closing-inner">
-              <blockquote className="closing-quote">
-                The capacity to see clearly in uncertain conditions is not a talent. It is a practice.
-              </blockquote>
-              <Link href="/about" className="closing-link">
-                About the work →
-              </Link>
-            </div>
           </div>
         </section>
 

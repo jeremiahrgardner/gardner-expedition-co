@@ -125,10 +125,10 @@ export default function CAVEGrowthDiagram({
       <path
         d={innerPoints}
         fill="#0A0A0A"
-        opacity="0.03"
+        fillOpacity="0.03"
         stroke="#0A0A0A"
         strokeWidth="0.6"
-        opacity="0.2"
+        strokeOpacity="0.2"
       />
 
       {/* Connecting lines from center to each phase marker */}

@@ -8,12 +8,11 @@ export default function SiteNav() {
 
   const links = [
     { href: '/frameworks', label: 'Frameworks' },
-    { href: '/articles', label: 'Articles' },
     { href: '/expeditions', label: 'Expeditions' },
-    { href: '/diagnostics', label: 'Diagnostics' },
-    { href: '/media', label: 'Media' },
-    { href: '/about', label: 'About' },
     { href: 'https://haloclinepress.com', label: 'Books' },
+    { href: '/diagnostics', label: 'Diagnostics' },
+    { href: 'https://jeremiahgardner.com', label: 'Speaking' },
+    { href: '/about', label: 'About' },
   ]
 
   return (
@@ -30,8 +29,8 @@ export default function SiteNav() {
             </li>
           ))}
           <li>
-            <Link href="/diagnostics" className="nav-cta">
-              Begin Assessment
+            <Link href="/start-here" className="nav-cta">
+              Start Here
             </Link>
           </li>
         </ul>
@@ -63,8 +62,8 @@ export default function SiteNav() {
             {label}
           </Link>
         ))}
-        <Link href="/diagnostics" onClick={() => setMenuOpen(false)}>
-          Begin Assessment
+        <Link href="/start-here" onClick={() => setMenuOpen(false)}>
+          Start Here
         </Link>
       </div>
     </nav>
