@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
+import styles from './Expeditions.module.css'
 
 import { metadataFor } from '@/lib/metadata'
 
@@ -161,11 +162,26 @@ const responses = [
   'Transform into systems people can actually use.',
 ]
 
+const organizationLogos: Record<string, string> = {
+  'Roche Diabetes Care': 'roche',
+  'Genentech PHC': 'genentech',
+  ING: 'ing',
+  eBay: 'ebay',
+  GE: 'ge',
+  'American Family Insurance': 'american-family',
+  'Nike Innovation Lab': 'nike',
+  'John Deere': 'john-deere',
+  Siemens: 'siemens',
+  'AIA Insurance': 'aia',
+  Transavia: 'transavia',
+  'WD-40': 'wd40',
+}
+
 export default function ExpeditionsPage() {
   return (
     <>
       <SiteNav />
-      <main id="main-content" tabIndex={-1} className="page-wrapper">
+      <main id="main-content" tabIndex={-1} className={`page-wrapper ${styles.page}`}>
 
         {/* \u2500\u2500\u2500 HERO \u2500\u2500\u2500 */}
         <section className="exp-hero">
@@ -183,18 +199,20 @@ export default function ExpeditionsPage() {
             </svg>
           </div>
 
-          <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '800px' }}>
+          <div className={`container ${styles.heroGrid}`}>
+            <div className={styles.heroLead}>
             <span className="exp-section-label">Expeditions</span>
 
             <h1 className="exp-headline">
               Built in the Field,<br />
-              <span style={{ color: 'var(--goldline)' }}>Not the Lab</span>
+              <span className={styles.heroAccent}>Not the Lab</span>
             </h1>
 
             <p className="exp-subhead">
               Gardner Expedition Co.'s frameworks were shaped through years of enterprise transformation work with global organizations navigating uncertainty, growth, customer change, and strategic reinvention.
             </p>
 
+            </div>
             <div className="exp-hero-body">
               <p>The work has taken different forms across different organizations.</p>
               <p>GE called it <em>FastWorks</em>.</p>
@@ -215,40 +233,40 @@ export default function ExpeditionsPage() {
           <div className="trust-strip-inner">
             <p className="trust-strip-label">Selected organizations connected to this body of work</p>
             <div className="trust-grid">
-              <a className="trust-logo-img" href="https://en.wikipedia.org/wiki/General_Electric" target="_blank" rel="noopener noreferrer" aria-label="General Electric">
+              <a className="trust-logo-img" href="#exp-ge" aria-label="General Electric">
                 <img src="/images/logos/ge.svg" alt="GE" loading="lazy" />
               </a>
-              <a className="trust-logo-img" href="https://en.wikipedia.org/wiki/ING_Group" target="_blank" rel="noopener noreferrer" aria-label="ING">
-                <img src="/images/logos/ing.svg" alt="ING" loading="lazy" />
+              <a className="trust-logo-img" href="#exp-ing" aria-label="ING">
+                <span className={styles.companyWordmark} aria-hidden="true" data-brand-label>ING</span>
               </a>
-              <a className="trust-logo-img" href="https://en.wikipedia.org/wiki/Roche" target="_blank" rel="noopener noreferrer" aria-label="Roche">
+              <a className="trust-logo-img" href="#exp-roche" aria-label="Roche">
                 <img src="/images/logos/roche.svg" alt="Roche" loading="lazy" />
               </a>
-              <a className="trust-logo-img" href="https://en.wikipedia.org/wiki/Genentech" target="_blank" rel="noopener noreferrer" aria-label="Genentech">
+              <a className="trust-logo-img" href="#exp-genentech" aria-label="Genentech">
                 <img src="/images/logos/genentech.svg" alt="Genentech" loading="lazy" />
               </a>
-              <a className="trust-logo-img" href="https://en.wikipedia.org/wiki/EBay" target="_blank" rel="noopener noreferrer" aria-label="eBay">
+              <a className="trust-logo-img" href="#exp-ebay" aria-label="eBay">
                 <img src="/images/logos/ebay.svg" alt="eBay" loading="lazy" />
               </a>
-              <a className="trust-logo-img" href="https://en.wikipedia.org/wiki/Nike,_Inc." target="_blank" rel="noopener noreferrer" aria-label="Nike">
+              <a className="trust-logo-img" href="#exp-nike" aria-label="Nike">
                 <img src="/images/logos/nike.svg" alt="Nike" loading="lazy" />
               </a>
-              <a className="trust-logo-img" href="https://en.wikipedia.org/wiki/American_Family_Insurance" target="_blank" rel="noopener noreferrer" aria-label="American Family Insurance">
+              <a className="trust-logo-img" href="#exp-american-family" aria-label="American Family Insurance">
                 <img src="/images/logos/american-family.svg" alt="American Family Insurance" loading="lazy" />
               </a>
-              <a className="trust-logo-img" href="https://en.wikipedia.org/wiki/WD-40_Company" target="_blank" rel="noopener noreferrer" aria-label="WD-40">
-                <img src="/images/logos/wd40.svg" alt="WD-40" loading="lazy" />
+              <a className="trust-logo-img" href="#exp-wd40" aria-label="WD-40">
+                <span className={styles.companyWordmark} aria-hidden="true" data-brand-label>WD-40</span>
               </a>
-              <a className="trust-logo-img" href="https://en.wikipedia.org/wiki/John_Deere" target="_blank" rel="noopener noreferrer" aria-label="John Deere">
+              <a className="trust-logo-img" href="#exp-john-deere" aria-label="John Deere">
                 <img src="/images/logos/john-deere.svg" alt="John Deere" loading="lazy" />
               </a>
-              <a className="trust-logo-img" href="https://en.wikipedia.org/wiki/Siemens" target="_blank" rel="noopener noreferrer" aria-label="Siemens">
+              <a className="trust-logo-img" href="#exp-siemens" aria-label="Siemens">
                 <img src="/images/logos/siemens.svg" alt="Siemens" loading="lazy" />
               </a>
-              <a className="trust-logo-img" href="https://en.wikipedia.org/wiki/AIA_Group" target="_blank" rel="noopener noreferrer" aria-label="AIA">
+              <a className="trust-logo-img" href="#exp-aia" aria-label="AIA">
                 <img src="/images/logos/aia.svg" alt="AIA" loading="lazy" />
               </a>
-              <a className="trust-logo-img" href="https://en.wikipedia.org/wiki/Transavia" target="_blank" rel="noopener noreferrer" aria-label="Transavia">
+              <a className="trust-logo-img" href="#exp-transavia" aria-label="Transavia">
                 <img src="/images/logos/transavia.svg" alt="Transavia" loading="lazy" />
               </a>
             </div>
@@ -290,15 +308,18 @@ export default function ExpeditionsPage() {
         {/* \u2500\u2500\u2500 METHODS \u2500\u2500\u2500 */}
         <section className="exp-methods" style={{ background: 'var(--paper-alt)' }}>
           <div className="exp-methods-inner">
+            <div className={styles.sectionIntro}>
             <p className="exp-section-label">Methods Proven in Practice</p>
             <h2 className="exp-section-title">Operational doctrine, not theory.</h2>
             <p className="exp-section-lead">Each method below was developed to solve a specific, recurring challenge in enterprise transformation work.</p>
 
+            </div>
+            <div className={styles.methodsList}>
             {methods.map((m, i) => (
               <details key={i} className="method-card">
                 <summary className="method-header">
                   <span className="method-name">{m.name}</span>
-                  <span className="method-chevron">+</span>
+                  <span className="method-chevron" aria-hidden="true">+</span>
                 </summary>
                 <div className="method-details">
                   <div>
@@ -314,6 +335,7 @@ export default function ExpeditionsPage() {
                 </div>
               </details>
             ))}
+            </div>
           </div>
         </section>
 
@@ -324,9 +346,16 @@ export default function ExpeditionsPage() {
             <h2 className="exp-section-title">Sustained engagements that shaped the frameworks.</h2>
 
             {featuredExpeditions.map((exp, i) => (
-              <div key={i} className="featured-expedition">
+              <div key={i} id={`exp-${organizationLogos[exp.name]}`} className="featured-expedition">
                 <div className="featured-exp-ed">
                   <div>
+                    <div className={styles.expeditionMark}>
+                      {exp.name === 'ING' ? (
+                        <span className={styles.companyWordmark} aria-hidden="true" data-brand-label>ING</span>
+                      ) : (
+                        <img src={`/images/logos/${organizationLogos[exp.name]}.svg`} alt="" width="120" height="48" loading="lazy" />
+                      )}
+                    </div>
                     <div className="featured-exp-meta">
                       <span className="tag">{exp.tag}</span>
                       {exp.year && <span className="exp-year">{exp.year}</span>}
@@ -374,7 +403,12 @@ export default function ExpeditionsPage() {
 
             <div className="engagement-grid">
               {engagements.map(item => (
-                <div key={item.name} className="engagement-item">
+                <div key={item.name} id={`exp-${organizationLogos[item.name]}`} className="engagement-item">
+                  {item.name === 'WD-40' ? (
+                    <span className={`${styles.companyWordmark} ${styles.engagementWordmark}`} aria-hidden="true" data-brand-label>WD-40</span>
+                  ) : (
+                    <img className={styles.engagementLogo} src={`/images/logos/${organizationLogos[item.name]}.svg`} alt="" width="96" height="40" loading="lazy" />
+                  )}
                   <h3 className="engagement-name">{item.name}</h3>
                   <p className="engagement-desc">{item.desc}</p>
                 </div>
@@ -436,7 +470,7 @@ export default function ExpeditionsPage() {
               <p><em>&ldquo;Help your organization learn faster, decide better, and move with discipline through uncertainty.&rdquo;</em></p>
             </div>
             <Link href="/about" className="exp-cta-btn">
-              Start a Conversation \u2192
+              Start a Conversation →
             </Link>
           </div>
         </section>

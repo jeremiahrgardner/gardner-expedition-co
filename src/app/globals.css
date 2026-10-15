@@ -300,7 +300,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .site-nav-links {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 16px;
   list-style: none;
 }
 
