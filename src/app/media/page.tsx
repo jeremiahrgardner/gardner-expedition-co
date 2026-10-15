@@ -2,12 +2,16 @@ import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 
+import { metadataFor } from '@/lib/metadata'
+
+export const metadata = metadataFor('/media')
+
 const books = [
   {
     title: 'The Read',
-    year: '2024',
+    year: 'February 9, 2027',
     desc: 'A methodology for developing superior situational awareness — reading rooms, systems, dynamics, and signals with accuracy that most people mistake for intuition. The book that anchors the framework.',
-    status: 'Available',
+    status: 'Forthcoming',
   },
   {
     title: 'The Lean Brand',

@@ -4,6 +4,10 @@ import SiteFooter from "@/components/SiteFooter"
 import { fetchAllArticles } from "@/lib/notion"
 import type { Article } from "@/lib/articles"
 
+import { metadataFor } from '@/lib/metadata'
+
+export const metadata = metadataFor('/articles')
+
 function formatDate(dateStr: string): string {
   if (!dateStr) return ""
   try {

@@ -1,12 +1,19 @@
+import StructuredData from '@/components/StructuredData'
+import { frameworkTerm } from '@/lib/structured-data'
 import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 import TheSearchSystemDiagram from '@/components/diagrams/TheSearchSystem'
 import FieldNotebookOrnaments from '@/components/diagrams/FieldNotebookOrnaments'
 
+import { metadataFor } from '@/lib/metadata'
+
+export const metadata = metadataFor('/frameworks/the-search')
+
 export default function TheSearchPage() {
   return (
     <>
+      <StructuredData data={frameworkTerm('/frameworks/the-search')} />
       <SiteNav />
       <div className="page-wrapper">
         <section className="fw-hero">
@@ -111,7 +118,7 @@ export default function TheSearchPage() {
             <div className="fw-sidebar-section">
               <h4>Explore Further</h4>
               <Link href="/frameworks">← All Frameworks</Link>
-              <Link href="/frameworks/cave-growth">CAVE Growth System™</Link>
+              <Link href="/frameworks/the-search">The Search System™</Link>
               <Link href="/frameworks/the-read">The Read™</Link>
             </div>
             <div className="fw-sidebar-section">

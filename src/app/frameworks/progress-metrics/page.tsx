@@ -1,12 +1,19 @@
+import StructuredData from '@/components/StructuredData'
+import { frameworkTerm } from '@/lib/structured-data'
 import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 import ProgressMetricsDiagram from '@/components/diagrams/ProgressMetrics'
 import FieldNotebookOrnaments from '@/components/diagrams/FieldNotebookOrnaments'
 
+import { metadataFor } from '@/lib/metadata'
+
+export const metadata = metadataFor('/frameworks/progress-metrics')
+
 export default function ProgressMetricsPage() {
   return (
     <>
+      <StructuredData data={frameworkTerm('/frameworks/progress-metrics')} />
       <SiteNav />
       <div className="page-wrapper">
         <section className="fw-hero">
@@ -109,7 +116,7 @@ export default function ProgressMetricsPage() {
             <div className="fw-sidebar-section">
               <h4>Explore Further</h4>
               <Link href="/frameworks">← All Frameworks</Link>
-              <Link href="/frameworks/cave-growth">CAVE Growth System™</Link>
+              <Link href="/frameworks/the-search">The Search System™</Link>
               <Link href="/frameworks/the-search">The Search System™</Link>
             </div>
             <div className="fw-sidebar-section">

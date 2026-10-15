@@ -1,10 +1,17 @@
+import StructuredData from '@/components/StructuredData'
+import { aboutPage } from '@/lib/structured-data'
 import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 
+import { metadataFor } from '@/lib/metadata'
+
+export const metadata = metadataFor('/about')
+
 export default function AboutPage() {
   return (
     <>
+      <StructuredData data={aboutPage} />
       <SiteNav />
       <div className="page-wrapper">
         <div className="about-grid">
@@ -55,7 +62,7 @@ export default function AboutPage() {
             <p>
               Gardner Expedition Co. is the home of his core intellectual ecosystem —
               the frameworks, diagnostics, and operating systems built through that
-              field work: Goldline™, The Read™, CAVE Growth System™, The Search System™,
+              field work: Goldline™, The Read™, The Search System™,
               Coaching Metaskills™, Progress Metrics™, and Program as a Product™.
               The work is designed to be used, not just admired.
             </p>

@@ -1,14 +1,14 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { SITE_URL } from '@/lib/metadata'
+import StructuredData from '@/components/StructuredData'
+import { organizationAndWebsite } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'Gardner Expedition Co.',
     template: '%s | Gardner Expedition Co.',
-  },
-  description: 'An intellectual ecosystem for frameworks, diagnostics, essays, and applied exploration in organizational growth and human development.',
-  alternates: {
-    canonical: 'https://gardnerexpedition.co',
   },
   openGraph: {
     type: 'website',
@@ -30,7 +30,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" type="image/png" href="/GEC_Primary_Icon.png" />
         <link rel="apple-touch-icon" href="/GEC_Primary_Icon.png" />
       </head>
-      <body>{children}</body>
+      <body>
+        <StructuredData data={organizationAndWebsite} />
+        {children}
+      </body>
     </html>
   )
 }

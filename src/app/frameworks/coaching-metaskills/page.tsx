@@ -1,12 +1,19 @@
+import StructuredData from '@/components/StructuredData'
+import { frameworkTerm } from '@/lib/structured-data'
 import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 import CoachingMetaskillsDiagram from '@/components/diagrams/CoachingMetaskills'
 import FieldNotebookOrnaments from '@/components/diagrams/FieldNotebookOrnaments'
 
+import { metadataFor } from '@/lib/metadata'
+
+export const metadata = metadataFor('/frameworks/coaching-metaskills')
+
 export default function CoachingMetaskillsPage() {
   return (
     <>
+      <StructuredData data={frameworkTerm('/frameworks/coaching-metaskills')} />
       <SiteNav />
       <div className="page-wrapper">
         <section className="fw-hero">

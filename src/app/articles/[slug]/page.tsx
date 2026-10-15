@@ -3,6 +3,7 @@ import SiteNav from "@/components/SiteNav"
 import SiteFooter from "@/components/SiteFooter"
 import Link from "next/link"
 import type { Metadata } from "next"
+import { createPageMetadata } from "@/lib/metadata"
 import type { Article } from "@/lib/articles"
 
 type Props = { params: Promise<{ slug: string }> }
@@ -21,8 +22,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const articles = await fetchAllArticles()
   const article = articles.find((p: Article) => p.slug === slug)
-  if (article) return { title: article.title, description: article.excerpt }
-  return { title: "Article | Gardner Expedition Co." }
+  const path = `/articles/${encodeURIComponent(slug)}`
+  if (article) {
+    const uniqueExcerpt = article.excerpt && articles.filter(item => item.excerpt === article.excerpt).length === 1
+    const description = uniqueExcerpt ? article.excerpt : article.paragraphs.join(' ').slice(0, 155)
+    return createPageMetadata(path, article.title, description)
+  }
+  return {
+    ...createPageMetadata(path, 'Article not found', 'The requested article could not be found in the Gardner Expedition Co. article archive.'),
+    robots: { index: false, follow: true },
+  }
 }
 
 // ─── Date formatter ───────────────────────────────────────────────────────────
