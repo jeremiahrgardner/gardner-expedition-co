@@ -78,9 +78,8 @@ export default function ProgressMetricsPage() {
             <h2>Connection to the Ecosystem</h2>
             <p>
               Progress Metrics™ is the measurement layer of the framework ecosystem.
-              It is used alongside the CAVE Growth System™ (which provides the
-              methodology for navigating uncertainty) and the Search System™
-              (which governs how exploration investments are made and governed).
+              It is used alongside the Search System™ (which governs how
+              exploration investments are made).
               Without a measurement system for uncertain work, exploration
               becomes impossible to manage.
             </p>

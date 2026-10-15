@@ -72,7 +72,7 @@ export default function TheReadPage() {
               <li><strong>What does the moment need?</strong> Choose the role and the move that fit.</li>
             </ul>
             <p>
-              <Link href="https://haloclinepress.com/books/the-read">Explore the book →</Link>
+              <Link href="https://www.haloclinepress.com/books/the-read">Explore the book →</Link>
               {' · '}
               <Link href="https://deadreckon.io/programs">Bring it to your team with DeadReckon →</Link>
             </p>

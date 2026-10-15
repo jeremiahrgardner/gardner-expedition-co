@@ -11,7 +11,7 @@ function inline(text: string) {
   return text.split(/(<a\s[^>]*>[^<]*<\/a>|\*\*[^*]+\*\*|_[^_]+_)/g).map((part, index) => {
     const anchor = part.match(/^<a\s[^>]*href=["']([^"']+)["'][^>]*>([^<]*)<\/a>$/i)
     if (anchor) {
-      const legacy: Record<string, string> = { '/getclarity': '/diagnostics', '/books': 'https://haloclinepress.com/books', '/speaking': 'https://jeremiahgardner.com' }
+      const legacy: Record<string, string> = { '/getclarity': '/diagnostics', '/books': 'https://www.haloclinepress.com/books', '/speaking': 'https://jeremiahgardner.com' }
       const [path, hash] = anchor[1].split('#')
       const href = (legacy[path] ?? path) + (hash ? `#${hash}` : '')
       if (/^(\/(?!\/)|https?:\/\/)/i.test(href)) return <Link key={index} href={href}>{anchor[2]}</Link>

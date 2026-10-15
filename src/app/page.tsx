@@ -42,7 +42,7 @@ const routingCards = [
     desc: 'For conferences, leadership events, and offsites.',
   },
   {
-    href: 'https://haloclinepress.com/books',
+    href: 'https://www.haloclinepress.com/books',
     title: 'Read the Books',
     desc: 'For leaders who want the ideas in a practical, durable form.',
   },
@@ -65,7 +65,7 @@ const ecosystemItems = [
     desc: 'Speaking and event booking',
   },
   {
-    href: 'https://haloclinepress.com',
+    href: 'https://www.haloclinepress.com',
     name: 'Halocline Press',
     desc: 'Books and publishing',
   },
