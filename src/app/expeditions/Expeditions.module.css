@@ -1,0 +1,228 @@
+/* A field-record layout; all presentation stays scoped to this page. */
+.page :global(.exp-hero) {
+  padding: clamp(64px, 7vw, 104px) 0 72px;
+  background: linear-gradient(125deg, var(--paper) 30%, #efeee7);
+}
+.heroGrid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(40px, 6vw, 88px);
+  align-items: start;
+}
+.heroLead { position: sticky; top: 108px; }
+.heroAccent { color: var(--gold); }
+.page :global(.exp-headline) {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.08;
+  margin: 16px 0 28px;
+  max-width: 13ch;
+}
+.page :global(.exp-subhead) { font-size: 1.2rem; line-height: 1.75; margin: 0; }
+.page :global(.exp-hero-body) {
+  padding: 0 0 0 32px;
+  border-left: 2px solid var(--goldline);
+  font-size: 1.025rem;
+  color: var(--ink-light);
+  max-width: none;
+}
+.page :global(.exp-hero-body p + p) { margin-top: 14px; }
+.page :global(.exp-hero-body p:nth-child(n + 2):nth-child(-n + 5)) {
+  padding: 12px 0;
+  margin: 0;
+  border-bottom: 1px solid var(--border);
+}
+.page :global(.exp-hero-body em) { font-weight: 600; }
+.page :global(.exp-hero-body p:nth-last-child(2)) {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--ink);
+  margin-block: 24px;
+}
+.page :global(.exp-hero-texture) { opacity: 0.09; }
+.page :global(.trust-strip) { padding: 48px 0; background: var(--paper-alt); }
+.page :global(.trust-strip-label) { margin-bottom: 24px; line-height: 1.7; }
+.page :global(.trust-grid) {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1px;
+  padding: 1px;
+  background: var(--border);
+}
+.page :global(.trust-logo-img) {
+  min-height: 88px;
+  padding: 18px;
+  background: var(--paper-alt);
+  opacity: 1;
+  transition: background 180ms ease;
+}
+.page :global(.trust-logo-img img) {
+  width: 100%;
+  height: 46px;
+  max-height: none;
+  max-width: 112px;
+  object-fit: contain;
+  filter: grayscale(1) brightness(0.65);
+  opacity: 0.8;
+}
+.page :global(.trust-logo-img:hover) { background: var(--paper-warm); }
+.page :global(.trust-logo-img:focus-visible) { outline-offset: -4px; }
+.page :global(.exp-positioning),
+.page :global(.exp-featured),
+.page :global(.exp-proof-section),
+.page :global(.exp-cta) { padding-block: 88px; }
+.page :global(.exp-positioning-inner) {
+  max-width: var(--max-width);
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+  gap: 64px;
+  align-items: start;
+}
+.page :global(.exp-positioning h2) { position: sticky; top: 112px; margin: 0; max-width: 15ch; }
+.page :global(.exp-positioning-body) { font-size: 1.1rem; color: var(--ink-light); }
+.page :global(.exp-positioning-body ul) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 32px;
+  margin-block: 24px;
+  padding-left: 20px;
+}
+.page :global(.exp-positioning-body li) { font-size: 1rem; margin: 0; color: var(--ink-light); }
+.page :global(.exp-positioning-body li::marker) { color: var(--gold); }
+.page :global(.exp-pull-quote) {
+  margin-block: 32px;
+  padding: 24px 28px;
+  background: var(--paper-warm);
+  font-size: 1.4rem;
+}
+.page :global(.exp-methods) { padding-block: 72px; }
+.page :global(.exp-methods-inner) {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+  gap: 64px;
+  align-items: start;
+}
+.sectionIntro { position: sticky; top: 112px; }
+.page :global(.exp-section-label) { line-height: 1.7; font-weight: 600; color: var(--gold); }
+.page :global(.exp-section-title) { max-width: 26ch; line-height: 1.2; margin-bottom: 20px; }
+.page :global(.exp-section-lead) { font-size: 1.1rem; margin-bottom: 0; }
+.methodsList { border-top: 1px solid var(--border); min-width: 0; }
+.page :global(.method-card) { padding: 0; border-bottom: 1px solid var(--border); }
+.page :global(.method-card:first-child) { border-top: none; }
+.page :global(.method-header) {
+  padding: 24px 0;
+  cursor: pointer;
+  list-style: none;
+  align-items: center;
+}
+.page :global(.method-header::-webkit-details-marker) { display: none; }
+.page :global(.method-header:hover .method-name) { color: var(--gold); }
+.page :global(.method-name) { font-size: 1.05rem; line-height: 1.5; }
+.page :global(.method-chevron) {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--ink);
+}
+.page :global(.method-card[open] .method-chevron) { transform: rotate(45deg); }
+.page :global(.method-details) { padding: 0 0 28px; gap: 32px; }
+.page :global(.method-detail-text) { font-size: 1rem; color: var(--ink-light); }
+.page :global(.exp-featured) { background: var(--paper); }
+.page :global(.featured-expedition) {
+  margin-top: 28px;
+  padding: 36px;
+  background: var(--paper-alt);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--goldline);
+}
+.page :global(.featured-exp-ed) { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 40px; }
+.expeditionMark { display: flex; align-items: center; height: 60px; margin-bottom: 24px; }
+.expeditionMark img { width: 120px; height: 48px; object-fit: contain; object-position: left; filter: grayscale(1) brightness(0.65); }
+.page :global(.featured-exp-meta) { flex-wrap: wrap; gap: 8px 16px; margin-bottom: 16px; }
+.page :global(.featured-exp-title) { font-size: clamp(1.3rem, 2.3vw, 1.8rem); line-height: 1.35; }
+.page :global(.featured-exp-subtitle) { font-size: 1.1rem; }
+.page :global(.featured-exp-narrative) { font-size: 1rem; color: var(--ink-light); margin-bottom: 20px; }
+.page :global(.featured-exp-sidebar) {
+  border: 0;
+  padding: 28px;
+  background: var(--paper-warm);
+  align-self: stretch;
+}
+.page :global(.sidebar-section) { margin-bottom: 28px; }
+.page :global(.sidebar-section:last-child) { margin-bottom: 0; }
+.page :global(.sidebar-label) { font-weight: 600; font-size: 0.68rem; }
+.page :global(.sidebar-text) { font-size: 1rem; color: var(--ink-light); }
+.page :global(.method-pill) { line-height: 1.5; padding: 6px 10px; background: var(--paper); }
+.page :global(.exp-engagements) { padding-block: 72px; }
+.page :global(.engagement-grid) { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; background: transparent; }
+.page :global(.engagement-item) { padding: 28px; border: 1px solid var(--border); background: var(--paper); }
+.engagementLogo { width: 96px; height: 40px; object-fit: contain; object-position: left; filter: grayscale(1) brightness(0.65); margin-bottom: 24px; }
+.page :global(.engagement-name) { font-size: 1.1rem; line-height: 1.4; margin-bottom: 12px; }
+.page :global(.engagement-desc) { font-size: 1rem; }
+.page :global(.exp-proof-list) { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 40px; }
+.page :global(.exp-proof-item h4) { font-size: 0.9rem; line-height: 1.6; text-transform: none; }
+.page :global(.exp-proof-item p) { font-size: 1rem; }
+.page :global(.exp-proof-inner .exp-section-lead) { color: #BCBCB4; font-size: 1.15rem; }
+.page :global(.exp-response) { margin-top: 56px; display: grid; grid-template-columns: 0.8fr 1.4fr; gap: 64px; padding-top: 40px; }
+.page :global(.exp-response h3) { font-size: 1.7rem; margin: 0; }
+.page :global(.response-items) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 24px; }
+.page :global(.response-text) { font-size: 1rem; }
+.page :global(.exp-cta) { background: var(--paper-warm); }
+.page :global(.exp-cta h2) { max-width: 25ch; }
+.page :global(.exp-cta-body) { font-size: 1.1rem; margin-bottom: 32px; }
+
+@media (max-width: 1000px) {
+  .heroGrid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .page :global(.exp-headline) { font-size: 2.8rem; }
+  .page :global(.exp-positioning-inner), .page :global(.exp-methods-inner) { grid-template-columns: 1fr 1.5fr; gap: 32px; }
+  .page :global(.featured-expedition) { padding: 28px; }
+  .page :global(.featured-exp-ed) { gap: 28px; }
+  .page :global(.featured-exp-sidebar) { padding: 24px; }
+  .page :global(.engagement-grid), .page :global(.exp-proof-list) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 767px) {
+  .page :global(.exp-hero) { padding: 48px 0; }
+  .heroGrid { grid-template-columns: 1fr; gap: 32px; }
+  .heroLead, .sectionIntro, .page :global(.exp-positioning h2) { position: static; }
+  .page :global(.exp-headline) { font-size: clamp(2.25rem, 9vw, 3.5rem); max-width: none; margin-bottom: 24px; }
+  .page :global(.exp-subhead) { font-size: 1.125rem; }
+  .page :global(.exp-hero-body) { padding-left: 20px; }
+  .page :global(.trust-strip) { padding-block: 32px; }
+  .page :global(.trust-grid) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .page :global(.trust-logo-img) { min-height: 80px; padding: 16px; }
+  .page :global(.trust-logo-img img) { height: 36px; }
+  .page :global(.exp-positioning), .page :global(.exp-methods), .page :global(.exp-featured),
+  .page :global(.exp-engagements), .page :global(.exp-proof-section), .page :global(.exp-cta) { padding-block: 56px; }
+  .page :global(.exp-positioning-inner), .page :global(.exp-methods-inner) { grid-template-columns: 1fr; gap: 28px; }
+  .page :global(.exp-positioning h2) { max-width: none; }
+  .page :global(.exp-positioning-body ul) { column-gap: 24px; }
+  .page :global(.exp-pull-quote) { padding: 20px; font-size: 1.25rem; }
+  .page :global(.exp-section-title) { font-size: 1.8rem; max-width: none; }
+  .page :global(.method-header) { padding: 20px 0; }
+  .page :global(.method-details) { grid-template-columns: 1fr; gap: 20px; }
+  .page :global(.featured-expedition) { padding: 24px 20px; }
+  .page :global(.featured-exp-ed) { grid-template-columns: 1fr; gap: 24px; }
+  .page :global(.featured-exp-sidebar) { padding: 20px; }
+  .page :global(.exp-response) { grid-template-columns: 1fr; gap: 24px; }
+  .page :global(.response-items) { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .page :global(.trust-grid) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .page :global(.engagement-grid), .page :global(.exp-proof-list) { grid-template-columns: 1fr; }
+  .page :global(.exp-positioning-body ul) { grid-template-columns: 1fr; gap: 4px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page :global(.trust-logo-img), .page :global(.method-chevron) { transition: none; }
+}
+
+.companyWordmark { font-family: var(--font-sans); font-weight: 700; font-size: 1.4rem; letter-spacing: -0.05em; line-height: 1.4; color: var(--ink-light); }
+.engagementWordmark { display: flex; align-items: center; min-height: 40px; margin-bottom: 24px; }
+
+.page :global(.featured-expedition), .page :global(.engagement-item) { scroll-margin-top: 24px; }
+.page :global(.featured-expedition:target), .page :global(.engagement-item:target) { outline: 2px solid var(--gold); outline-offset: 4px; }

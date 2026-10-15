@@ -40,6 +40,7 @@ export default function SiteNav() {
   const links = [
     { href: '/frameworks', label: 'Frameworks' },
     { href: '/expeditions', label: 'Expeditions' },
+    { href: '/articles', label: 'Articles' },
     { href: 'https://haloclinepress.com/books', label: 'Books' },
     { href: '/diagnostics', label: 'Diagnostics' },
     { href: 'https://jeremiahgardner.com', label: 'Speaking' },
