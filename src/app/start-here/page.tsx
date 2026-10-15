@@ -21,7 +21,7 @@ const routes = [
     external: false,
   },
   {
-    href: 'https://haloclinepress.com',
+    href: 'https://www.haloclinepress.com',
     title: 'I want to read the books.',
     desc: 'Practical, durable guides for leaders who want depth beyond a keynote.',
     external: true,

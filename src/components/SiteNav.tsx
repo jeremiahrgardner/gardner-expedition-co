@@ -41,7 +41,7 @@ export default function SiteNav() {
     { href: '/frameworks', label: 'Frameworks' },
     { href: '/expeditions', label: 'Expeditions' },
     { href: '/articles', label: 'Articles' },
-    { href: 'https://haloclinepress.com/books', label: 'Books' },
+    { href: 'https://www.haloclinepress.com/books', label: 'Books' },
     { href: '/diagnostics', label: 'Diagnostics' },
     { href: 'https://jeremiahgardner.com', label: 'Speaking' },
     { href: '/about', label: 'About' },

@@ -12,6 +12,11 @@ const nextConfig = {
         destination: '/frameworks/the-search',
         permanent: true,
       },
+      {
+        source: '/articles/Why-High-Performers-Often-Feel-Unstable-During-Growthand-What-to-Do-About-It',
+        destination: '/articles/Why-High-Performers-Often-Feel-Unstable-During-Growth-and-What-to-Do-About-It',
+        permanent: true,
+      },
     ]
   },
 }

@@ -82,8 +82,8 @@ export default function ProgramAsProductPage() {
             <h2>Connection to the Ecosystem</h2>
             <p>
               Program as a Product™ is the scaling and adoption layer of the
-              framework ecosystem. It governs how the CAVE Growth System™ and
-              the Search System™ get built and deployed inside organizations —
+              framework ecosystem. It governs how the Search System™ gets built
+              and deployed inside organizations —
               not as big-bang transformations but as evolving systems that
               learn their way into durable capability.
             </p>

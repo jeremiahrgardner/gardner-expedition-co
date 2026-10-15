@@ -24,9 +24,9 @@ export const organizationAndWebsite = {
       },
       subOrganization: {
         '@type': 'Organization',
-        '@id': 'https://haloclinepress.com/#organization',
+        '@id': 'https://www.haloclinepress.com/#organization',
         name: 'Halocline Press',
-        url: 'https://haloclinepress.com',
+        url: 'https://www.haloclinepress.com',
       },
     },
     {
@@ -68,9 +68,9 @@ export function frameworkTerm(path: string) {
     ...(book ? {
       subjectOf: {
         '@type': 'Book',
-        '@id': `https://haloclinepress.com/books/${book.slug}#book`,
+        '@id': `https://www.haloclinepress.com/books/${book.slug}#book`,
         name: book.name,
-        url: `https://haloclinepress.com/books/${book.slug}`,
+        url: `https://www.haloclinepress.com/books/${book.slug}`,
       },
     } : {}),
   }

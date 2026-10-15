@@ -214,16 +214,27 @@ export async function fetchArticlesFromNotion(): Promise<Article[]> {
 // ─── Dev-mode fallback ─────────────────────────────────────────────────────────
 import articlesData from "./articles.json"
 
+// Slugs that were published with a typo. The old URL permanently redirects to
+// the corrected one (see next.config.js). Harmless once the Notion slug is fixed.
+export const SLUG_CORRECTIONS: Record<string, string> = {
+  "Why-High-Performers-Often-Feel-Unstable-During-Growthand-What-to-Do-About-It":
+    "Why-High-Performers-Often-Feel-Unstable-During-Growth-and-What-to-Do-About-It",
+}
+
+function withCorrectedSlugs(articles: Article[]): Article[] {
+  return articles.map(a => (SLUG_CORRECTIONS[a.slug] ? { ...a, slug: SLUG_CORRECTIONS[a.slug] } : a))
+}
+
 export async function fetchAllArticles(): Promise<Article[]> {
   if (NOTION_TOKEN) {
     try {
       const notionArticles = await fetchArticlesFromNotion()
-      if (notionArticles.length > 0) return notionArticles
+      if (notionArticles.length > 0) return withCorrectedSlugs(notionArticles)
     } catch (err) {
       console.warn("[notion.ts] Notion fetch failed, falling back to JSON:", err)
     }
   }
-  return articlesData as Article[]
+  return withCorrectedSlugs(articlesData as Article[])
 }
 
 // Also export the slug fetcher for [slug]/page.tsx

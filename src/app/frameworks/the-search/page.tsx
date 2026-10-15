@@ -80,11 +80,10 @@ export default function TheSearchPage() {
             <h2>Connection to the Ecosystem</h2>
             <p>
               The Search System™ is the enterprise-level layer of the framework
-              ecosystem. It runs on top of the CAVE Growth System™ (which provides
-              the methodology for navigating uncertainty), Progress Metrics™ (which
-              tracks the evidence and confidence of exploration investments), and
-              Program as a Product™ (which governs how exploration systems are
-              built and scaled).
+              ecosystem. It works alongside Progress Metrics™ (which tracks the
+              evidence and confidence of exploration investments) and Program as a
+              Product™ (which governs how exploration systems are built and
+              scaled).
             </p>
           </div>
 

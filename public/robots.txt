@@ -15,4 +15,4 @@ User-agent: Google-Extended
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://gardnerexpedition.co/sitemap.xml
+Sitemap: https://www.gardnerexpedition.co/sitemap.xml
