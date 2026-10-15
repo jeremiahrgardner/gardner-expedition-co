@@ -28,7 +28,7 @@ export default async function ArticlesPage() {
   return (
     <>
       <SiteNav />
-      <div className="page-wrapper">
+      <main id="main-content" tabIndex={-1} className="page-wrapper">
         <section className="section" style={{ borderBottom: "1px solid var(--soft-gray)" }}>
           <div className="container" style={{ maxWidth: "800px" }}>
             <span className="eyebrow">Essays &amp; Reflections</span>
@@ -51,6 +51,7 @@ export default async function ArticlesPage() {
               <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
                 {featuredEssays.map((essay) => (
                   <Link
+                    className="article-row"
                     key={essay.slug}
                     href={`/articles/${essay.slug}`}
                     style={{
@@ -65,7 +66,7 @@ export default async function ArticlesPage() {
                     }}
                   >
                     <div>
-                      <div style={{ display: "flex", gap: "var(--space-sm)", alignItems: "center", marginBottom: "8px" }}>
+                      <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--space-sm)", alignItems: "center", marginBottom: "8px" }}>
                         <span className="eyebrow" style={{ color: "var(--gold)" }}>
                           {(essay as Article & { tag?: string }).tag || "Essay"}
                         </span>
@@ -91,6 +92,7 @@ export default async function ArticlesPage() {
               <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
                 {fieldNotes.map((post) => (
                   <Link
+                    className="article-row"
                     key={post.slug}
                     href={`/articles/${post.slug}`}
                     style={{
@@ -105,7 +107,7 @@ export default async function ArticlesPage() {
                     }}
                   >
                     <div>
-                      <div style={{ display: "flex", gap: "var(--space-sm)", alignItems: "center", marginBottom: "8px" }}>
+                      <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--space-sm)", alignItems: "center", marginBottom: "8px" }}>
                         <span className="eyebrow" style={{ color: "var(--gold)" }}>
                           {(post as Article & { tag?: string }).tag || "Article"}
                         </span>
@@ -122,8 +124,8 @@ export default async function ArticlesPage() {
           </section>
         )}
 
-        <SiteFooter />
-      </div>
+      </main>
+      <SiteFooter />
     </>
   )
 }

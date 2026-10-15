@@ -10,7 +10,7 @@ export default function NavigatingUncertaintyPage() {
   return (
     <>
       <SiteNav />
-      <div className="page-wrapper">
+      <main id="main-content" tabIndex={-1} className="page-wrapper">
         <article className="essay-page">
           <header>
             <p className="essay-meta">Field Notes · March 2026 · Systems Thinking</p>
@@ -141,8 +141,8 @@ export default function NavigatingUncertaintyPage() {
           </Link>
         </div>
 
-        <SiteFooter />
-      </div>
+      </main>
+      <SiteFooter />
     </>
   )
 }

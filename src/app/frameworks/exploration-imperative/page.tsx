@@ -1,10 +1,10 @@
+import StructuredData from '@/components/StructuredData'
+import { frameworkTerm } from '@/lib/structured-data'
 import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 import CaveStructure from '@/components/diagrams/CaveStructure'
 
-import StructuredData from '@/components/StructuredData'
-import { frameworkTerm } from '@/lib/structured-data'
 import { metadataFor } from '@/lib/metadata'
 
 export const metadata = metadataFor('/frameworks/exploration-imperative')
@@ -14,7 +14,7 @@ export default function ExplorationImperativePage() {
     <>
       <StructuredData data={frameworkTerm('/frameworks/exploration-imperative')} />
       <SiteNav />
-      <div className="page-wrapper">
+      <main id="main-content" tabIndex={-1} className="page-wrapper">
         <section className="fw-hero">
           <div className="fw-hero-inner">
             <span className="eyebrow">Framework</span>
@@ -118,8 +118,8 @@ export default function ExplorationImperativePage() {
           </aside>
         </div>
 
-        <SiteFooter />
-      </div>
+      </main>
+      <SiteFooter />
     </>
   )
 }

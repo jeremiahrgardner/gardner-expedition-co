@@ -1,10 +1,11 @@
+import StructuredData from '@/components/StructuredData'
+import { frameworkTermSet } from '@/lib/structured-data'
 import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 
-import StructuredData from '@/components/StructuredData'
-import { frameworkTermSet } from '@/lib/structured-data'
 import { frameworks } from '@/lib/frameworks'
+
 import { metadataFor } from '@/lib/metadata'
 
 export const metadata = metadataFor('/frameworks')
@@ -14,7 +15,7 @@ export default function FrameworksPage() {
     <>
       <StructuredData data={frameworkTermSet()} />
       <SiteNav />
-      <div className="page-wrapper">
+      <main id="main-content" tabIndex={-1} className="page-wrapper">
         <section className="section" style={{ borderBottom: '1px solid var(--soft-gray)' }}>
           <div className="container" style={{ maxWidth: '800px' }}>
             <span className="eyebrow">Intellectual Backbone</span>
@@ -36,7 +37,7 @@ export default function FrameworksPage() {
 
         <section className="section">
           <div className="container">
-            <div className="framework-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
+            <div className="framework-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))' }}>
               {frameworks.filter(framework => framework.showInIndex !== false).map(({ href, name, subtitle, desc }) => (
                 <Link key={href} href={href} className="framework-card">
                   <h3>{name}</h3>
@@ -49,8 +50,8 @@ export default function FrameworksPage() {
           </div>
         </section>
 
-        <SiteFooter />
-      </div>
+      </main>
+      <SiteFooter />
     </>
   )
 }

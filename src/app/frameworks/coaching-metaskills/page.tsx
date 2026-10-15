@@ -15,7 +15,7 @@ export default function CoachingMetaskillsPage() {
     <>
       <StructuredData data={frameworkTerm('/frameworks/coaching-metaskills')} />
       <SiteNav />
-      <div className="page-wrapper">
+      <main id="main-content" tabIndex={-1} className="page-wrapper">
         <section className="fw-hero">
           <div className="fw-hero-inner">
             <span className="eyebrow">Framework</span>
@@ -126,8 +126,8 @@ export default function CoachingMetaskillsPage() {
           </aside>
         </div>
 
-        <SiteFooter />
-      </div>
+      </main>
+      <SiteFooter />
     </>
   )
 }

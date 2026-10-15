@@ -147,6 +147,27 @@ function renderBlock(block: string) {
   )
 }
 
+// Keep contiguous bullet blocks in a real list for readable spacing and
+// correct screen-reader navigation.
+function renderBlocks(blocks: string[]) {
+  const rendered = []
+  for (let index = 0; index < blocks.length; index++) {
+    if (blocks[index].startsWith('* ')) {
+      const start = index
+      const items = []
+      while (index < blocks.length && blocks[index].startsWith('* ')) {
+        items.push(renderBlock(blocks[index]))
+        index++
+      }
+      rendered.push(<ul className="article-bullets" key={`list-${start}`}>{items}</ul>)
+      index--
+    } else {
+      rendered.push(renderBlock(blocks[index]))
+    }
+  }
+  return rendered
+}
+
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default async function ArticlePage({ params }: Props) {
   const { slug } = await params
@@ -157,10 +178,10 @@ export default async function ArticlePage({ params }: Props) {
     return (
       <>
         <SiteNav />
-        <div className="page-wrapper" style={{ textAlign: "center", padding: "4rem 0" }}>
+        <main id="main-content" tabIndex={-1} className="page-wrapper" style={{ textAlign: "center", padding: "4rem 0" }}>
           <h1 style={{ fontFamily: "var(--font-serif)", marginBottom: "1rem" }}>Article not found</h1>
           <Link href="/articles" style={{ color: "var(--gold)" }}>← Back to Articles</Link>
-        </div>
+        </main>
         <SiteFooter />
       </>
     )
@@ -174,7 +195,7 @@ export default async function ArticlePage({ params }: Props) {
     <>
       <StructuredData data={structuredData} />
       <SiteNav />
-      <div className="page-wrapper">
+      <main id="main-content" tabIndex={-1} className="page-wrapper">
         <article className="essay-page">
           <header>
             <p className="essay-meta">
@@ -194,7 +215,7 @@ export default async function ArticlePage({ params }: Props) {
             )}
           </header>
           <div style={{ marginTop: "2rem" }}>
-            {article.paragraphs.map((block) => renderBlock(block))}
+            {renderBlocks(article.paragraphs)}
           </div>
         </article>
         <div style={{
@@ -208,7 +229,7 @@ export default async function ArticlePage({ params }: Props) {
             ← Back to Articles
           </Link>
         </div>
-      </div>
+      </main>
       <SiteFooter />
     </>
   )

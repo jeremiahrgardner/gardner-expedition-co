@@ -2,6 +2,7 @@ import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 import KitNewsletterForm from '@/components/KitNewsletterForm'
+import { fetchAllArticles } from '@/lib/notion'
 
 import { metadataFor } from '@/lib/metadata'
 
@@ -85,15 +86,18 @@ const ecosystemItems = [
   },
 ]
 
-export default function HomePage() {
+export default async function HomePage() {
+  const articles = await fetchAllArticles()
+
   return (
     <>
       <SiteNav />
-      <div className="page-wrapper">
+      <main id="main-content" tabIndex={-1} className="page-wrapper">
 
         {/* ─── HERO ───────────────────────────────────────── */}
         <section className="hero-editorial">
           <div className="hero-editorial-inner">
+            <p className="hero-kicker"><span aria-hidden="true" />Gardner Expedition Co. · Field systems for leaders</p>
             <h1>Navigate uncertainty before it becomes drift.</h1>
             <p className="hero-sub">
               Gardner Expedition Co. builds field-tested frameworks, books, diagnostics,
@@ -218,13 +222,9 @@ export default function HomePage() {
               </div>
               <div className="field-notes-right">
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 0, borderTop: '1px solid var(--border)' }}>
-                  {[
-                    { title: 'On Navigating Uncertainty Without a Map', date: 'Field Notes', href: '/articles/navigating-uncertainty' },
-                    { title: 'The Intelligence of Systems', date: 'Field Notes', href: '/articles/the-intelligence-of-systems' },
-                    { title: 'Alignment as Practice', date: 'Field Notes', href: '/articles/alignment-as-practice' },
-                  ].map(({ title, date, href }) => (
-                    <a key={title} href={href} style={{ display: 'block', padding: 'var(--space-sm) 0', borderBottom: '1px solid var(--border)', textDecoration: 'none', color: 'var(--ink)' }}>
-                      <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--goldline)', marginBottom: '4px' }}>{date}</p>
+                  {articles.slice(0, 3).map(({ title, slug, type }) => (
+                    <a key={slug} href={`/articles/${slug}`} style={{ display: 'block', padding: 'var(--space-sm) 0', borderBottom: '1px solid var(--border)', textDecoration: 'none', color: 'var(--ink)' }}>
+                      <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '4px' }}>{type || 'Article'}</p>
                       <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', fontWeight: 600 }}>{title}</p>
                     </a>
                   ))}
@@ -256,8 +256,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        <SiteFooter />
-      </div>
+      </main>
+      <SiteFooter />
     </>
   )
 }

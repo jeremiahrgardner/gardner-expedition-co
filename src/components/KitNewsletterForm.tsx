@@ -67,25 +67,28 @@ export default function KitNewsletterForm({
   return (
     <div className={`${styles.container} ${className}`}>
       <div className={styles.label}>{label}</div>
+      <h2 className={styles.heading}>{heading}</h2>
+      <p className={styles.subtext}>{subtext}</p>
 
       {formState === 'success' ? (
-        <div className={styles.success}>
+        <div className={styles.success} role="status" aria-live="polite">
           <p className={styles.successHeading}>You&apos;re in.</p>
           <p className={styles.successText}>
             Watch for Field Notes in your inbox. No spam, ever.
           </p>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} noValidate className={styles.form}>
+        <form onSubmit={handleSubmit} aria-busy={formState === 'loading'} className={styles.form}>
           <div className={styles.row}>
             <div className={styles.field}>
-              <label htmlFor={`${source}-fn`} className={styles.srOnly}>
+              <label htmlFor={`${source}-fn`} className={styles.fieldLabel}>
                 First name
               </label>
               <input
                 id={`${source}-fn`}
                 type="text"
                 name="first_name"
+                autoComplete="given-name"
                 placeholder="First name"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
@@ -95,13 +98,14 @@ export default function KitNewsletterForm({
               />
             </div>
             <div className={styles.field}>
-              <label htmlFor={`${source}-ln`} className={styles.srOnly}>
+              <label htmlFor={`${source}-ln`} className={styles.fieldLabel}>
                 Last name
               </label>
               <input
                 id={`${source}-ln`}
                 type="text"
                 name="last_name"
+                autoComplete="family-name"
                 placeholder="Last name"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
@@ -113,13 +117,15 @@ export default function KitNewsletterForm({
           </div>
 
           <div className={styles.field}>
-            <label htmlFor={`${source}-email`} className={styles.srOnly}>
+            <label htmlFor={`${source}-email`} className={styles.fieldLabel}>
               Email address
             </label>
             <input
               id={`${source}-email`}
               type="email"
               name="email_address"
+              autoComplete="email"
+              aria-describedby={`${source}-privacy`}
               placeholder="Email address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -130,7 +136,7 @@ export default function KitNewsletterForm({
           </div>
 
           {formState === 'error' && errorMessage && (
-            <p className={styles.errorText}>{errorMessage}</p>
+            <p className={styles.errorText} role="alert">{errorMessage}</p>
           )}
 
           <button
@@ -141,7 +147,7 @@ export default function KitNewsletterForm({
             {formState === 'loading' ? 'Subscribing…' : 'Join Field Notes'}
           </button>
 
-          <p className={styles.finePrint}>No spam. Unsubscribe anytime.</p>
+          <p id={`${source}-privacy`} className={styles.finePrint}>No spam. Unsubscribe anytime.</p>
         </form>
       )}
     </div>

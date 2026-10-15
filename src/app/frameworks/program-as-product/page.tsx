@@ -15,7 +15,7 @@ export default function ProgramAsProductPage() {
     <>
       <StructuredData data={frameworkTerm('/frameworks/program-as-product')} />
       <SiteNav />
-      <div className="page-wrapper">
+      <main id="main-content" tabIndex={-1} className="page-wrapper">
         <section className="fw-hero">
           <div className="fw-hero-inner">
             <span className="eyebrow">Framework</span>
@@ -130,8 +130,8 @@ export default function ProgramAsProductPage() {
           </aside>
         </div>
 
-        <SiteFooter />
-      </div>
+      </main>
+      <SiteFooter />
     </>
   )
 }
