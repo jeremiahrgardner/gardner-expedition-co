@@ -38,7 +38,8 @@ interface NotionPageProperties {
   Title: { title: NotionRichText[] }
   Slug: { rich_text: NotionRichText[] }
   Date: { date: { start: string } | null }
-  Tag: { select: { name: string } | null }
+  Tag?: { select?: { name: string } | null; multi_select?: { name: string }[] }
+  Tags?: { multi_select?: { name: string }[] }
   Excerpt: { rich_text: NotionRichText[] }
   Status: { select: { name: string } | null }
   Type: { select: { name: string } | null }
@@ -169,7 +170,8 @@ async function fetchArticlesFromNotionInner(): Promise<Article[]> {
       const title = extractRichText(props.Title.title)
       const slug = extractRichText(props.Slug.rich_text)
       const date = props.Date.date?.start ?? ""
-      const tag = props.Tag.select?.name ?? ""
+      const tag = props.Tag?.select?.name ?? ""
+      const tags = (props.Tags?.multi_select ?? props.Tag?.multi_select ?? []).map(item => item.name)
       const type = props.Type.select?.name ?? ""
       const excerpt = extractRichText(props.Excerpt.rich_text)
 
@@ -192,6 +194,7 @@ async function fetchArticlesFromNotionInner(): Promise<Article[]> {
         excerpt,
         paragraphs,
         tag,
+        tags,
         type,
       })
     }

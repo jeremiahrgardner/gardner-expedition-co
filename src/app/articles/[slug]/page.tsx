@@ -6,7 +6,9 @@ import type { Metadata } from "next"
 import { articleDescription, createPageMetadata } from "@/lib/metadata"
 import StructuredData from "@/components/StructuredData"
 import { articleStructuredData } from "@/lib/structured-data"
-import type { Article } from "@/lib/articles"
+import { articleTags, formatArticleDate, readingMinutes, topicHref, type Article } from "@/lib/articles"
+import ArticleBody, { articleHeadings } from "@/components/ArticleBody"
+import { notFound } from "next/navigation"
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -35,200 +37,70 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-// ─── Date formatter ───────────────────────────────────────────────────────────
-function formatDate(dateStr: string): string {
-  if (!dateStr) return ""
-  const d = new Date(dateStr)
-  return d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })
-}
-
-// ─── Block renderer (same logic as before, but clean) ─────────────────────────
-function renderBlock(block: string) {
-  if (block.startsWith("##H2##")) {
-    return (
-      <h2 key={block} style={{
-        fontFamily: "var(--font-serif)",
-        fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
-        fontWeight: 400,
-        marginTop: "2.5rem",
-        marginBottom: "1rem",
-        lineHeight: 1.25,
-        color: "var(--ink)",
-      }}>
-        {block.slice(6)}
-      </h2>
-    )
-  }
-  if (block.startsWith("##H3##")) {
-    return (
-      <h3 key={block} style={{
-        fontFamily: "var(--font-serif)",
-        fontSize: "clamp(1.3rem, 2.5vw, 1.9rem)",
-        fontWeight: 400,
-        marginTop: "2rem",
-        marginBottom: "0.75rem",
-        lineHeight: 1.25,
-        color: "var(--ink)",
-      }}>
-        {block.slice(6)}
-      </h3>
-    )
-  }
-  if (block.startsWith("* ")) {
-    return (
-      <li key={block} style={{
-        marginLeft: "1.5rem",
-        marginBottom: "0.5rem",
-        color: "var(--ink)",
-        lineHeight: 1.7,
-      }}>
-        {block.slice(2)}
-      </li>
-    )
-  }
-  if (block.startsWith("> ")) {
-    return (
-      <blockquote key={block} style={{
-        borderLeft: "3px solid var(--gold)",
-        paddingLeft: "1.5rem",
-        paddingTop: "0.5rem",
-        paddingBottom: "0.5rem",
-        marginTop: "2rem",
-        marginBottom: "2rem",
-        fontStyle: "italic",
-        color: "var(--ink)",
-      }}>
-        <p style={{ fontSize: "1.1rem", lineHeight: 1.7 }}>{block.slice(2)}</p>
-      </blockquote>
-    )
-  }
-  if (block === "##HR##") {
-    return <hr key={"hr"} style={{ border: "none", borderTop: "1px solid var(--soft-gray)", margin: "3rem 0" }} />
-  }
-
-  const hasBold = block.includes("**")
-  const hasBlockquote = block.startsWith("> ")
-  const hasItalic = block.includes("_")
-
-  const content = hasBlockquote ? block.slice(2) : block
-
-  if (hasBold || hasItalic) {
-    const segments = content.split(/(\*\*[^*]+\*\*|_([^_]+)_)/g)
-    return (
-      <p key={block} style={{
-        color: "var(--ink)",
-        lineHeight: 1.8,
-        marginBottom: "1.5rem",
-        maxWidth: "68ch",
-      }}>
-        {segments.map((seg, i) => {
-          if (!seg) return null
-          if (seg.startsWith("**") && seg.endsWith("**")) {
-            return <strong key={i} style={{ fontWeight: 600 }}>{seg.slice(2, -2)}</strong>
-          }
-          if (seg.startsWith("_") && seg.endsWith("_")) {
-            return <em key={i}>{seg.slice(1, -1)}</em>
-          }
-          return seg
-        })}
-      </p>
-    )
-  }
-
-  return (
-    <p key={block} style={{
-      color: "var(--ink)",
-      lineHeight: 1.8,
-      marginBottom: "1.5rem",
-      maxWidth: "68ch",
-    }}>
-      {content}
-    </p>
-  )
-}
-
-// Keep contiguous bullet blocks in a real list for readable spacing and
-// correct screen-reader navigation.
-function renderBlocks(blocks: string[]) {
-  const rendered = []
-  for (let index = 0; index < blocks.length; index++) {
-    if (blocks[index].startsWith('* ')) {
-      const start = index
-      const items = []
-      while (index < blocks.length && blocks[index].startsWith('* ')) {
-        items.push(renderBlock(blocks[index]))
-        index++
-      }
-      rendered.push(<ul className="article-bullets" key={`list-${start}`}>{items}</ul>)
-      index--
-    } else {
-      rendered.push(renderBlock(blocks[index]))
-    }
-  }
-  return rendered
-}
-
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default async function ArticlePage({ params }: Props) {
   const { slug } = await params
   const articles = await fetchAllArticles()
   const article = articles.find((p: Article) => p.slug === slug)
 
-  if (!article) {
-    return (
-      <>
-        <SiteNav />
-        <main id="main-content" tabIndex={-1} className="page-wrapper" style={{ textAlign: "center", padding: "4rem 0" }}>
-          <h1 style={{ fontFamily: "var(--font-serif)", marginBottom: "1rem" }}>Article not found</h1>
-          <Link href="/articles" style={{ color: "var(--gold)" }}>← Back to Articles</Link>
-        </main>
-        <SiteFooter />
-      </>
-    )
-  }
+  if (!article) notFound()
 
-  const typedArticle = article as Article & { tag?: string; type?: string }
-  const tag = typedArticle.tag || typedArticle.type || "Article"
+  const tags = articleTags(article)
+  const headings = articleHeadings(article.paragraphs)
+  const dateLabel = formatArticleDate(article.date)
+  const related = articles.filter(item => item.slug !== article.slug)
+    .map(item => ({ article: item, score: articleTags(item).filter(tag => tags.includes(tag)).length }))
+    .sort((a, b) => b.score - a.score || (Date.parse(b.article.date) || 0) - (Date.parse(a.article.date) || 0))
+    .slice(0, 3).map(item => item.article)
   const structuredData = articleStructuredData(article, articleDescription(article, articles))
+  const contents = headings.map(heading => <li key={heading.id}><a href={`#${heading.id}`}>{heading.title}</a></li>)
 
   return (
     <>
       <StructuredData data={structuredData} />
       <SiteNav />
-      <main id="main-content" tabIndex={-1} className="page-wrapper">
-        <article className="essay-page">
-          <header>
-            <p className="essay-meta">
-              <Link href="/articles" style={{ color: "var(--gold)" }}>Articles</Link>
-              {tag !== "Article" && ` · ${tag}`}
-            </p>
+      <main id="main-content" tabIndex={-1} className="page-wrapper reading-page">
+        <article>
+          <header className="reading-header container" id="article-top">
+            <Link href="/articles" className="reading-back">← All articles</Link>
+            <div className="article-tags" aria-label="Article topics">
+              {tags.map(tag => <Link className="article-tag" href={topicHref(tag)} key={tag}>{tag}</Link>)}
+            </div>
             <h1>{article.title}</h1>
-            {article.date && (
-              <p style={{ color: "var(--muted)", marginTop: "0.5rem", fontSize: "0.9rem" }}>
-                {formatDate(article.date)}
-              </p>
-            )}
-            {article.excerpt && (
-              <p style={{ color: "var(--muted)", fontSize: "1.1rem", lineHeight: 1.7, marginTop: "1rem" }}>
-                {article.excerpt}
-              </p>
-            )}
+            {article.subtitle && <p className="reading-subtitle">{article.subtitle}</p>}
+            <div className="reading-byline">
+              <span className="author-monogram" aria-hidden="true">JG</span>
+              <div><Link href="/about" className="reading-author">Jeremiah Gardner</Link><div className="reading-meta">{dateLabel && <><time dateTime={article.date}>{dateLabel}</time><span aria-hidden="true">·</span></>}<span>{readingMinutes(article)} min read</span></div></div>
+            </div>
           </header>
-          <div style={{ marginTop: "2rem" }}>
-            {renderBlocks(article.paragraphs)}
+          <div className="reading-layout container">
+            <aside className="reading-sidebar" aria-label="Reading companion">
+              <div className="reading-sidebar-inner">
+                <p className="eyebrow">{headings.length ? 'On this page' : 'An ongoing exploration'}</p>
+                {headings.length > 0 ? <nav aria-label="Article sections"><ol>{contents}</ol></nav> : <p className="reading-sidebar-note">Ideas for leading, learning, and finding the way forward.</p>}
+                <a className="reading-top-link" href="#article-top">Back to top ↑</a>
+              </div>
+            </aside>
+            <div className="reading-column">
+              {headings.length > 0 && <details className="reading-mobile-contents"><summary>On this page <span aria-hidden="true">＋</span></summary><nav aria-label="Article sections on mobile"><ol>{contents}</ol></nav></details>}
+              <ArticleBody blocks={article.paragraphs} />
+              <footer className="reading-end">
+                <span className="reading-end-mark" aria-hidden="true">◆</span>
+                <p>Written by <Link href="/about">Jeremiah Gardner</Link></p>
+                <div className="article-tags" aria-label="Explore these topics">{tags.map(tag => <Link className="article-tag" href={topicHref(tag)} key={tag}>{tag} ↗</Link>)}</div>
+                <Link href="/articles" className="reading-back">← Explore all articles</Link>
+              </footer>
+            </div>
           </div>
         </article>
-        <div style={{
-          maxWidth: "var(--content-width)",
-          margin: "0 auto var(--space-xl)",
-          padding: "0 var(--space-md)",
-          borderTop: "1px solid var(--soft-gray)",
-          paddingTop: "var(--space-md)",
-        }}>
-          <Link href="/articles" style={{ fontSize: "0.85rem", color: "var(--muted)" }}>
-            ← Back to Articles
-          </Link>
-        </div>
+        {related.length > 0 && <section className="related-reading container" aria-labelledby="related-heading">
+          <div className="related-reading-heading"><div><span className="eyebrow">Continue the exploration</span><h2 id="related-heading">Further reading</h2></div><Link href="/articles">All articles →</Link></div>
+          <div className="related-grid">{related.map(item => <article className="related-card" key={item.slug}>
+            <span className="related-topic">{articleTags(item)[0] || 'Article'}</span>
+            <h3><Link href={`/articles/${item.slug}`}>{item.title} <span aria-hidden="true">↗</span></Link></h3>
+            <p>{readingMinutes(item)} min read</p>
+          </article>)}</div>
+        </section>}
       </main>
       <SiteFooter />
     </>
