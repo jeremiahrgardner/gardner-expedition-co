@@ -165,7 +165,7 @@ export default function ExpeditionsPage() {
   return (
     <>
       <SiteNav />
-      <div className="page-wrapper">
+      <main id="main-content" tabIndex={-1} className="page-wrapper">
 
         {/* \u2500\u2500\u2500 HERO \u2500\u2500\u2500 */}
         <section className="exp-hero">
@@ -441,7 +441,7 @@ export default function ExpeditionsPage() {
           </div>
         </section>
 
-      </div>
+      </main>
       <SiteFooter />
     </>
   )

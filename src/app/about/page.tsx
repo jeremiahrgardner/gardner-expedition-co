@@ -1,6 +1,7 @@
 import StructuredData from '@/components/StructuredData'
 import { aboutPage } from '@/lib/structured-data'
 import Link from 'next/link'
+import Image from 'next/image'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 
@@ -13,28 +14,12 @@ export default function AboutPage() {
     <>
       <StructuredData data={aboutPage} />
       <SiteNav />
-      <div className="page-wrapper">
+      <main id="main-content" tabIndex={-1} className="page-wrapper">
         <div className="about-grid">
-          {/* Portrait column */}
-          <div>
-            <div className="about-portrait">
-              <div style={{
-                width: '100%',
-                height: '100%',
-                background: 'linear-gradient(160deg, var(--paper-warm) 0%, var(--margin) 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}>
-                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                  <circle cx="40" cy="30" r="16" fill="var(--margin)"/>
-                  <ellipse cx="40" cy="75" rx="28" ry="22" fill="var(--margin)"/>
-                </svg>
-              </div>
-            </div>
-            <div style={{ marginTop: 'var(--space-sm)', fontSize: '0.78rem', color: 'var(--muted)' }}>
-              Jeremiah Gardner
-            </div>
+          <div className="about-brand-panel">
+            <Image src="/GEC_Primary_Icon.png" alt="" width={160} height={179} />
+            <p className="about-brand-name">Gardner<br />Expedition Co.</p>
+            <span className="about-brand-caption">Navigating complexity.<br />Building clarity.</span>
           </div>
 
           {/* Bio column */}
@@ -101,8 +86,8 @@ export default function AboutPage() {
           </blockquote>
         </div>
 
-        <SiteFooter />
-      </div>
+      </main>
+      <SiteFooter />
     </>
   )
 }

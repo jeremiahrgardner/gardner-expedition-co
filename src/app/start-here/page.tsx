@@ -50,7 +50,7 @@ export default function StartHerePage() {
   return (
     <>
       <SiteNav />
-      <div className="page-wrapper">
+      <main id="main-content" tabIndex={-1} className="page-wrapper">
 
         {/* ─── HERO ─────────────────────────────────────── */}
         <section className="start-here-hero">
@@ -102,8 +102,8 @@ export default function StartHerePage() {
           </div>
         </section>
 
-        <SiteFooter />
-      </div>
+      </main>
+      <SiteFooter />
     </>
   )
 }

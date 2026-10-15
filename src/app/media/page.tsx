@@ -42,7 +42,7 @@ export default function MediaPage() {
   return (
     <>
       <SiteNav />
-      <div className="page-wrapper">
+      <main id="main-content" tabIndex={-1} className="page-wrapper">
         <section className="section" style={{ borderBottom: '1px solid var(--soft-gray)' }}>
           <div className="container" style={{ maxWidth: '800px' }}>
             <span className="eyebrow">Books, Speaking, Podcast</span>
@@ -62,7 +62,7 @@ export default function MediaPage() {
           <div className="container">
             <div className="media-section">
               <h2>Books</h2>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 'var(--space-md)', marginTop: 'var(--space-md)' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 'var(--space-md)', marginTop: 'var(--space-md)' }}>
                 {books.map(({ title, year, desc, status }) => (
                   <div key={title} style={{ padding: 'var(--space-md)', border: '1px solid var(--soft-gray)' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: 'var(--space-sm)' }}>
@@ -71,11 +71,9 @@ export default function MediaPage() {
                     </div>
                     <p style={{ fontSize: '0.78rem', color: 'var(--muted)', marginBottom: 'var(--space-sm)' }}>{year}</p>
                     <p style={{ fontSize: '0.9rem', color: 'var(--muted)', lineHeight: '1.65' }}>{desc}</p>
-                    {title === 'The Read' && (
-                      <div style={{ marginTop: 'var(--space-md)', display: 'flex', gap: 'var(--space-sm)' }}>
-                        <Link href="#" className="btn-primary" style={{ fontSize: '0.75rem', padding: '10px 20px' }}>Order</Link>
-                      </div>
-                    )}
+                    <div style={{ marginTop: 'var(--space-md)', display: 'flex', gap: 'var(--space-sm)' }}>
+                      <Link href="https://www.haloclinepress.com/" className="btn-primary" style={{ fontSize: '0.75rem', padding: '10px 20px' }}>Explore at Halocline Press ↗</Link>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -88,14 +86,14 @@ export default function MediaPage() {
                 <h3 style={{ fontSize: '1.2rem', marginBottom: 'var(--space-xs)' }}>{podcast.title}</h3>
                 <p style={{ fontSize: '0.78rem', color: 'var(--gold)', marginBottom: 'var(--space-sm)' }}>{podcast.episodes} Episodes</p>
                 <p style={{ fontSize: '0.9rem', color: 'var(--muted)', lineHeight: '1.65', marginBottom: 'var(--space-md)' }}>{podcast.desc}</p>
-                <Link href="#" className="btn-ghost" style={{ fontSize: '0.78rem', padding: '10px 20px' }}>Listen →</Link>
+                <Link href="https://jeremiahgardner.com/" className="btn-ghost" style={{ fontSize: '0.78rem', padding: '10px 20px' }}>Explore Jeremiah’s Media ↗</Link>
               </div>
             </div>
 
             {/* Speaking */}
             <div className="media-section" style={{ marginTop: 'var(--space-xl)' }}>
               <h2>Speaking</h2>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'var(--space-md)', marginTop: 'var(--space-md)' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 'var(--space-md)', marginTop: 'var(--space-md)' }}>
                 {speaking.map(({ type, topics }) => (
                   <div key={type} style={{ padding: 'var(--space-md)', border: '1px solid var(--soft-gray)' }}>
                     <h3 style={{ fontSize: '1rem', marginBottom: 'var(--space-sm)' }}>{type}</h3>
@@ -116,8 +114,8 @@ export default function MediaPage() {
           </div>
         </section>
 
-        <SiteFooter />
-      </div>
+      </main>
+      <SiteFooter />
     </>
   )
 }

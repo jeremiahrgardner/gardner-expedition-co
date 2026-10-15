@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { SITE_URL } from '@/lib/metadata'
 import StructuredData from '@/components/StructuredData'
 import { organizationAndWebsite } from '@/lib/structured-data'
+import { SITE_URL } from '@/lib/metadata'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -32,6 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <StructuredData data={organizationAndWebsite} />
+        <a href="#main-content" className="skip-link">Skip to content</a>
         {children}
       </body>
     </html>

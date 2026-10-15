@@ -14,7 +14,7 @@ export default function GoldlinePage() {
     <>
       <StructuredData data={frameworkTerm('/frameworks/goldline')} />
       <SiteNav />
-      <div className="page-wrapper">
+      <main id="main-content" tabIndex={-1} className="page-wrapper">
         <section className="fw-hero">
           <div className="fw-hero-inner">
             <span className="eyebrow">Framework</span>
@@ -96,8 +96,8 @@ export default function GoldlinePage() {
           </aside>
         </div>
 
-        <SiteFooter />
-      </div>
+      </main>
+      <SiteFooter />
     </>
   )
 }

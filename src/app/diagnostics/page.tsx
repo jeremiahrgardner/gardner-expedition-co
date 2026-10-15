@@ -31,7 +31,7 @@ export default function DiagnosticsPage() {
   return (
     <>
       <SiteNav />
-      <div className="page-wrapper">
+      <main id="main-content" tabIndex={-1} className="page-wrapper">
         <section className="section" style={{ borderBottom: '1px solid var(--soft-gray)' }}>
           <div className="container" style={{ maxWidth: '800px' }}>
             <span className="eyebrow">Diagnostics & Assessments</span>
@@ -76,14 +76,14 @@ export default function DiagnosticsPage() {
               engagement — someone who can help read the results and
               translate them into an action arc.
             </p>
-            <Link href="/about" className="btn-primary" style={{ background: 'var(--gold)', color: 'var(--ink)' }}>
+            <Link href="/about" className="btn-primary" style={{ background: 'var(--goldline)', color: 'var(--ink)' }}>
               Get in Touch
             </Link>
           </div>
         </section>
 
-        <SiteFooter />
-      </div>
+      </main>
+      <SiteFooter />
     </>
   )
 }
