@@ -3,6 +3,9 @@ import SiteNav from "@/components/SiteNav"
 import SiteFooter from "@/components/SiteFooter"
 import Link from "next/link"
 import type { Metadata } from "next"
+import { articleDescription, createPageMetadata } from "@/lib/metadata"
+import StructuredData from "@/components/StructuredData"
+import { articleStructuredData } from "@/lib/structured-data"
 import type { Article } from "@/lib/articles"
 
 type Props = { params: Promise<{ slug: string }> }
@@ -21,8 +24,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const articles = await fetchAllArticles()
   const article = articles.find((p: Article) => p.slug === slug)
-  if (article) return { title: article.title, description: article.excerpt }
-  return { title: "Article | Gardner Expedition Co." }
+  const path = `/articles/${encodeURIComponent(slug)}`
+  if (article) {
+    const description = articleDescription(article, articles)
+    return createPageMetadata(path, article.title, description)
+  }
+  return {
+    ...createPageMetadata(path, 'Article not found', 'The requested article could not be found in the Gardner Expedition Co. article archive.'),
+    robots: { index: false, follow: true },
+  }
 }
 
 // ─── Date formatter ───────────────────────────────────────────────────────────
@@ -158,9 +168,11 @@ export default async function ArticlePage({ params }: Props) {
 
   const typedArticle = article as Article & { tag?: string; type?: string }
   const tag = typedArticle.tag || typedArticle.type || "Article"
+  const structuredData = articleStructuredData(article, articleDescription(article, articles))
 
   return (
     <>
+      <StructuredData data={structuredData} />
       <SiteNav />
       <div className="page-wrapper">
         <article className="essay-page">

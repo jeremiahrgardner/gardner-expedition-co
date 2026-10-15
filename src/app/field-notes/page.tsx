@@ -2,6 +2,10 @@ import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 
+import { metadataFor } from '@/lib/metadata'
+
+export const metadata = metadataFor('/field-notes')
+
 const essays = [
   {
     slug: 'navigating-uncertainty',

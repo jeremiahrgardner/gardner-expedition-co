@@ -3,9 +3,16 @@ import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 import CaveStructure from '@/components/diagrams/CaveStructure'
 
+import StructuredData from '@/components/StructuredData'
+import { frameworkTerm } from '@/lib/structured-data'
+import { metadataFor } from '@/lib/metadata'
+
+export const metadata = metadataFor('/frameworks/exploration-imperative')
+
 export default function ExplorationImperativePage() {
   return (
     <>
+      <StructuredData data={frameworkTerm('/frameworks/exploration-imperative')} />
       <SiteNav />
       <div className="page-wrapper">
         <section className="fw-hero">
@@ -101,7 +108,7 @@ export default function ExplorationImperativePage() {
               <h4>Explore Further</h4>
               <Link href="/frameworks">← All Frameworks</Link>
               <Link href="/frameworks/the-read">The Read</Link>
-              <Link href="/frameworks/cavey-growth">CAVE Growth System™</Link>
+              <Link href="/frameworks/the-search">The Search System™</Link>
             </div>
             <div className="fw-sidebar-section">
               <h4>Related</h4>

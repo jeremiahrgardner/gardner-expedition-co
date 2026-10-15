@@ -1,11 +1,18 @@
+import StructuredData from '@/components/StructuredData'
+import { frameworkTerm } from '@/lib/structured-data'
 import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 import PerceptionMap from '@/components/diagrams/PerceptionMap'
 
+import { metadataFor } from '@/lib/metadata'
+
+export const metadata = metadataFor('/frameworks/the-read')
+
 export default function TheReadPage() {
   return (
     <>
+      <StructuredData data={frameworkTerm('/frameworks/the-read')} />
       <SiteNav />
       <div className="page-wrapper">
         <section className="fw-hero">
@@ -22,9 +29,7 @@ export default function TheReadPage() {
           <div className="fw-main">
             <h2>What It Is</h2>
             <p>
-              The Read™ is Jeremiah's diagnostic leadership framework. It teaches
-              leaders to see what is actually happening beneath the surface of a
-              team, organization, or decision moment — before they intervene.
+              The Read™ is the framework behind Diagnostic Leadership: seeing what is really happening before deciding what to do next.
             </p>
             <p>
               The name comes from the skill that separates exceptional leaders from
@@ -57,13 +62,20 @@ export default function TheReadPage() {
               choose the intervention the moment actually needs.
             </p>
 
-            <h2>Key Dimensions</h2>
+            <h2>Read the situation before you choose the response.</h2>
+            <p>
+              The Read™ is the framework behind Diagnostic Leadership, the discipline Jeremiah Gardner introduces in <em>The Read: Diagnostic Leadership and How Leaders See What's Really Happening Before They Act</em> (Halocline Press, February 9, 2027). It rests on three questions:
+            </p>
             <ul>
-              <li><strong>Observation</strong> — The discipline of attending to what is actually present, not what you expect or hope to find</li>
-              <li><strong>Diagnosis</strong> — Separating symptoms from signals and identifying what is actually driving the situation</li>
-              <li><strong>Intervention</strong> — Choosing the move that addresses the root, not just the expression</li>
-              <li><strong>Review</strong> — Updating your mental model when the evidence contradicts what you believed</li>
+              <li><strong>What do I see?</strong> Separate the evidence from the story you're telling about it.</li>
+              <li><strong>What is driving it?</strong> Test competing explanations, including your own contribution.</li>
+              <li><strong>What does the moment need?</strong> Choose the role and the move that fit.</li>
             </ul>
+            <p>
+              <Link href="https://haloclinepress.com/books/the-read">Explore the book →</Link>
+              {' · '}
+              <Link href="https://deadreckon.io/programs">Bring it to your team with DeadReckon →</Link>
+            </p>
 
             <h2>Practical Application</h2>
             <p>
@@ -105,7 +117,7 @@ export default function TheReadPage() {
               <h4>Explore Further</h4>
               <Link href="/frameworks">← All Frameworks</Link>
               <Link href="/frameworks/goldline">Goldline™</Link>
-              <Link href="/frameworks/cave-growth">CAVE Growth System™</Link>
+              <Link href="/frameworks/the-search">The Search System™</Link>
             </div>
             <div className="fw-sidebar-section">
               <h4>Related</h4>

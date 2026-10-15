@@ -3,24 +3,22 @@ import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 import KitNewsletterForm from '@/components/KitNewsletterForm'
 
+import { metadataFor } from '@/lib/metadata'
+
+export const metadata = metadataFor('/')
+
 const fieldSystems = [
   {
     href: '/frameworks/goldline',
     name: 'The Goldline Framework™',
     job: 'For personal clarity and centered contribution.',
-    desc: 'Identify your central contribution, build the systems that support it, and navigate growth without losing your center.',
+    desc: 'Centered Exploration: finding the line that lets you go further without losing your way.',
   },
   {
     href: '/frameworks/the-read',
     name: 'The Read™',
     job: 'For diagnosing what is really happening in a room, team, or system.',
-    desc: 'Observe beneath the surface, separate symptoms from signals, and choose the intervention the moment actually needs.',
-  },
-  {
-    href: '/frameworks/cave-growth',
-    name: 'CAVE Growth System™',
-    job: 'For building evidence-led growth capability.',
-    desc: 'Surface assumptions, learn from customers, run rapid experiments, and make evidence-based decisions under uncertainty.',
+    desc: 'Diagnostic Leadership: seeing what is really happening before deciding what to do next.',
   },
   {
     href: '/frameworks/the-search',
@@ -43,7 +41,7 @@ const routingCards = [
     desc: 'For conferences, leadership events, and offsites.',
   },
   {
-    href: 'https://haloclinepress.com',
+    href: 'https://haloclinepress.com/books',
     title: 'Read the Books',
     desc: 'For leaders who want the ideas in a practical, durable form.',
   },
@@ -53,7 +51,7 @@ const routingCards = [
     desc: 'For individuals or teams trying to see their current pattern clearly.',
   },
   {
-    href: 'https://www.deadreckon.io',
+    href: 'https://deadreckon.io',
     title: 'Bring This Into Your Organization',
     desc: 'For teams navigating uncertainty, change, evidence, and growth.',
   },
@@ -76,9 +74,9 @@ const ecosystemItems = [
     desc: 'AI-guided leadership reflection',
   },
   {
-    href: 'https://www.deadreckon.io',
+    href: 'https://deadreckon.io',
     name: 'DeadReckon',
-    desc: 'Organizational systems and advisory work',
+    desc: 'Diagnostic Leadership training and advisory for leaders and teams',
   },
   {
     href: 'https://gardnerunderwater.com',

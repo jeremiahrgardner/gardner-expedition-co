@@ -2,12 +2,16 @@ import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 
+import { metadataFor } from '@/lib/metadata'
+
+export const metadata = metadataFor('/expeditions')
+
 const methods = [
   {
     name: 'Search Before Scale',
     problem: 'Teams launch programs before validating the search space — building on assumptions instead of evidence.',
     proven: 'Roche Diabetes Care, GE FastWorks, ING PACE',
-    application: 'Core to CAVE Growth System\u2122 \u2014 structures exploration before investment.',
+    application: 'Core to The Search System\u2122 \u2014 structures exploration before investment.',
   },
   {
     name: 'Customer-Proximate Discovery',

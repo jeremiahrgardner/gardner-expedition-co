@@ -1,0 +1,33 @@
+# Gardner Expedition Co.
+
+> Founded by Jeremiah Gardner, Gardner Expedition Co. builds frameworks, books, diagnostics, and advisory systems that help leaders navigate uncertainty before it becomes drift.
+
+The core idea: the problem is rarely uncertainty itself, but misreading it. Leadership failures often come from misreading the signals in a room, team, or system rather than from a lack of intelligence or effort. Gardner Expedition Co. is the home of Jeremiah Gardner's frameworks and the parent company of the Halocline Press imprint.
+
+## Frameworks
+
+- [Goldline™](https://gardnerexpedition.co/frameworks/goldline): The framework behind Centered Exploration: finding the line that lets you go further without losing your way. The steadier your center, the bolder your moves can be. Three parts: Trace, Anchor, Navigate. Subject of the forthcoming book *The Goldline: Centered Exploration and How You Go Further Without Losing Your Way* (Halocline Press, Spring 2032).
+- [The Read™](https://gardnerexpedition.co/frameworks/the-read): The framework behind Diagnostic Leadership: seeing what is really happening before deciding what to do next. Built on three questions: What do I see? What is driving it? What does the moment need? Subject of the book *The Read: Diagnostic Leadership and How Leaders See What's Really Happening Before They Act* (Halocline Press, February 9, 2027) and the basis of DeadReckon's programs.
+- [The Search System™](https://gardnerexpedition.co/frameworks/the-search): An operating model that makes continuous discovery and validation of new opportunities a permanent enterprise function.
+- [Coaching Metaskills™](https://gardnerexpedition.co/frameworks/coaching-metaskills): A capability-building system for leaders and coaches to observe, diagnose, intervene, and learn from evidence.
+- [Progress Metrics™](https://gardnerexpedition.co/frameworks/progress-metrics): A measurement system for tracking learning, confidence, and opportunity progress before traditional business metrics exist.
+- [Program as a Product™](https://gardnerexpedition.co/frameworks/program-as-product): A change philosophy that treats organizational programs as evolving products shaped by stakeholder insight and evidence.
+- [Exploration Imperative™](https://gardnerexpedition.co/frameworks/exploration-imperative): A strategic principle for building organizational cultures that treat uncertainty as a design condition — the medium through which durable growth is actually achieved.
+- [All frameworks](https://gardnerexpedition.co/frameworks)
+
+## Explore
+
+- [Start here](https://gardnerexpedition.co/start-here)
+- [About Gardner Expedition Co.](https://gardnerexpedition.co/about)
+- [Diagnostics](https://gardnerexpedition.co/diagnostics)
+- [Expeditions](https://gardnerexpedition.co/expeditions)
+- [Articles](https://gardnerexpedition.co/articles)
+- [Media](https://gardnerexpedition.co/media)
+
+## Ecosystem
+
+- [JeremiahGardner.com](https://jeremiahgardner.com): Keynotes and speaking by Jeremiah Gardner.
+- [Halocline Press](https://haloclinepress.com): Book imprint of Gardner Expedition Co.; publisher of *The Read*, *The Cave*, and *The Goldline*.
+- [DeadReckon](https://deadreckon.io): Diagnostic Leadership training and advisory for leaders and teams, co-founded by Jeremiah Gardner.
+- [AskNoema.ai](https://asknoema.ai): AI-guided leadership reflection.
+- [Gardner Underwater](https://gardnerunderwater.com): Exploration and dive training.

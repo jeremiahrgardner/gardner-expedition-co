@@ -1,12 +1,19 @@
+import StructuredData from '@/components/StructuredData'
+import { frameworkTerm } from '@/lib/structured-data'
 import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 import ProgramAsProductDiagram from '@/components/diagrams/ProgramAsProduct'
 import FieldNotebookOrnaments from '@/components/diagrams/FieldNotebookOrnaments'
 
+import { metadataFor } from '@/lib/metadata'
+
+export const metadata = metadataFor('/frameworks/program-as-product')
+
 export default function ProgramAsProductPage() {
   return (
     <>
+      <StructuredData data={frameworkTerm('/frameworks/program-as-product')} />
       <SiteNav />
       <div className="page-wrapper">
         <section className="fw-hero">
@@ -112,7 +119,7 @@ export default function ProgramAsProductPage() {
             <div className="fw-sidebar-section">
               <h4>Explore Further</h4>
               <Link href="/frameworks">← All Frameworks</Link>
-              <Link href="/frameworks/cave-growth">CAVE Growth System™</Link>
+              <Link href="/frameworks/the-search">The Search System™</Link>
               <Link href="/frameworks/the-search">The Search System™</Link>
             </div>
             <div className="fw-sidebar-section">

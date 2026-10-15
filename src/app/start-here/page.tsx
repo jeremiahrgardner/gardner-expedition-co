@@ -1,12 +1,11 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 
-export const metadata: Metadata = {
-  title: 'Start Here | Gardner Expedition Co.',
-  description: 'Find the right entry point for where you are and where you need to move.',
-}
+
+import { metadataFor } from '@/lib/metadata'
+
+export const metadata = metadataFor('/start-here')
 
 const routes = [
   {
@@ -34,7 +33,7 @@ const routes = [
     external: false,
   },
   {
-    href: 'https://www.deadreckon.io',
+    href: 'https://deadreckon.io',
     title: 'I want help with my organization.',
     desc: 'Organizational systems, advisory work, and structured transformation programs.',
     external: true,
