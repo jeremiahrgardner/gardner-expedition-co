@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import styles from './KitNewsletterForm.module.css'
+import { track } from '@/lib/posthog'
 
 type FormState = 'idle' | 'loading' | 'success' | 'error'
 
@@ -53,11 +54,13 @@ export default function KitNewsletterForm({
       }
 
       setFormState('success')
+      track('form_success', { placement: source })
       setFirstName('')
       setLastName('')
       setEmail('')
     } catch (err) {
       setFormState('error')
+      track('form_error', { placement: source })
       setErrorMessage(
         err instanceof Error ? err.message : 'Something went wrong. Please try again.'
       )

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import StructuredData from '@/components/StructuredData'
+import PostHogInit from '@/components/PostHogInit'
 import { organizationAndWebsite } from '@/lib/structured-data'
 import { SITE_URL } from '@/lib/metadata'
 
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <StructuredData data={organizationAndWebsite} />
+        <PostHogInit />
         <a href="#main-content" className="skip-link">Skip to content</a>
         {children}
       </body>
