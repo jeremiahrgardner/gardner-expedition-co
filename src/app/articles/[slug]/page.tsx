@@ -3,7 +3,9 @@ import SiteNav from "@/components/SiteNav"
 import SiteFooter from "@/components/SiteFooter"
 import Link from "next/link"
 import type { Metadata } from "next"
-import { createPageMetadata } from "@/lib/metadata"
+import { articleDescription, createPageMetadata } from "@/lib/metadata"
+import StructuredData from "@/components/StructuredData"
+import { articleStructuredData } from "@/lib/structured-data"
 import type { Article } from "@/lib/articles"
 
 type Props = { params: Promise<{ slug: string }> }
@@ -24,8 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const article = articles.find((p: Article) => p.slug === slug)
   const path = `/articles/${encodeURIComponent(slug)}`
   if (article) {
-    const uniqueExcerpt = article.excerpt && articles.filter(item => item.excerpt === article.excerpt).length === 1
-    const description = uniqueExcerpt ? article.excerpt : article.paragraphs.join(' ').slice(0, 155)
+    const description = articleDescription(article, articles)
     return createPageMetadata(path, article.title, description)
   }
   return {
@@ -167,9 +168,11 @@ export default async function ArticlePage({ params }: Props) {
 
   const typedArticle = article as Article & { tag?: string; type?: string }
   const tag = typedArticle.tag || typedArticle.type || "Article"
+  const structuredData = articleStructuredData(article, articleDescription(article, articles))
 
   return (
     <>
+      <StructuredData data={structuredData} />
       <SiteNav />
       <div className="page-wrapper">
         <article className="essay-page">

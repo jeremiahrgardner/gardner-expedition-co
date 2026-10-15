@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
+import type { Article } from './articles'
 
-export const SITE_URL = 'https://gardnerexpedition.co'
+export const SITE_URL = 'https://www.gardnerexpedition.co'
 const SITE_NAME = 'Gardner Expedition Co.'
 
 export const pageInfo = {
@@ -89,4 +90,9 @@ export function createPageMetadata(path: string, title: string, description: str
 export function metadataFor(path: keyof typeof pageInfo): Metadata {
   const { title, description } = pageInfo[path]
   return createPageMetadata(path, title, description)
+}
+
+export function articleDescription(article: Article, articles: Article[]): string {
+  const uniqueExcerpt = article.excerpt && articles.filter(item => item.excerpt === article.excerpt).length === 1
+  return uniqueExcerpt ? article.excerpt : article.paragraphs.join(' ').slice(0, 155)
 }

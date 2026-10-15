@@ -1,3 +1,4 @@
+import type { Article } from './articles'
 import { frameworks } from './frameworks'
 import { SITE_URL, pageInfo } from './metadata'
 
@@ -90,4 +91,16 @@ export function frameworkTermSet() {
 
 export function serializeStructuredData(data: unknown): string {
   return JSON.stringify(data).replace(/</g, '\\u003c')
+}
+
+export function articleStructuredData(article: Article, description: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description,
+    datePublished: article.date || undefined,
+    url: `${SITE_URL}/articles/${encodeURIComponent(article.slug)}`,
+    author: { '@id': personId },
+  }
 }
