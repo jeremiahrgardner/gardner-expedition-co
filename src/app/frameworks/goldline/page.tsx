@@ -29,7 +29,7 @@ export default function GoldlinePage() {
           <div className="fw-main">
             <h2>What It Is</h2>
             <p>
-              <strong>Centered Exploration.</strong> Goldline™ is the framework behind Centered Exploration, the subject of Jeremiah Gardner's forthcoming book <Link href="https://www.haloclinepress.com/books/the-goldline"><em>The Goldline: Centered Exploration and How You Go Further Without Losing Your Way</em></Link> (Halocline Press, Spring 2032). The steadier your center, the bolder your moves can be. The practice has three parts:
+              <strong>Centered Exploration.</strong> Goldline™ is the framework behind Centered Exploration, the subject of Jeremiah Gardner's forthcoming book <Link href="https://www.haloclinepress.com/books/the-goldline"><em>The Goldline: Centered Exploration and How You Go Further Without Losing Your Way</em></Link> (Halocline Press, Spring 2031). The steadier your center, the bolder your moves can be. The practice has three parts:
             </p>
             <ul>
               <li><strong>Trace:</strong> the archaeology of your impact. You don't invent a Goldline; you uncover it.</li>
