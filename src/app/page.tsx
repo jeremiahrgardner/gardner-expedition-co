@@ -79,11 +79,6 @@ const ecosystemItems = [
     name: 'DeadReckon',
     desc: 'Diagnostic Leadership training and advisory for leaders and teams',
   },
-  {
-    href: 'https://gardnerunderwater.com',
-    name: 'Gardner Underwater',
-    desc: 'Exploration, training, and source metaphor',
-  },
 ]
 
 export default async function HomePage() {
