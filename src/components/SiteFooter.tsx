@@ -27,6 +27,7 @@ export default function SiteFooter() {
         <div className="site-footer-nav">
           <h4>Connect</h4>
           <ul>
+            <li><a href="mailto:j@jeremiahgardner.com?subject=Gardner%20Expedition%20Co.%20inquiry">Email Gardner Expedition Co.</a></li>
             <li><a href="https://jeremiahgardner.com" target="_blank" rel="noopener noreferrer">JeremiahGardner.com</a></li>
             <li><a href="https://www.haloclinepress.com" target="_blank" rel="noopener noreferrer">Halocline Press</a></li>
             <li><a href="https://asknoema.ai" target="_blank" rel="noopener noreferrer">AskNoema.ai</a></li>
