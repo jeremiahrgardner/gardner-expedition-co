@@ -1,5 +1,6 @@
 import { Fragment } from 'react'
 import Link from 'next/link'
+import KitNewsletterForm from './KitNewsletterForm'
 
 export function articleHeadings(blocks: string[]) {
   return blocks.flatMap((block, index) => /^##H[23]##/.test(block.trim()) ? [{ id: `section-${index}`, title: block.trim().slice(6).trim() }] : [])
@@ -45,6 +46,10 @@ export default function ArticleBody({ blocks }: { blocks: string[] }) {
       index--
     } else if (block.startsWith('> ')) {
       rendered.push(<blockquote key={index}><p>{inline(block.slice(2))}</p></blockquote>)
+    } else if (block.startsWith('##SIGNUP##')) {
+      // Inline Field Notes signup. Optional suffix becomes the Kit source tag, e.g. "##SIGNUP## 30-step-rule".
+      const source = `article-${block.slice(10).trim() || 'inline'}`
+      rendered.push(<div key={index} id="field-notes" className="article-signup"><KitNewsletterForm source={source} heading="Get Field Notes in your inbox" subtext="Practical lessons on customer understanding, leadership, and finding the way forward when the map runs out." /></div>)
     } else if (block === '##HR##') {
       rendered.push(<hr key={index} />)
     } else {

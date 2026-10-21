@@ -225,11 +225,25 @@ function withCorrectedSlugs(articles: Article[]): Article[] {
   return articles.map(a => (SLUG_CORRECTIONS[a.slug] ? { ...a, slug: SLUG_CORRECTIONS[a.slug] } : a))
 }
 
+// Articles edited directly in articles.json. For these slugs the repo copy wins over
+// Notion, so remove a slug from this list once its Notion page has been updated to match.
+const REPO_PRIORITY_SLUGS = new Set([
+  "The-30-Step-Rule-Part-1-A-Lesson-in-Customer-Observation-From-Walt-Disney",
+])
+
+function withRepoPriority(articles: Article[]): Article[] {
+  const repo = new Map((articlesData as Article[]).map(a => [a.slug, a]))
+  return articles.map(a => {
+    const local = REPO_PRIORITY_SLUGS.has(a.slug) ? repo.get(a.slug) : undefined
+    return local ? { ...a, title: local.title, excerpt: local.excerpt, paragraphs: local.paragraphs } : a
+  })
+}
+
 export async function fetchAllArticles(): Promise<Article[]> {
   if (NOTION_TOKEN) {
     try {
       const notionArticles = await fetchArticlesFromNotion()
-      if (notionArticles.length > 0) return withCorrectedSlugs(notionArticles)
+      if (notionArticles.length > 0) return withRepoPriority(withCorrectedSlugs(notionArticles))
     } catch (err) {
       console.warn("[notion.ts] Notion fetch failed, falling back to JSON:", err)
     }

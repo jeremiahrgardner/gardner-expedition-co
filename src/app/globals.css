@@ -3267,3 +3267,4 @@ h1, h2, h3 { text-wrap: balance; overflow-wrap: break-word; }
 .reading-prose a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; text-decoration-color: var(--gold); }
 .reading-prose a:hover { text-decoration-color: var(--ink); }
 .article-archive :focus-visible, .reading-page :focus-visible { outline-color: var(--ink); }
+.article-signup { margin: var(--space-lg, 3rem) 0; padding-top: var(--space-md, 2rem); border-top: 1px solid var(--border, #e5e5e5); }
