@@ -30,10 +30,10 @@ export default function AboutPage() {
             </span>
 
             <p>
-              Jeremiah Gardner is a bestselling author, entrepreneur, keynote speaker,
-              innovation strategist, and elite cave explorer who helps leaders and
-              organizations navigate uncertainty, build adaptive capability, and turn
-              ambiguity into advantage.
+              Jeremiah Gardner helps people catch a misread before it becomes a
+              mistake. A former Chief Innovation Officer, technical cave diver, and
+              author of the Wall Street Journal bestseller The Lean Brand, he helps
+              leaders and teams see what&apos;s actually happening before they act.
             </p>
 
             <p>
