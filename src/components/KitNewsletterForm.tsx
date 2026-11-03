@@ -37,20 +37,25 @@ export default function KitNewsletterForm({
     setErrorMessage('')
 
     try {
+      // Kit's public form endpoint only accepts the same multipart fields its
+      // official embed sends. A JSON body is answered with an HTML page and a
+      // 200, so nothing is saved; always check the JSON `status` it returns.
+      const payload = new FormData()
+      payload.set('email_address', email.trim())
+      payload.set('fields[first_name]', firstName.trim())
+      payload.set('fields[last_name]', lastName.trim())
+      payload.set('referrer', document.referrer)
+      payload.set('host', window.location.href)
+      payload.set('ckjs_version', '6')
       const res = await fetch(`https://app.kit.com/forms/${formId}/subscriptions`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email_address: email,
-          first_name: firstName,
-          last_name: lastName,
-          tags: [`source:${source}`],
-        }),
+        headers: { Accept: 'application/json', 'X-CKJS-Version': '6' },
+        body: payload,
+        signal: AbortSignal.timeout(15_000),
       })
-
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}))
-        throw new Error(data.message || `Subscription failed (${res.status})`)
+      const data = await res.json().catch(() => null) as { status?: string; errors?: { messages?: string[] } } | null
+      if (!res.ok || !data || (data.status !== 'success' && data.status !== 'quarantined')) {
+        throw new Error(data?.errors?.messages?.[0] || 'We could not subscribe you. Please check your email and try again.')
       }
 
       setFormState('success')
