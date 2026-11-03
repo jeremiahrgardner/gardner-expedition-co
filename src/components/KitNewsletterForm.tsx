@@ -27,7 +27,6 @@ export default function KitNewsletterForm({
 }: KitNewsletterFormProps) {
   const [formState, setFormState] = useState<FormState>('idle')
   const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
 
@@ -43,7 +42,6 @@ export default function KitNewsletterForm({
       const payload = new FormData()
       payload.set('email_address', email.trim())
       payload.set('fields[first_name]', firstName.trim())
-      payload.set('fields[last_name]', lastName.trim())
       // Attribution: which site, placement and page this signup came from.
       payload.set('fields[signup_source]', `gardnerexpedition.co:${source}`)
       payload.set('fields[signup_page]', window.location.pathname)
@@ -64,7 +62,6 @@ export default function KitNewsletterForm({
       setFormState('success')
       track('form_success', { placement: source })
       setFirstName('')
-      setLastName('')
       setEmail('')
     } catch (err) {
       setFormState('error')
@@ -85,15 +82,33 @@ export default function KitNewsletterForm({
         <div className={styles.success} role="status" aria-live="polite">
           <p className={styles.successHeading}>You&apos;re in.</p>
           <p className={styles.successText}>
-            Watch for Field Notes in your inbox. No spam, ever.
+            Check your inbox to confirm your subscription. If you don&apos;t see the email, check your spam folder.
           </p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} aria-busy={formState === 'loading'} className={styles.form}>
           <div className={styles.row}>
             <div className={styles.field}>
+              <label htmlFor={`${source}-email`} className={styles.fieldLabel}>
+                Email address
+              </label>
+              <input
+                id={`${source}-email`}
+                type="email"
+                name="email_address"
+                autoComplete="email"
+                aria-describedby={`${source}-privacy`}
+                placeholder="Email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                disabled={formState === 'loading'}
+                className={styles.input}
+              />
+            </div>
+            <div className={styles.field}>
               <label htmlFor={`${source}-fn`} className={styles.fieldLabel}>
-                First name
+                First name <span className={styles.optional}>(optional)</span>
               </label>
               <input
                 id={`${source}-fn`}
@@ -103,47 +118,10 @@ export default function KitNewsletterForm({
                 placeholder="First name"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
-                required
                 disabled={formState === 'loading'}
                 className={styles.input}
               />
             </div>
-            <div className={styles.field}>
-              <label htmlFor={`${source}-ln`} className={styles.fieldLabel}>
-                Last name
-              </label>
-              <input
-                id={`${source}-ln`}
-                type="text"
-                name="last_name"
-                autoComplete="family-name"
-                placeholder="Last name"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-                required
-                disabled={formState === 'loading'}
-                className={styles.input}
-              />
-            </div>
-          </div>
-
-          <div className={styles.field}>
-            <label htmlFor={`${source}-email`} className={styles.fieldLabel}>
-              Email address
-            </label>
-            <input
-              id={`${source}-email`}
-              type="email"
-              name="email_address"
-              autoComplete="email"
-              aria-describedby={`${source}-privacy`}
-              placeholder="Email address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              disabled={formState === 'loading'}
-              className={styles.input}
-            />
           </div>
 
           {formState === 'error' && errorMessage && (

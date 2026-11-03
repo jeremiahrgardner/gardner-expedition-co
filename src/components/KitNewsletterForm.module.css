@@ -134,3 +134,8 @@
 .input { min-height: 48px; }
 .finePrint { line-height: 1.6; }
 @media (prefers-reduced-motion: reduce) { .input, .button { transition: none; } }
+
+.optional {
+  font-weight: 400;
+  opacity: 0.7;
+}
