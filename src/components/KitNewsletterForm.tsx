@@ -29,6 +29,7 @@ export default function KitNewsletterForm({
   const [firstName, setFirstName] = useState('')
   const [email, setEmail] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
+  const [verificationUrl, setVerificationUrl] = useState<string>()
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -54,13 +55,22 @@ export default function KitNewsletterForm({
         body: payload,
         signal: AbortSignal.timeout(15_000),
       })
-      const data = await res.json().catch(() => null) as { status?: string; errors?: { messages?: string[] } } | null
+      const data = await res.json().catch(() => null) as { status?: string; url?: string; errors?: { messages?: string[] } } | null
       if (!res.ok || !data || (data.status !== 'success' && data.status !== 'quarantined')) {
         throw new Error(data?.errors?.messages?.[0] || 'We could not subscribe you. Please check your email and try again.')
       }
 
+      // Kit's bot guard can quarantine a signup until the reader passes a check
+      // on Kit's site. Without that step the subscriber is never created.
+      if (data.status === 'quarantined') {
+        const url = data.url ? new URL(data.url) : undefined
+        if (!url || url.protocol !== 'https:' || !['app.kit.com', 'app.convertkit.com'].includes(url.hostname)) throw new Error('Please try signing up again.')
+        setVerificationUrl(url.href)
+        track('form_quarantined', { placement: source })
+      } else {
+        track('form_success', { placement: source })
+      }
       setFormState('success')
-      track('form_success', { placement: source })
       setFirstName('')
       setEmail('')
     } catch (err) {
@@ -80,10 +90,18 @@ export default function KitNewsletterForm({
 
       {formState === 'success' ? (
         <div className={styles.success} role="status" aria-live="polite">
-          <p className={styles.successHeading}>You&apos;re in.</p>
-          <p className={styles.successText}>
-            Check your inbox to confirm your subscription. If you don&apos;t see the email, check your spam folder.
-          </p>
+          {verificationUrl ? (
+            <p className={styles.successText}>
+              One more step: <a href={verificationUrl}>complete your signup verification</a>.
+            </p>
+          ) : (
+            <>
+              <p className={styles.successHeading}>You&apos;re in.</p>
+              <p className={styles.successText}>
+                Check your inbox to confirm your subscription. If you don&apos;t see the email, check your spam folder.
+              </p>
+            </>
+          )}
         </div>
       ) : (
         <form onSubmit={handleSubmit} aria-busy={formState === 'loading'} className={styles.form}>
