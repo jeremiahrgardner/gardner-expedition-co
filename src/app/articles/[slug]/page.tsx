@@ -8,6 +8,7 @@ import StructuredData from "@/components/StructuredData"
 import { articleStructuredData } from "@/lib/structured-data"
 import { articleTags, formatArticleDate, readingMinutes, topicHref, type Article } from "@/lib/articles"
 import ArticleBody, { articleHeadings } from "@/components/ArticleBody"
+import KitNewsletterForm from "@/components/KitNewsletterForm"
 import { notFound } from "next/navigation"
 
 type Props = { params: Promise<{ slug: string }> }
@@ -84,6 +85,8 @@ export default async function ArticlePage({ params }: Props) {
             <div className="reading-column">
               {headings.length > 0 && <details className="reading-mobile-contents"><summary>On this page <span aria-hidden="true">＋</span></summary><nav aria-label="Article sections on mobile"><ol>{contents}</ol></nav></details>}
               <ArticleBody blocks={article.paragraphs} />
+              {/* Every article ends with a Field Notes signup unless the body already places one inline. */}
+              {!article.paragraphs.some(block => block.startsWith('##SIGNUP##')) && <div className="article-signup"><KitNewsletterForm source="article-end" heading="Get Field Notes in your inbox" subtext="Practical lessons on customer understanding, leadership, and finding the way forward when the map runs out." /></div>}
               <footer className="reading-end">
                 <span className="reading-end-mark" aria-hidden="true">◆</span>
                 <p>Written by <Link href="/about">Jeremiah Gardner</Link></p>

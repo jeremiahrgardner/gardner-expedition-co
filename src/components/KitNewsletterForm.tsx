@@ -44,6 +44,9 @@ export default function KitNewsletterForm({
       payload.set('email_address', email.trim())
       payload.set('fields[first_name]', firstName.trim())
       payload.set('fields[last_name]', lastName.trim())
+      // Attribution: which site, placement and page this signup came from.
+      payload.set('fields[signup_source]', `gardnerexpedition.co:${source}`)
+      payload.set('fields[signup_page]', window.location.pathname)
       payload.set('referrer', document.referrer)
       payload.set('host', window.location.href)
       payload.set('ckjs_version', '6')

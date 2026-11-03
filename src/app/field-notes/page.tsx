@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
+import KitNewsletterForm from '@/components/KitNewsletterForm'
 import { fetchAllArticles } from '@/lib/notion'
 
 import { metadataFor } from '@/lib/metadata'
@@ -63,6 +64,9 @@ export default async function FieldNotesPage() {
           </div>
         </section>
 
+        <section className="container" style={{ paddingBlock: 'var(--space-xl, 4rem)' }}>
+          <KitNewsletterForm source="field-notes-index" heading="Get Field Notes in your inbox" subtext="Practical lessons on customer understanding, leadership, and finding the way forward when the map runs out." />
+        </section>
       </main>
       <SiteFooter />
     </>
