@@ -3,7 +3,7 @@ import SiteNav from "@/components/SiteNav"
 import SiteFooter from "@/components/SiteFooter"
 import Link from "next/link"
 import type { Metadata } from "next"
-import { articleDescription, createPageMetadata } from "@/lib/metadata"
+import { SITE_URL, articleDescription, createPageMetadata } from "@/lib/metadata"
 import StructuredData from "@/components/StructuredData"
 import { articleStructuredData } from "@/lib/structured-data"
 import { articleTags, formatArticleDate, readingMinutes, topicHref, type Article } from "@/lib/articles"
@@ -11,7 +11,7 @@ import ArticleBody, { articleHeadings } from "@/components/ArticleBody"
 import KitNewsletterForm from "@/components/KitNewsletterForm"
 import { notFound } from "next/navigation"
 import ArticleNextStep from "@/components/ArticleNextStep"
-import { nextStepFor, withMidArticleSignup } from "@/lib/article-conversion"
+import { canonicalSlugFor, isIndexable, nextStepFor, withMidArticleSignup } from "@/lib/article-conversion"
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -32,7 +32,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const path = `/articles/${encodeURIComponent(slug)}`
   if (article) {
     const description = articleDescription(article, articles)
-    return createPageMetadata(path, article.title, description, { absoluteIfLong: true })
+    const meta = createPageMetadata(path, article.title, description, { absoluteIfLong: true })
+    const canonicalSlug = canonicalSlugFor(article)
+    if (canonicalSlug !== article.slug) meta.alternates = { canonical: `${SITE_URL}/articles/${encodeURIComponent(canonicalSlug)}` }
+    if (!isIndexable(article)) meta.robots = { index: false, follow: true }
+    return meta
   }
   return {
     ...createPageMetadata(path, 'Article not found', 'The requested article could not be found in the Gardner Expedition Co. article archive.'),
@@ -55,7 +59,7 @@ export default async function ArticlePage({ params }: Props) {
     .map(item => ({ article: item, score: articleTags(item).filter(tag => tags.includes(tag)).length }))
     .sort((a, b) => b.score - a.score || (Date.parse(b.article.date) || 0) - (Date.parse(a.article.date) || 0))
     .slice(0, 3).map(item => item.article)
-  const structuredData = articleStructuredData(article, articleDescription(article, articles))
+  const structuredData = articleStructuredData(article, articleDescription(article, articles), tags)
   const contents = headings.map(heading => <li key={heading.id}><a href={`#${heading.id}`}>{heading.title}</a></li>)
 
   return (

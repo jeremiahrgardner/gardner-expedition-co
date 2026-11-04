@@ -62,3 +62,20 @@ export function withMidArticleSignup(blocks: string[]): string[] {
   }
   return blocks
 }
+
+// ─── Index hygiene ─────────────────────────────────────────────────────────────
+// Weekly Field Notes digests are short roundups of other articles. They stay
+// readable on the site but are kept out of search so the full articles rank.
+export function isIndexable(article: Article): boolean {
+  return !article.slug.startsWith('Field-Notes-')
+}
+
+// Older articles that cover the same ground as a newer, fuller version.
+// Search engines are pointed at the newer one so the two don't compete.
+const CANONICAL_TO: Record<string, string> = {
+  'The-Anchors-of-Innovation-Strategy': 'The-4-Anchors-of-Innovation-Strategy-And-Why-Most-Companies-Get-Them-Wrong',
+}
+
+export function canonicalSlugFor(article: Article): string {
+  return CANONICAL_TO[article.slug] ?? article.slug
+}

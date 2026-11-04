@@ -93,14 +93,22 @@ export function serializeStructuredData(data: unknown): string {
   return JSON.stringify(data).replace(/</g, '\\u003c')
 }
 
-export function articleStructuredData(article: Article, description: string) {
+export function articleStructuredData(article: Article, description: string, topics: string[] = []) {
+  const url = `${SITE_URL}/articles/${encodeURIComponent(article.slug)}`
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: article.title,
     description,
     datePublished: article.date || undefined,
-    url: `${SITE_URL}/articles/${encodeURIComponent(article.slug)}`,
-    author: { '@id': personId },
+    dateModified: article.date || undefined,
+    url,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    author: { '@id': personId, '@type': 'Person', name: 'Jeremiah Gardner', url: 'https://jeremiahgardner.com' },
+    publisher: { '@id': organizationId },
+    image: `${SITE_URL}/GEC_Primary_Mark.png`,
+    keywords: topics.length ? topics.join(', ') : undefined,
+    wordCount: article.paragraphs.join(' ').split(/\s+/).filter(Boolean).length,
+    isPartOf: { '@id': `${SITE_URL}/#website` },
   }
 }
