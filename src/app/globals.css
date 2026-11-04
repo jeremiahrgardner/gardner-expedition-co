@@ -3268,3 +3268,11 @@ h1, h2, h3 { text-wrap: balance; overflow-wrap: break-word; }
 .reading-prose a:hover { text-decoration-color: var(--ink); }
 .article-archive :focus-visible, .reading-page :focus-visible { outline-color: var(--ink); }
 .article-signup { margin: var(--space-lg, 3rem) 0; padding-top: var(--space-md, 2rem); border-top: 1px solid var(--border, #e5e5e5); }
+
+/* Article next step: one commercial path chosen by the article's topics */
+.article-next-step { margin: var(--space-md) 0 0; padding: 28px 28px 26px; background: var(--paper-alt); border: 1px solid var(--border); border-left: 3px solid var(--goldline); }
+.article-next-step h2 { margin: 8px 0 8px; font-family: var(--font-serif); font-size: 1.5rem; line-height: 1.25; color: var(--ink); }
+.article-next-step p:not(.eyebrow) { margin: 0 0 16px; font-family: var(--font-serif); font-size: 1.1rem; line-height: 1.55; color: var(--ink-light); }
+.article-next-step a { font: 600 0.82rem/1 var(--font-sans); letter-spacing: 0.04em; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--goldline); padding-bottom: 3px; }
+.article-next-step a:hover, .article-next-step a:focus-visible { border-bottom-color: var(--ink); }
+@media (max-width: 640px) { .article-next-step { padding: 22px 18px 20px; } .article-next-step h2 { font-size: 1.3rem; } }

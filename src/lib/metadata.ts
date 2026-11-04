@@ -75,11 +75,15 @@ export const pageInfo = {
   }
 } as const
 
-export function createPageMetadata(path: string, title: string, description: string): Metadata {
-  const fullTitle = path === '/' ? title : `${title} | ${SITE_NAME}`
+export function createPageMetadata(path: string, title: string, description: string, options: { absoluteIfLong?: boolean } = {}): Metadata {
+  // Search results cut titles near 60 characters. When the site name would push a
+  // long headline past that, the headline alone is used so it isn't truncated.
+  const suffixed = `${title} | ${SITE_NAME}`
+  const absolute = path === '/' || (options.absoluteIfLong && suffixed.length > 60)
+  const fullTitle = absolute ? title : suffixed
   const url = `${SITE_URL}${path === '/' ? '' : path}`
   return {
-    title: path === '/' ? { absolute: title } : title,
+    title: absolute ? { absolute: title } : title,
     description,
     alternates: { canonical: url },
     openGraph: { title: fullTitle, description, url },
@@ -92,7 +96,54 @@ export function metadataFor(path: keyof typeof pageInfo): Metadata {
   return createPageMetadata(path, title, description)
 }
 
+const DESCRIPTION_MAX = 158
+
+/** Removes site markup so descriptions show only the author's words. */
+function plain(text: string): string {
+  return text.replace(/<a\s[^>]*>([^<]*)<\/a>/gi, '$1').replace(/\*\*([^*]+)\*\*/g, '$1').replace(/_([^_]+)_/g, '$1').replace(/\s+/g, ' ').trim()
+}
+
+/**
+ * Older imports glued a section label onto the first sentence
+ * ("The Next HorizonIn contemplating…", "I. Notes From Me 1. …").
+ * Drop that label so the description starts with the author's first sentence.
+ */
+function withoutLeadLabel(text: string): string {
+  let t = text
+    .replace(/^Here's this week's Field Notes\.\s*/i, '')
+    .replace(/^I\.\s*Notes From Me\s*1\.\s*[^"“]{0,110}["“]/i, '')
+    .replace(/^Innovation Leadership Series Part I{1,3}(?=[A-Z][a-z'’])/, '')
+  const glued = t.slice(0, 110).search(/[a-z?](?=["“”]?[A-Z][a-z'’ ])/)
+  // Only a label (no sentence punctuation before the join) is removed, so real
+  // words like "PowerPoint" or "LinkedIn" inside a sentence are left alone.
+  if (glued > 0 && /^[^.,:;!"“”–—]*\??$/.test(t.slice(0, glued))) t = t.slice(glued + 1)
+  t = t.trim()
+  if ((t.match(/["“”]/g) ?? []).length % 2 === 1) t = /^["“”]/.test(t) ? t.slice(1).trim() : t.replace(/["”]$/, '')
+  return t
+}
+
+/** Keeps whole sentences from the start of the text, up to the length search results show. */
+function wholeSentences(text: string): string {
+  const sentences = text.match(/[^.!?]+[.!?]+["'”’)]*(\s|$)/g) ?? []
+  let out = ''
+  for (const sentence of sentences) {
+    const next = (out + sentence).trim()
+    if (next.length > DESCRIPTION_MAX) break
+    out = next + ' '
+  }
+  out = out.trim()
+  if (out.length >= 70 || (out && out.length === text.trim().length)) return out
+  if (text.length <= DESCRIPTION_MAX) return text.trim()
+  // No sentence boundary fits: cut at a word boundary instead of mid-word.
+  const cut = text.slice(0, DESCRIPTION_MAX - 1)
+  return cut.slice(0, cut.lastIndexOf(' ')).replace(/[,;:\s]+$/, '') + '…'
+}
+
 export function articleDescription(article: Article, articles: Article[]): string {
-  const uniqueExcerpt = article.excerpt && articles.filter(item => item.excerpt === article.excerpt).length === 1
-  return uniqueExcerpt ? article.excerpt : article.paragraphs.join(' ').slice(0, 155)
+  const excerpt = plain((article.excerpt ?? '').replace(/\.\.\.$|…$/, ''))
+  const complete = /[.!?]["”’)]?$/.test(excerpt)
+  const uniqueExcerpt = complete && excerpt.length >= 70 && articles.filter(item => item.excerpt === article.excerpt).length === 1
+  if (uniqueExcerpt && !/\.\.\.$|…$/.test(article.excerpt) && excerpt.length <= DESCRIPTION_MAX) return excerpt
+  const prose = article.paragraphs.map(b => b.trim()).filter(b => b && !/^(##|> |\* |\d+\.\s)/.test(b)).map(plain).join(' ')
+  return wholeSentences(withoutLeadLabel(uniqueExcerpt ? excerpt : prose))
 }
