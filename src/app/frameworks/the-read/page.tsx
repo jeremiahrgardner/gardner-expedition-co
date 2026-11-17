@@ -29,7 +29,7 @@ export default function TheReadPage() {
           <div className="fw-main">
             <h2>What It Is</h2>
             <p>
-              The Read™ is the framework behind Diagnostic Leadership: seeing what is really happening before deciding what to do next.
+              The Read™ is the framework behind <a href="https://deadreckon.io/diagnostic-leadership">Diagnostic Leadership</a>: seeing what is really happening before deciding what to do next.
             </p>
             <p>
               The name comes from the skill that separates exceptional leaders from
@@ -73,6 +73,8 @@ export default function TheReadPage() {
             </ul>
             <p>
               <Link href="https://www.haloclinepress.com/books/the-read">Explore the book →</Link>
+              {' · '}
+              <Link href="https://deadreckon.io/diagnostic-leadership">What is Diagnostic Leadership? →</Link>
               {' · '}
               <Link href="https://deadreckon.io/programs">Bring it to your team with DeadReckon →</Link>
             </p>

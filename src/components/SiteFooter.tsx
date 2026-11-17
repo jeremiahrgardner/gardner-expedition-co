@@ -43,6 +43,7 @@ export default function SiteFooter() {
             <li><a href="https://jeremiahgardner.com" target="_blank" rel="noopener noreferrer">Jeremiah Gardner<span className="footer-tag">Speaking</span></a></li>
             <li><a href="https://asknoema.ai" target="_blank" rel="noopener noreferrer">AskNoema.ai<span className="footer-tag">Coaching</span></a></li>
             <li><a href="https://deadreckon.io" target="_blank" rel="noopener noreferrer">DeadReckon<span className="footer-tag">Diagnostic Leadership</span></a></li>
+            <li><a href="https://deadreckon.io/diagnostic-leadership" target="_blank" rel="noopener noreferrer">What is Diagnostic Leadership?<span className="footer-tag">Definition</span></a></li>
           </ul>
         </div>
 

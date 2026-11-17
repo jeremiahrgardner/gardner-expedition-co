@@ -28,5 +28,6 @@ The core idea: the problem is rarely uncertainty itself, but misreading it. Lead
 
 - [JeremiahGardner.com](https://jeremiahgardner.com): Keynotes and speaking by Jeremiah Gardner.
 - [Halocline Press](https://www.haloclinepress.com): Book imprint of Gardner Expedition Co.; publisher of *The Read*, *The Cave*, and *The Goldline*.
+- [What is Diagnostic Leadership?](https://deadreckon.io/diagnostic-leadership): The definition, the three questions leaders work through before they act, and how teams practice it.
 - [DeadReckon](https://deadreckon.io): Diagnostic Leadership training and advisory for leaders and teams, co-founded by Jeremiah Gardner.
 - [AskNoema.ai](https://asknoema.ai): AI-guided leadership reflection.
