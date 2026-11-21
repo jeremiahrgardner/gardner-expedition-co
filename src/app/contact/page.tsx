@@ -10,7 +10,7 @@ export default function ContactPage() {
     <>
       <SiteNav />
       <main id="main-content" tabIndex={-1} className="page-wrapper">
-        <div style={{ maxWidth: '40rem', margin: '0 auto' }}>
+        <div style={{ maxWidth: '40rem', margin: '0 auto', paddingBottom: 'var(--space-lg)' }}>
           <span className="eyebrow" style={{ display: 'block', marginBottom: 'var(--space-md)' }}>Contact</span>
           <h1>Get in touch</h1>
           <p style={{ marginBottom: 'var(--space-lg)' }}>
