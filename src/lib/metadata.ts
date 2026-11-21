@@ -41,6 +41,10 @@ export const pageInfo = {
     "title": "Exploration Imperative™",
     "description": "A strategic principle for building organizational cultures that treat uncertainty as a design condition through which durable growth is actually achieved."
   },
+  "/contact": {
+    "title": "Contact",
+    "description": "Contact Gardner Expedition Co. about the frameworks, working together, or media requests."
+  },
   "/about": {
     "title": "About",
     "description": "Gardner Expedition Co., founded by Jeremiah Gardner, builds frameworks, books, diagnostics, and advisory systems for leaders navigating uncertainty."

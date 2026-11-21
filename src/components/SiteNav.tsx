@@ -45,6 +45,7 @@ export default function SiteNav() {
     { href: '/diagnostics', label: 'Diagnostics' },
     { href: 'https://jeremiahgardner.com', label: 'Speaking' },
     { href: '/about', label: 'About' },
+    { href: '/contact', label: 'Contact' },
   ]
 
   return (

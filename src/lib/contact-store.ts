@@ -1,0 +1,20 @@
+import { put } from '@vercel/blob'
+
+// Contact messages are saved privately before anything else, so an email or
+// receiver outage never loses one. One file per message:
+// inquiries/<YYYY-MM-DD>/<reference>.json
+
+export function isContactStorageConfigured(): boolean {
+  return Boolean(process.env.BLOB_READ_WRITE_TOKEN)
+}
+
+export async function saveContact(contact: Record<string, string>, reference: string, submittedAt: string): Promise<void> {
+  if (!isContactStorageConfigured()) throw new Error('Contact storage unavailable')
+  const pathname = `inquiries/${submittedAt.slice(0, 10)}/${reference}.json`
+  const stored = await put(pathname, JSON.stringify({ ...contact, reference, submittedAt }), {
+    access: 'private',
+    addRandomSuffix: false,
+    contentType: 'application/json',
+  })
+  if (stored.pathname !== pathname) throw new Error('Contact storage did not confirm receipt')
+}

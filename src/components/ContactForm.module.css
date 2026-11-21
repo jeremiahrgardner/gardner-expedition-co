@@ -1,0 +1,141 @@
+/* ContactForm: same tokens as KitNewsletterForm. */
+
+
+.label {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-subtle);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+@media (min-width: 480px) {
+  .row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.field {
+  flex: 1;
+}
+
+
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0;
+  font-size: 1rem;
+  background: var(--paper);
+  color: var(--ink);
+  outline-offset: 3px;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.input::placeholder {
+  color: var(--ink-subtle);
+}
+
+.input:focus {
+  border-color: var(--goldline);
+  outline-offset: 3px;
+  box-shadow: none;
+}
+
+.input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  border-radius: 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 0.25rem;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 600;
+}
+
+.button:hover:not(:disabled) {
+  background: var(--ink-light);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.finePrint {
+  font-size: 0.7rem;
+  color: var(--ink-subtle);
+  margin-top: 0.25rem;
+  font-family: 'Montserrat', system-ui, sans-serif;
+}
+
+.errorText {
+  font-size: 0.78rem;
+  color: #c0392b;
+  margin-top: -0.25rem;
+  font-family: 'Montserrat', system-ui, sans-serif;
+}
+
+.success {
+  padding: 1.5rem 0;
+}
+
+.successHeading {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 1.25rem;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.successText {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-size: 0.8rem;
+  color: var(--ink-subtle);
+}
+
+.heading { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 16px; }
+.subtext { color: var(--muted); font-size: 1.1rem; line-height: 1.7; margin-bottom: 28px; }
+.fieldLabel { display: block; text-align: left; font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; color: var(--ink-light); margin-bottom: 6px; }
+.button { min-height: 48px; }
+.input { min-height: 48px; }
+.finePrint { line-height: 1.6; }
+@media (prefers-reduced-motion: reduce) { .input, .button { transition: none; } }
+
+.optional {
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.textarea { min-height: 9rem; resize: vertical; line-height: 1.6; }
+.form { text-align: left; }
+.errorText a { color: inherit; text-decoration: underline; }
