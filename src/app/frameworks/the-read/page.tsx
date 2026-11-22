@@ -74,6 +74,8 @@ export default function TheReadPage() {
             <p>
               <Link href="https://www.haloclinepress.com/books/the-read">Explore the book →</Link>
               {' · '}
+              <a href="https://www.amazon.com/dp/B0HSKDQZ8L">Preorder on Kindle →</a>
+              {' · '}
               <Link href="https://deadreckon.io/diagnostic-leadership">What is Diagnostic Leadership? →</Link>
               {' · '}
               <Link href="https://deadreckon.io/programs">Bring it to your team with DeadReckon →</Link>
