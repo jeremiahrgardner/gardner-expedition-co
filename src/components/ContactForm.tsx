@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from 'react'
+import { HumanCheck, humanFields, resetHumanCheck } from './HumanCheck'
 import styles from './ContactForm.module.css'
 import { track } from '@/lib/posthog'
 
@@ -22,10 +23,11 @@ export default function ContactForm() {
     setStatus('sending')
     setError('')
     try {
+      const human = await humanFields()
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...data, sourcePath: window.location.pathname }),
+        body: JSON.stringify({ ...data, sourcePath: window.location.pathname, ...human }),
         signal: AbortSignal.timeout(30_000),
       })
       const result = await response.json().catch(() => ({}))
@@ -36,6 +38,7 @@ export default function ContactForm() {
       setStatus('sent')
       try { track('contact_form_submit', { topic: String(data.topic || '') }) } catch {}
     } catch (err) {
+      resetHumanCheck()
       setStatus('error')
       setError(err instanceof Error && err.name !== 'TimeoutError' ? err.message : 'The request timed out. Please try again.')
     }
@@ -84,6 +87,7 @@ export default function ContactForm() {
         <label htmlFor="contact-message" className={styles.fieldLabel}>Message</label>
         <textarea id="contact-message" name="message" required maxLength={5000} rows={6} className={`${styles.input} ${styles.textarea}`} readOnly={busy} />
       </div>
+      <HumanCheck />
       {status === 'error' && (
         <p className={styles.errorText} role="alert">
           {error} <a href="mailto:j@jeremiahgardner.com?subject=Gardner%20Expedition%20Co.%20inquiry">Email us instead</a>.

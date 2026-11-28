@@ -1,5 +1,6 @@
 import { createHash, randomUUID } from 'node:crypto'
 import type { RelayInquiry, RelayResult } from './contact-relay'
+import { checkHuman } from './human-check'
 
 // Same flow on every site's contact form (except deadreckon.io):
 // 1. save privately, 2. relay to the contact forms sheet (row + notification + confirmation).
@@ -62,6 +63,8 @@ export async function handleContact(request: Request, deps: ContactDeps) {
     const message = field(body, 'message', 5000, true)
     const sourcePath = field(body, 'sourcePath', 500) || '/contact'
     limit(email)
+    const human = await checkHuman(body, request)
+    if (!human.ok) throw new InvalidForm("We couldn't confirm this was sent by a person. Please refresh the page and try again, or email j@jeremiahgardner.com.", 403)
 
     const reference = randomUUID()
     const submittedAt = new Date().toISOString()
@@ -70,12 +73,13 @@ export async function handleContact(request: Request, deps: ContactDeps) {
     const relayed = await deps.relay({
       site: 'gardnerexpedition.co',
       reference, submittedAt, name, email,
-      subject: `Gardner Expedition Co. inquiry: ${topic}`,
+      subject: `${human.verified ? '' : '[Unverified] '}Gardner Expedition Co. inquiry: ${topic}`,
       fields: [
         ['Organization', organization || 'Not specified'], ['Topic', topic],
         ['Sent from', sourcePath], ['Message', message],
       ],
-      confirmation: process.env.CONTACT_CONFIRMATION_ENABLED === 'false' ? undefined : {
+      // No confirmation unless the human check passed: bots use forms to flood strangers' inboxes.
+      confirmation: process.env.CONTACT_CONFIRMATION_ENABLED === 'false' || !human.verified ? undefined : {
         subject: 'We received your message',
         text: [
           `Hi ${name.split(/\s+/)[0]},`,
